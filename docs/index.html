@@ -243,26 +243,21 @@ div.csl-indent {
 <p>R can perform basic mathematical functions, just like a calculator. Type the following into the console and press enter:</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="index.html#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="dv">10</span> <span class="sc">+</span> <span class="dv">5</span>   <span class="co"># Add ten and five</span></span></code></pre></div>
 <pre><code>## [1] 15</code></pre>
-<pre><code>## [1] 15</code></pre>
 <p>To do more complicated analyses, and to make scripts generalizable, we often want to assign values to objects. Type the following in your R script, then execute</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="index.html#cb6-1" aria-hidden="true" tabindex="-1"></a>myvalue <span class="ot">&lt;-</span> <span class="dv">10</span></span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="index.html#cb5-1" aria-hidden="true" tabindex="-1"></a>myvalue <span class="ot">&lt;-</span> <span class="dv">10</span></span></code></pre></div>
 <p>The arrow <code>&lt;-</code> is how we assign a value to an object. In general, it is better to assign values to objects rather than do math directly on the values. That is because if we want to do several different operations on <code>myvalue</code> but might want to change it later, we only have to change it in one place. Once you have stored a value you can print it, or you can use it to perform further mathematical functions:</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="index.html#cb7-1" aria-hidden="true" tabindex="-1"></a>myvalue   <span class="co">#print myvalue</span></span></code></pre></div>
-<pre><code>## [1] 10</code></pre>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="index.html#cb6-1" aria-hidden="true" tabindex="-1"></a>myvalue   <span class="co">#print myvalue</span></span></code></pre></div>
 <pre><code>## [1] 10</code></pre>
 <p> </p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="index.html#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(myvalue)   <span class="co">#print myvalue</span></span></code></pre></div>
-<pre><code>## [1] 10</code></pre>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="index.html#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(myvalue)   <span class="co">#print myvalue</span></span></code></pre></div>
 <pre><code>## [1] 10</code></pre>
 <p>There’s really no difference between these two ways to print an object  </p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="index.html#cb13-1" aria-hidden="true" tabindex="-1"></a>myvalue <span class="sc">+</span> <span class="dv">5</span>   <span class="co">#add 5 to myvalue</span></span></code></pre></div>
-<pre><code>## [1] 15</code></pre>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="index.html#cb10-1" aria-hidden="true" tabindex="-1"></a>myvalue <span class="sc">+</span> <span class="dv">5</span>   <span class="co">#add 5 to myvalue</span></span></code></pre></div>
 <pre><code>## [1] 15</code></pre>
 <p> </p>
-<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="index.html#cb16-1" aria-hidden="true" tabindex="-1"></a>newvalue <span class="ot">&lt;-</span> myvalue <span class="sc">+</span> <span class="dv">5</span></span></code></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="index.html#cb12-1" aria-hidden="true" tabindex="-1"></a>newvalue <span class="ot">&lt;-</span> myvalue <span class="sc">+</span> <span class="dv">5</span></span></code></pre></div>
 <p> </p>
-<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="index.html#cb17-1" aria-hidden="true" tabindex="-1"></a>newvalue</span></code></pre></div>
-<pre><code>## [1] 15</code></pre>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="index.html#cb13-1" aria-hidden="true" tabindex="-1"></a>newvalue</span></code></pre></div>
 <pre><code>## [1] 15</code></pre>
 <p>Note: You can choose any name you want for an object, but be careful! The name should be short (you may have to type it many times), but informative (so you don’t get it confused with other objects). You cannot use spaces and you cannot begin an object name with a number. You can use capitalization and underscore to your advantage, for example: <em>thisIsAnObject</em> or <em>this_is_an_object</em></p>
 <p> </p>
@@ -275,30 +270,27 @@ div.csl-indent {
 <div id="classes" class="section level2" number="1.6">
 <h2><span class="header-section-number">1.6</span> Classes</h2>
 <p>R can work with more than just numbers, it can handle a variety of data formats. You can use the function <code>class</code> to check the type of data:</p>
-<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="index.html#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(myvalue)</span></code></pre></div>
-<pre><code>## [1] &quot;numeric&quot;</code></pre>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="index.html#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(myvalue)</span></code></pre></div>
 <pre><code>## [1] &quot;numeric&quot;</code></pre>
 <p> </p>
 <p>But what happens if we assign an object to something other than a number?</p>
-<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="index.html#cb23-1" aria-hidden="true" tabindex="-1"></a>season <span class="ot">&lt;-</span> <span class="st">&quot;fall&quot;</span></span>
-<span id="cb23-2"><a href="index.html#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(season)</span></code></pre></div>
-<pre><code>## [1] &quot;character&quot;</code></pre>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="index.html#cb17-1" aria-hidden="true" tabindex="-1"></a>season <span class="ot">&lt;-</span> <span class="st">&quot;fall&quot;</span></span>
+<span id="cb17-2"><a href="index.html#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(season)</span></code></pre></div>
 <pre><code>## [1] &quot;character&quot;</code></pre>
 <p> </p>
 <p>Two somewhat confusing classes are <code>character</code> and <code>factor</code>. <code>character</code> means a string of letters while <code>factor</code> represents categorical data. For plotting and summarizing, we often want <code>factor</code> data. We can convert <code>character</code> data to <code>factor</code> data using the <code>as.factor</code> command:</p>
-<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="index.html#cb26-1" aria-hidden="true" tabindex="-1"></a>season_factor <span class="ot">&lt;-</span> <span class="fu">as.factor</span>(season)</span>
-<span id="cb26-2"><a href="index.html#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(season_factor)</span></code></pre></div>
-<pre><code>## [1] &quot;factor&quot;</code></pre>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="index.html#cb19-1" aria-hidden="true" tabindex="-1"></a>season_factor <span class="ot">&lt;-</span> <span class="fu">as.factor</span>(season)</span>
+<span id="cb19-2"><a href="index.html#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(season_factor)</span></code></pre></div>
 <pre><code>## [1] &quot;factor&quot;</code></pre>
 <p>     </p>
 </div>
 <div id="vectors-and-dataframes" class="section level2" number="1.7">
 <h2><span class="header-section-number">1.7</span> Vectors and dataframes</h2>
 <p>Usually we want to look at more than one number or value at once. For a single set of values, we can use a <strong>vector</strong>. To make a vector, we use the <code>c()</code> function (c stands for combine)</p>
-<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="index.html#cb29-1" aria-hidden="true" tabindex="-1"></a>seasons <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;fall&quot;</span>,<span class="st">&quot;winter&quot;</span>,<span class="st">&quot;spring&quot;</span>,<span class="st">&quot;summer&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="index.html#cb21-1" aria-hidden="true" tabindex="-1"></a>seasons <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;fall&quot;</span>,<span class="st">&quot;winter&quot;</span>,<span class="st">&quot;spring&quot;</span>,<span class="st">&quot;summer&quot;</span>)</span></code></pre></div>
 <p> </p>
 <p>Perhaps the most common way to format data is in a dataframe. This is basically a spreadsheet, like you would make in Excel. R has a few example dataframes that we can use. We installed one earlier when we installed the babynames package. Look at the top of this dataframe (the <code>head</code> command gives just the first 5 entries):</p>
-<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="index.html#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(babynames)</span></code></pre></div>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="index.html#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(babynames)</span></code></pre></div>
 <pre><code>## # A tibble: 6 x 5
 ##    year sex   name          n   prop
 ##   &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt;     &lt;int&gt;  &lt;dbl&gt;
@@ -308,35 +300,18 @@ div.csl-indent {
 ## 4  1880 F     Elizabeth  1939 0.0199
 ## 5  1880 F     Minnie     1746 0.0179
 ## 6  1880 F     Margaret   1578 0.0162</code></pre>
-<pre><code>## # A tibble: 6 x 5
-##    year sex   name          n   prop
-##   &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt;     &lt;int&gt;  &lt;dbl&gt;
-## 1  1880 F     Mary       7065 0.0724
-## 2  1880 F     Anna       2604 0.0267
-## 3  1880 F     Emma       2003 0.0205
-## 4  1880 F     Elizabeth  1939 0.0199
-## 5  1880 F     Minnie     1746 0.0179
-## 6  1880 F     Margaret   1578 0.0162</code></pre>
-<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="index.html#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dim</span>(babynames)  <span class="co"># how many rows and columns are in the dataframe?</span></span></code></pre></div>
-<pre><code>## [1] 1924665       5</code></pre>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="index.html#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dim</span>(babynames)  <span class="co"># how many rows and columns are in the dataframe?</span></span></code></pre></div>
 <pre><code>## [1] 1924665       5</code></pre>
 <p><code>dim</code> gives you the dimensions of the dataframe.
  </p>
 <p>Remember, we can always use <code>?</code> to ask for help. If we want a description of the babynames dataframe:</p>
-<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="index.html#cb36-1" aria-hidden="true" tabindex="-1"></a>?babynames</span></code></pre></div>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="index.html#cb26-1" aria-hidden="true" tabindex="-1"></a>?babynames</span></code></pre></div>
 <p>     </p>
 </div>
 <div id="subsetting" class="section level2" number="1.8">
 <h2><span class="header-section-number">1.8</span> Subsetting</h2>
 <p>Sometimes we want to examine a specific portion of the data. There are several ways to do this. For a two-dimensional dataframe you can use square bracket notation <code>[x,y]</code> where x is the rows you want and y is the columns you want. Like this:</p>
-<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="index.html#cb37-1" aria-hidden="true" tabindex="-1"></a>babynames[<span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>,<span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">3</span>)]   <span class="co">#take the first four rows and columns 2 &amp; 3</span></span></code></pre></div>
-<pre><code>## # A tibble: 4 x 2
-##   sex   name     
-##   &lt;chr&gt; &lt;chr&gt;    
-## 1 F     Mary     
-## 2 F     Anna     
-## 3 F     Emma     
-## 4 F     Elizabeth</code></pre>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="index.html#cb27-1" aria-hidden="true" tabindex="-1"></a>babynames[<span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>,<span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">3</span>)]   <span class="co">#take the first four rows and columns 2 &amp; 3</span></span></code></pre></div>
 <pre><code>## # A tibble: 4 x 2
 ##   sex   name     
 ##   &lt;chr&gt; &lt;chr&gt;    
@@ -347,14 +322,13 @@ div.csl-indent {
 <p>Notice the <code>:</code> gives me all the integers between 1 and 4.</p>
 <p> </p>
 <p>You can also ask for columns by name using the <code>$</code> notation. This means you can use the column name to ask for a single column out of the dataframe. Note that this does not work for rows.</p>
-<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb40-1"><a href="index.html#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(babynames<span class="sc">$</span>name)</span></code></pre></div>
-<pre><code>## [1] &quot;Mary&quot;      &quot;Anna&quot;      &quot;Emma&quot;      &quot;Elizabeth&quot; &quot;Minnie&quot;    &quot;Margaret&quot;</code></pre>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="index.html#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(babynames<span class="sc">$</span>name)</span></code></pre></div>
 <pre><code>## [1] &quot;Mary&quot;      &quot;Anna&quot;      &quot;Emma&quot;      &quot;Elizabeth&quot; &quot;Minnie&quot;    &quot;Margaret&quot;</code></pre>
 <p> </p>
 <p>You can use the <code>subset</code> function to ask for rows that meet certain criteria. Notice the double <code>==</code>. You use this when you are comparing values.</p>
-<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="index.html#cb43-1" aria-hidden="true" tabindex="-1"></a>myname <span class="ot">&lt;-</span> <span class="st">&quot;Rachael&quot;</span></span>
-<span id="cb43-2"><a href="index.html#cb43-2" aria-hidden="true" tabindex="-1"></a>mydata <span class="ot">&lt;-</span> <span class="fu">subset</span>(babynames,name<span class="sc">==</span>myname)   <span class="co"># take just the entries where name = &quot;Rachael&quot;</span></span>
-<span id="cb43-3"><a href="index.html#cb43-3" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(mydata)</span></code></pre></div>
+<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="index.html#cb31-1" aria-hidden="true" tabindex="-1"></a>myname <span class="ot">&lt;-</span> <span class="st">&quot;Rachael&quot;</span></span>
+<span id="cb31-2"><a href="index.html#cb31-2" aria-hidden="true" tabindex="-1"></a>mydata <span class="ot">&lt;-</span> <span class="fu">subset</span>(babynames,name<span class="sc">==</span>myname)   <span class="co"># take just the entries where name = &quot;Rachael&quot;</span></span>
+<span id="cb31-3"><a href="index.html#cb31-3" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(mydata)</span></code></pre></div>
 <pre><code>## # A tibble: 6 x 5
 ##    year sex   name        n      prop
 ##   &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt;   &lt;int&gt;     &lt;dbl&gt;
@@ -364,41 +338,29 @@ div.csl-indent {
 ## 4  1883 F     Rachael     9 0.0000750
 ## 5  1884 F     Rachael     7 0.0000509
 ## 6  1885 F     Rachael     8 0.0000564</code></pre>
-<pre><code>## # A tibble: 6 x 5
-##    year sex   name        n      prop
-##   &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt;   &lt;int&gt;     &lt;dbl&gt;
-## 1  1880 F     Rachael    12 0.000123 
-## 2  1881 F     Rachael     8 0.0000809
-## 3  1882 F     Rachael     8 0.0000692
-## 4  1883 F     Rachael     9 0.0000750
-## 5  1884 F     Rachael     7 0.0000509
-## 6  1885 F     Rachael     8 0.0000564</code></pre>
-<div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb46-1"><a href="index.html#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dim</span>(mydata)</span></code></pre></div>
+<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="index.html#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dim</span>(mydata)</span></code></pre></div>
 <pre><code>## [1] 158   5</code></pre>
 <p>     </p>
 </div>
 <div id="plotting" class="section level2" number="1.9">
 <h2><span class="header-section-number">1.9</span> Plotting</h2>
 <p>R is great for plotting. The simplest type of plot is just an x,y scatterplot:</p>
-<div class="sourceCode" id="cb48"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb48-1"><a href="index.html#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(mydata<span class="sc">$</span>year,mydata<span class="sc">$</span>prop)</span></code></pre></div>
-<p><img src="Website_files/figure-html/unnamed-chunk-19-1.png" width="672" /></p>
-<p><img src="Week_1_files/figure-markdown_github/unnamed-chunk-19-1.png" /></p>
-<p>Use <code>?</code> to look at the options for plotting. For example, here I add more informative axis labels and choose a nice color for the points:</p>
-<div class="sourceCode" id="cb49"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb49-1"><a href="index.html#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(mydata<span class="sc">$</span>year,mydata<span class="sc">$</span>prop,</span>
-<span id="cb49-2"><a href="index.html#cb49-2" aria-hidden="true" tabindex="-1"></a>     <span class="at">ylab=</span><span class="st">&quot;Proportion of babies&quot;</span>,</span>
-<span id="cb49-3"><a href="index.html#cb49-3" aria-hidden="true" tabindex="-1"></a>     <span class="at">xlab=</span><span class="st">&quot;Year&quot;</span>,</span>
-<span id="cb49-4"><a href="index.html#cb49-4" aria-hidden="true" tabindex="-1"></a>     <span class="at">col=</span><span class="st">&quot;aquamarine4&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="index.html#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(mydata<span class="sc">$</span>year,mydata<span class="sc">$</span>prop)</span></code></pre></div>
 <p><img src="Website_files/figure-html/unnamed-chunk-20-1.png" width="672" /></p>
-<p><img src="Week_1_files/figure-markdown_github/unnamed-chunk-20-1.png" /></p>
+<p>Use <code>?</code> to look at the options for plotting. For example, here I add more informative axis labels and choose a nice color for the points:</p>
+<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="index.html#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(mydata<span class="sc">$</span>year,mydata<span class="sc">$</span>prop,</span>
+<span id="cb36-2"><a href="index.html#cb36-2" aria-hidden="true" tabindex="-1"></a>     <span class="at">ylab=</span><span class="st">&quot;Proportion of babies&quot;</span>,</span>
+<span id="cb36-3"><a href="index.html#cb36-3" aria-hidden="true" tabindex="-1"></a>     <span class="at">xlab=</span><span class="st">&quot;Year&quot;</span>,</span>
+<span id="cb36-4"><a href="index.html#cb36-4" aria-hidden="true" tabindex="-1"></a>     <span class="at">col=</span><span class="st">&quot;aquamarine4&quot;</span>)</span></code></pre></div>
+<p><img src="Website_files/figure-html/unnamed-chunk-21-1.png" width="672" /></p>
 <p>Notice that I used new lines (returns) to make this more readable. R doesn’t care where you put white space, so use it to make your code as organized as possible.
  </p>
 <p>Of course, it’s better if color is informative, so lets use it to learn something. Isn’t it weird that there are a bunch of points at 0 and other points with higher proportions during the same time frame? Maybe those points are different in some way. Lets try this:</p>
-<div class="sourceCode" id="cb50"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb50-1"><a href="index.html#cb50-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(mydata<span class="sc">$</span>year,mydata<span class="sc">$</span>prop,</span>
-<span id="cb50-2"><a href="index.html#cb50-2" aria-hidden="true" tabindex="-1"></a>     <span class="at">ylab=</span><span class="st">&quot;Proportion of babies&quot;</span>,</span>
-<span id="cb50-3"><a href="index.html#cb50-3" aria-hidden="true" tabindex="-1"></a>     <span class="at">xlab=</span><span class="st">&quot;Year&quot;</span>,</span>
-<span id="cb50-4"><a href="index.html#cb50-4" aria-hidden="true" tabindex="-1"></a>     <span class="at">col=</span><span class="fu">as.factor</span>(mydata<span class="sc">$</span>sex))</span></code></pre></div>
-<p><img src="Website_files/figure-html/unnamed-chunk-21-1.png" width="672" /></p>
-<p><img src="Week_1_files/figure-markdown_github/unnamed-chunk-21-1.png" /></p>
+<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="index.html#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(mydata<span class="sc">$</span>year,mydata<span class="sc">$</span>prop,</span>
+<span id="cb37-2"><a href="index.html#cb37-2" aria-hidden="true" tabindex="-1"></a>     <span class="at">ylab=</span><span class="st">&quot;Proportion of babies&quot;</span>,</span>
+<span id="cb37-3"><a href="index.html#cb37-3" aria-hidden="true" tabindex="-1"></a>     <span class="at">xlab=</span><span class="st">&quot;Year&quot;</span>,</span>
+<span id="cb37-4"><a href="index.html#cb37-4" aria-hidden="true" tabindex="-1"></a>     <span class="at">col=</span><span class="fu">as.factor</span>(mydata<span class="sc">$</span>sex))</span></code></pre></div>
+<p><img src="Website_files/figure-html/unnamed-chunk-22-1.png" width="672" /></p>
 </div>
 <div id="exercise-describe-this-plot-in-plain-english.-what-conclusions-can-we-draw" class="section level2" number="1.10">
 <h2><span class="header-section-number">1.10</span> <em>Exercise</em>: Describe this plot in plain english. What conclusions can we draw?</h2>
@@ -408,18 +370,20 @@ div.csl-indent {
 <h2><span class="header-section-number">1.11</span> Homework</h2>
 <p>Each week, you will submit a script for homework. While most of the concepts you will need will be taught during section, you may have to look up some commands online (remember, Google is your friend!).</p>
 <p>The top of your script should contain commented lines with the following:</p>
-<div class="sourceCode" id="cb51"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb51-1"><a href="index.html#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Name</span></span>
-<span id="cb51-2"><a href="index.html#cb51-2" aria-hidden="true" tabindex="-1"></a><span class="co">#Date</span></span>
-<span id="cb51-3"><a href="index.html#cb51-3" aria-hidden="true" tabindex="-1"></a><span class="co">#EVE 109 Homework</span></span>
-<span id="cb51-4"><a href="index.html#cb51-4" aria-hidden="true" tabindex="-1"></a><span class="co">#Week ##</span></span></code></pre></div>
+<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="index.html#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Name</span></span>
+<span id="cb38-2"><a href="index.html#cb38-2" aria-hidden="true" tabindex="-1"></a><span class="co">#Date</span></span>
+<span id="cb38-3"><a href="index.html#cb38-3" aria-hidden="true" tabindex="-1"></a><span class="co">#EVE 109 Homework</span></span>
+<span id="cb38-4"><a href="index.html#cb38-4" aria-hidden="true" tabindex="-1"></a><span class="co">#Week ##</span></span></code></pre></div>
 <p> </p>
 <p>I should be able to execute the script. When printed answers are expected, you should store them in an object and have a line of code above should have a comment telling me where the answer is printed. For example:</p>
-<div class="sourceCode" id="cb52"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb52-1"><a href="index.html#cb52-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Answer to Question 1</span></span>
-<span id="cb52-2"><a href="index.html#cb52-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(myvalue)</span></code></pre></div>
+<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="index.html#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Answer to Question 1</span></span>
+<span id="cb39-2"><a href="index.html#cb39-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(myvalue)</span></code></pre></div>
+<pre><code>## [1] 10</code></pre>
 <p> </p>
 <p>If the answer requires a plot, follow the same format, with a comment indicating that this plot answers a homework question:</p>
-<div class="sourceCode" id="cb53"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb53-1"><a href="index.html#cb53-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Answer to Question 2</span></span>
-<span id="cb53-2"><a href="index.html#cb53-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(mydata<span class="sc">$</span>year,mydata<span class="sc">$</span>prop)</span></code></pre></div>
+<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="index.html#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Answer to Question 2</span></span>
+<span id="cb41-2"><a href="index.html#cb41-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(mydata<span class="sc">$</span>year,mydata<span class="sc">$</span>prop)</span></code></pre></div>
+<p><img src="Website_files/figure-html/unnamed-chunk-25-1.png" width="672" /></p>
 <p> </p>
 <p><strong><em>Show your work and comment your code. You will only receive full credit for clean, organized code</em></strong></p>
 <p> </p>
