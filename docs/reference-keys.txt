@@ -13,9 +13,6 @@ plotting
 exercise-describe-this-plot-in-plain-english.-what-conclusions-can-we-draw
 homework
 homework-1-write-a-script-that-does-the-following
-plot-the-use-of-your-name-over-time-or-pick-a-different-name.-only-include-points-for-one-gender.
-what-proportion-of-babies-had-your-name-when-it-was-most-popular
-in-which-year-was-your-name-most-popular
 intro
 literature
 methods
