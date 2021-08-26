@@ -1,5 +1,6 @@
 fig:nice-fig
 tab:nice-tab
+introduction-to-r
 installing-r-and-rstudio
 tour-of-rstudio
 installing-packages
