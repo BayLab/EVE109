@@ -25,12 +25,12 @@ This website has many tutorials that are relevant to the types of analyses biolo
 
 ## Tour of RStudio
 
-Next we will take a tour of RStudio as a class. We will cover:
-1. The console
-2. Scripts
-3. Commenting
-4. Executing Commands
-5. Asking for help
+Next we will take a tour of RStudio as a class. We will cover: 
+1. The console 
+2. Scripts 
+3. Commenting 
+4. Executing Commands 
+5. Asking for help 
 
      
 
@@ -100,7 +100,7 @@ Note: You can choose any name you want for an object, but be careful! The name s
 
  
 
-## *Exercise*: Write a script to find out what fraction of your life you've been at UC Davis
+### *Exercise*: Write a script to find out what fraction of your life you've been at UC Davis
 
 Include objects for your age and the number of years you've been at Davis. Have the script print the answer.
 
@@ -233,7 +233,7 @@ plot(mydata$year,mydata$prop,
 ```
 
 
-## *Exercise*: Describe this plot in plain english. What conclusions can we draw?
+### *Exercise*: Describe this plot in plain english. What conclusions can we draw?
 
        
 
