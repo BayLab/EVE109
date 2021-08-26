@@ -1,6 +1,6 @@
 fig:nice-fig
 tab:nice-tab
-prerequisites
+introduction-to-r
 intro
 literature
 methods
