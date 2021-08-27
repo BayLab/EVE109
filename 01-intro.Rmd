@@ -1,21 +1,110 @@
-# Introduction {#intro}
+# Molecular Markers
 
-You can label chapter and section titles using `{#label}` after them, e.g., we can reference Chapter \@ref(intro). If you do not manually label them, there will be automatic labels anyway, e.g., Chapter \@ref(methods).
+## Getting data from github
 
-Figures and tables with captions will be placed in `figure` and `table` environments, respectively.
+For this course, all the information and data we need will be stored in github. You saw github last week when we accessed the first tutorial. We can also use github to share and download data so that we are all working with the same files. A collection of files and scripts on github is called a *repository*. Each week we will download a new repository with the files needed for that week. Right now, you are looking at the webpage for the week 2 repository. Notice the URL is <http://github.com/rachaelbay/EVE109-Week2>. Each week, you can replace the "Week2" with the current week for the section tutorial and homework assignments.
 
-```{r nice-fig, fig.cap='Here is a nice figure!', out.width='80%', fig.asp=.75, fig.align='center'}
-par(mar = c(4, 4, .1, .1))
-plot(pressure, type = 'b', pch = 19)
+First, we need to copy the repository to our own computer. This is called *cloning*. We can easily do this by clicking the green button that says "Clone or download", then clicking the clipboard button to copy the URL:
+
+![](Week2_files/figure-markdown_github/Screen1.png)
+
+We can download this repository onto our computer by creating an R Project:  
+1. In RStudio, click *File* then *New Project*.  
+2. On the next screen, click *Version control*.  
+3. On the next screen, click *Git*.  
+4. Paste in the URL you copied, and name the project. You should also tell it where to save these files using the *Browse* button so that you can come back to them later. For example, the following screen shows me saving the repository to the "Documents" on my computer:
+
+![](Week2_files/figure-markdown_github/Screen2.png)
+
+&nbsp;
+
+Once you click "Create Project" the files will download from github (you must be connected to the internet!) and you will have everything you need for this week's section and homework.
+
+Note: Where did you download the data on your computer? A common mistake is to lose track of your downloads. Navigate to the location where you downloaded the repository. There should be a folder inside called "data". Each week, this folder will contain data needed for the week's homework. You should see a spreadsheet called "wombats.csv". Open it in a spreadsheet program (Excel or Numbers). 
+&nbsp;
+
+&nbsp;
+&nbsp;
+&nbsp;
+
+## Reading in data from spreadsheets
+
+A lot of data we use is stored in spreadsheets. However, when we store them in a normal Excel format (.xlsx) they come with a lot of extra formatting that R has trouble reading. One way to avoid this is to store them in a comma separated value format (.csv). Open "wombats.csv" in a text editor and look at it. It's not easy for us to read, but you can see that it is a very simple format where each entry is separated by a comma. You were able to open it in a spreadsheet program and R can read it easily. If you are making your own data, you can save spreadsheets as .csv files from most spreadsheet programs.
+
+Now we want to read that data into RStudio. We can do that using the command `read.csv`. Remember do assign the resulting data frame to an object:
+
+```{r}
+data <- read.csv("data/wombats.csv") # Read in a file
 ```
 
-Reference a figure by its code chunk label with the `fig:` prefix, e.g., see Figure \@ref(fig:nice-fig). Similarly, you can reference tables generated from `knitr::kable()`, e.g., see Table \@ref(tab:nice-tab).
-
-```{r nice-tab, tidy=FALSE}
-knitr::kable(
-  head(iris, 20), caption = 'Here is a nice table!',
-  booktabs = TRUE
-)
+Remember, we can look at the top of the dataframe using `head`:
+```{r}
+head(data)
 ```
 
-You can write citations, too. For example, we are using the **bookdown** package [@R-bookdown] in this sample book, which was built on top of R Markdown and **knitr** [@xie2015].
+This is data from the paper we read this week by Banks et al. (2003) using genetic analysis to monitor northern hairy-nosed wombats. The table represents the data shown in Figure 1, so individuals have already been identified and we're looking at the number of times each was recaptured.
+
+&nbsp;
+&nbsp;
+&nbsp;
+
+## Simple capture recapture example
+
+Next we will learn a simple way to make population size estimations. We will use the `capwire` package to do this. Remember how to install and load a package?
+
+```{r, eval=FALSE}
+install.packages("capwire")
+```
+
+```{r}
+library(capwire)
+```
+
+The manual for capwire can be found online [here](https://cran.r-project.org/web/packages/capwire/capwire.pdf)
+
+&nbsp;
+
+Okay, now lets make up some data. Luckily, *capwire* has a function that allows you to simulate data. Look up the function `simCapture`. Notice there are three different arguments we need to specify (we can ignore *return.cap.probs* because it has a default that we do not want to change). Using this function we'll simulate a population of 300, from which we have 50 samples. This distribution function just means that every individual has an equal probability of being captured.
+
+```{r}
+sim <- simCapture(n=300,s=50,dist.func=drawCapRatesUnif(0.1,1)) # Simulate capture data
+sim
+```
+
+Now that we have simulated data, we can use one of the `fitEcm` function to estimate population size. What arguments do we need for that function? Notice that the help page tells you what format your data should be in.
+
+```{r}
+ecm <- fitEcm(data=sim,max.pop=500) # estimate population size
+```
+
+The `fitEcm` page also describes that output. We are most interested in the population size estimate, which is called `ml.pop.size`. We can extract that using:
+
+```{r}
+ecm$ml.pop.size
+```
+
+How much uncertainty is there in our estimate? We can use bootstrap resampling to create confidence intervals. Look up the command `boostrapCapwire`
+```{r}
+boot <- bootstrapCapwire(x=ecm,bootstraps=1000,CI=c(0.025,0.975)) # estimate confidence intervals
+boot
+```
+Using this 95% confidence interval means there is a 95% chance the real answer is within that range. Why is it so large?! What happens if we have more samples?
+
+&nbsp;
+&nbsp;
+&nbsp;
+
+## Homework
+
+Now that we know how to estimate population sizes, we will use the wombat data from before. Start a new script for this.
+
+###*Homework 2: Write a script that does the following:*
+1. Read in "wombats.csv"
+
+2. Estimate the total population size.
+
+3. Estimate confidence intervals for the total population size.
+
+4. Estimate male and female population sizes.
+
+5. What is the ratio of males to females in this population?

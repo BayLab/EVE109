@@ -1,0 +1,440 @@
+--- 
+title: "EVE 109: Molecular Ecology"
+site: bookdown::bookdown_site
+documentclass: book
+bibliography: [book.bib, packages.bib]
+biblio-style: apalike
+link-citations: yes
+description: "Tutorials and datasets for discussion and homeowork excesises for EVE 109: Molecular Ecology"
+---
+
+
+# Discussion Section
+
+This website provides the material you will need to complete discussion section and homework exercises. Each week, we will go over the commands you need for that week's assignments. You may work together in class and on homework, but I do expect you to turn in an individual assignment that has been completed on your own and reflects your own understanding of the material. This course is meant to give you an introduction to analyzing genetic data in R, so feel free to take these assignments further where you are interested. Data is fun!
+
+## Installing R and RStudio
+
+For most of our analysis in this class, we will work with the programming language "R". RStudio is a software that provides a nice interface for using R. The very first thing we need to do is install both R and RStudio. The following link has instructions for installing R and RStudio on any laptop:
+
+<https://datacarpentry.org/R-ecology-lesson/#setup_instructions>
+
+This website has many tutorials that are relevant to the types of analyses biologists need. Take a moment and install R and RStudio on your laptop. If you are going to be doing homework on a different computer, you will want to install the software on that computer as well.
+
+     
+
+## Tour of RStudio
+
+Next we will take a tour of RStudio as a class. We will cover:  
+
+1. The console  
+
+2. Scripts  
+
+3. Commenting  
+
+4. Executing Commands  
+
+5. Asking for help  
+
+
+     
+
+## Installing packages
+
+Some special functions or datasets can be downloaded as packages. To install them, we use the `install.packages` command:
+
+``` r
+install.packages("babynames")
+```
+
+You only have to install a package once because the package is downloaded to your computer. However, each time you use a package you will need to tell R you are using commands from that package. It's good practice to place this at the top of your script.
+
+``` {r}
+library(babynames)
+```
+
+     
+
+## Basic functions in R
+
+R can perform basic mathematical functions, just like a calculator. Type the following into the console and press enter:
+
+``` {r}
+10 + 5   # Add ten and five
+```
+
+To do more complicated analyses, and to make scripts generalizable, we often want to assign values to objects. Type the following in your R script, then execute
+
+``` {r}
+myvalue <- 10
+```
+
+The arrow `<-` is how we assign a value to an object. In general, it is better to assign values to objects rather than do math directly on the values. That is because if we want to do several different operations on `myvalue` but might want to change it later, we only have to change it in one place. Once you have stored a value you can print it, or you can use it to perform further mathematical functions:
+
+``` {r}
+myvalue   #print myvalue
+```
+
+ 
+
+``` {r}
+print(myvalue)   #print myvalue
+```
+
+
+There's really no difference between these two ways to print an object  
+
+``` {r}
+myvalue + 5   #add 5 to myvalue
+```
+
+ 
+
+``` {r}
+newvalue <- myvalue + 5
+```
+
+ 
+
+``` {r}
+newvalue
+```
+
+
+Note: You can choose any name you want for an object, but be careful! The name should be short (you may have to type it many times), but informative (so you don't get it confused with other objects). You cannot use spaces and you cannot begin an object name with a number. You can use capitalization and underscore to your advantage, for example: *thisIsAnObject* or *this\_is\_an\_object*
+
+ 
+
+### *Exercise*: Write a script to find out what fraction of your life you've been at UC Davis
+
+Include objects for your age and the number of years you've been at Davis. Have the script print the answer.
+
+     
+
+## Classes
+
+R can work with more than just numbers, it can handle a variety of data formats. You can use the function `class` to check the type of data:
+
+``` {r}
+class(myvalue)
+```
+
+ 
+
+But what happens if we assign an object to something other than a number?
+
+``` {r}
+season <- "fall"
+class(season)
+```
+
+ 
+
+Two somewhat confusing classes are `character` and `factor`. `character` means a string of letters while `factor` represents categorical data. For plotting and summarizing, we often want `factor` data. We can convert `character` data to `factor` data using the `as.factor` command:
+
+``` {r}
+season_factor <- as.factor(season)
+class(season_factor)
+```
+
+     
+
+## Vectors and dataframes
+
+Usually we want to look at more than one number or value at once. For a single set of values, we can use a **vector**. To make a vector, we use the `c()` function (c stands for combine)
+
+``` {r}
+seasons <- c("fall","winter","spring","summer")
+```
+
+ 
+
+Perhaps the most common way to format data is in a dataframe. This is basically a spreadsheet, like you would make in Excel. R has a few example dataframes that we can use. We installed one earlier when we installed the babynames package. Look at the top of this dataframe (the `head` command gives just the first 5 entries):
+
+``` {r}
+head(babynames)
+```
+
+
+``` {r}
+dim(babynames)  # how many rows and columns are in the dataframe?
+```
+
+`dim` gives you the dimensions of the dataframe.
+ 
+
+Remember, we can always use `?` to ask for help. If we want a description of the babynames dataframe:
+
+``` {r}
+?babynames
+```
+
+     
+
+## Subsetting
+
+Sometimes we want to examine a specific portion of the data. There are several ways to do this. For a two-dimensional dataframe you can use square bracket notation `[x,y]` where x is the rows you want and y is the columns you want. Like this:
+
+``` {r}
+babynames[1:4,c(2,3)]   #take the first four rows and columns 2 & 3
+```
+
+Notice the `:` gives me all the integers between 1 and 4.
+
+ 
+
+You can also ask for columns by name using the `$` notation. This means you can use the column name to ask for a single column out of the dataframe. Note that this does not work for rows.
+
+``` {r}
+head(babynames$name)
+```
+
+ 
+
+You can use the `subset` function to ask for rows that meet certain criteria. Notice the double `==`. You use this when you are comparing values.
+
+``` {r}
+myname <- "Rachael"
+mydata <- subset(babynames,name==myname)   # take just the entries where name = "Rachael"
+head(mydata)
+```
+
+
+``` {r}
+dim(mydata)
+```
+
+
+     
+
+## Plotting
+
+R is great for plotting. The simplest type of plot is just an x,y scatterplot:
+
+``` {r}
+plot(mydata$year,mydata$prop)
+```
+
+Use `?` to look at the options for plotting. For example, here I add more informative axis labels and choose a nice color for the points:
+
+``` {r}
+plot(mydata$year,mydata$prop,
+     ylab="Proportion of babies",
+     xlab="Year",
+     col="aquamarine4")
+```
+
+
+Notice that I used new lines (returns) to make this more readable. R doesn't care where you put white space, so use it to make your code as organized as possible.
+ 
+
+Of course, it's better if color is informative, so lets use it to learn something. Isn't it weird that there are a bunch of points at 0 and other points with higher proportions during the same time frame? Maybe those points are different in some way. Lets try this:
+
+``` {r }
+plot(mydata$year,mydata$prop,
+     ylab="Proportion of babies",
+     xlab="Year",
+     col=as.factor(mydata$sex))
+```
+
+
+### *Exercise*: Describe this plot in plain english. What conclusions can we draw?
+
+       
+
+## Homework
+
+Each week, you will submit a script for homework. While most of the concepts you will need will be taught during section, you may have to look up some commands online (remember, Google is your friend!).
+
+The top of your script should contain commented lines with the following:
+
+``` {r}
+#Name
+#Date
+#EVE 109 Homework
+#Week ##
+```
+
+ 
+
+I should be able to execute the script. When printed answers are expected, you should store them in an object and have a line of code above should have a comment telling me where the answer is printed. For example:
+
+``` {r}
+#Answer to Question 1
+print(myvalue)
+```
+
+ 
+
+If the answer requires a plot, follow the same format, with a comment indicating that this plot answers a homework question:
+
+``` {r}
+#Answer to Question 2
+plot(mydata$year,mydata$prop)
+```
+
+ 
+
+***Show your work and comment your code. You will only receive full credit for clean, organized code***
+
+ 
+
+### *Homework 1: Write a script that does the following:*
+
+1. Plot the use of your name over time (Or pick a different name). Only include points for one gender.
+
+2. What proportion of babies had your name when it was most popular?
+
+3. In which year was your name most popular?
+
+
+<!--chapter:end:index.Rmd-->
+
+# Molecular Markers
+
+## Getting data from github
+
+For this course, all the information and data we need will be stored in github. You saw github last week when we accessed the first tutorial. We can also use github to share and download data so that we are all working with the same files. A collection of files and scripts on github is called a *repository*. Each week we will download a new repository with the files needed for that week. Right now, you are looking at the webpage for the week 2 repository. Notice the URL is <http://github.com/rachaelbay/EVE109-Week2>. Each week, you can replace the "Week2" with the current week for the section tutorial and homework assignments.
+
+First, we need to copy the repository to our own computer. This is called *cloning*. We can easily do this by clicking the green button that says "Clone or download", then clicking the clipboard button to copy the URL:
+
+![](Week2_files/figure-markdown_github/Screen1.png)
+
+We can download this repository onto our computer by creating an R Project:  
+1. In RStudio, click *File* then *New Project*.  
+2. On the next screen, click *Version control*.  
+3. On the next screen, click *Git*.  
+4. Paste in the URL you copied, and name the project. You should also tell it where to save these files using the *Browse* button so that you can come back to them later. For example, the following screen shows me saving the repository to the "Documents" on my computer:
+
+![](Week2_files/figure-markdown_github/Screen2.png)
+
+&nbsp;
+
+Once you click "Create Project" the files will download from github (you must be connected to the internet!) and you will have everything you need for this week's section and homework.
+
+Note: Where did you download the data on your computer? A common mistake is to lose track of your downloads. Navigate to the location where you downloaded the repository. There should be a folder inside called "data". Each week, this folder will contain data needed for the week's homework. You should see a spreadsheet called "wombats.csv". Open it in a spreadsheet program (Excel or Numbers). 
+&nbsp;
+
+&nbsp;
+&nbsp;
+&nbsp;
+
+## Reading in data from spreadsheets
+
+A lot of data we use is stored in spreadsheets. However, when we store them in a normal Excel format (.xlsx) they come with a lot of extra formatting that R has trouble reading. One way to avoid this is to store them in a comma separated value format (.csv). Open "wombats.csv" in a text editor and look at it. It's not easy for us to read, but you can see that it is a very simple format where each entry is separated by a comma. You were able to open it in a spreadsheet program and R can read it easily. If you are making your own data, you can save spreadsheets as .csv files from most spreadsheet programs.
+
+Now we want to read that data into RStudio. We can do that using the command `read.csv`. Remember do assign the resulting data frame to an object:
+
+```{r}
+data <- read.csv("data/wombats.csv") # Read in a file
+```
+
+Remember, we can look at the top of the dataframe using `head`:
+```{r}
+head(data)
+```
+
+This is data from the paper we read this week by Banks et al. (2003) using genetic analysis to monitor northern hairy-nosed wombats. The table represents the data shown in Figure 1, so individuals have already been identified and we're looking at the number of times each was recaptured.
+
+&nbsp;
+&nbsp;
+&nbsp;
+
+## Simple capture recapture example
+
+Next we will learn a simple way to make population size estimations. We will use the `capwire` package to do this. Remember how to install and load a package?
+
+```{r, eval=FALSE}
+install.packages("capwire")
+```
+
+```{r}
+library(capwire)
+```
+
+The manual for capwire can be found online [here](https://cran.r-project.org/web/packages/capwire/capwire.pdf)
+
+&nbsp;
+
+Okay, now lets make up some data. Luckily, *capwire* has a function that allows you to simulate data. Look up the function `simCapture`. Notice there are three different arguments we need to specify (we can ignore *return.cap.probs* because it has a default that we do not want to change). Using this function we'll simulate a population of 300, from which we have 50 samples. This distribution function just means that every individual has an equal probability of being captured.
+
+```{r}
+sim <- simCapture(n=300,s=50,dist.func=drawCapRatesUnif(0.1,1)) # Simulate capture data
+sim
+```
+
+Now that we have simulated data, we can use one of the `fitEcm` function to estimate population size. What arguments do we need for that function? Notice that the help page tells you what format your data should be in.
+
+```{r}
+ecm <- fitEcm(data=sim,max.pop=500) # estimate population size
+```
+
+The `fitEcm` page also describes that output. We are most interested in the population size estimate, which is called `ml.pop.size`. We can extract that using:
+
+```{r}
+ecm$ml.pop.size
+```
+
+How much uncertainty is there in our estimate? We can use bootstrap resampling to create confidence intervals. Look up the command `boostrapCapwire`
+```{r}
+boot <- bootstrapCapwire(x=ecm,bootstraps=1000,CI=c(0.025,0.975)) # estimate confidence intervals
+boot
+```
+Using this 95% confidence interval means there is a 95% chance the real answer is within that range. Why is it so large?! What happens if we have more samples?
+
+&nbsp;
+&nbsp;
+&nbsp;
+
+## Homework
+
+Now that we know how to estimate population sizes, we will use the wombat data from before. Start a new script for this.
+
+###*Homework 2: Write a script that does the following:*
+1. Read in "wombats.csv"
+
+2. Estimate the total population size.
+
+3. Estimate confidence intervals for the total population size.
+
+4. Estimate male and female population sizes.
+
+5. What is the ratio of males to females in this population?
+
+<!--chapter:end:01-intro.Rmd-->
+
+# Literature
+
+Here is a review of existing methods.
+
+<!--chapter:end:02-literature.Rmd-->
+
+# Methods
+
+We describe our methods in this chapter.
+
+<!--chapter:end:03-method.Rmd-->
+
+# Applications
+
+Some _significant_ applications are demonstrated in this chapter.
+
+## Example one
+
+## Example two
+
+<!--chapter:end:04-application.Rmd-->
+
+# Final Words
+
+We have finished a nice book.
+
+<!--chapter:end:05-summary.Rmd-->
+
+`r if (knitr::is_html_output()) '
+# References {-}
+'`
+
+<!--chapter:end:06-references.Rmd-->
+
