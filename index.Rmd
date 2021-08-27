@@ -27,10 +27,15 @@ This website has many tutorials that are relevant to the types of analyses biolo
 
 Next we will take a tour of RStudio as a class. We will cover: 
 1. The console  
+
 2. Scripts  
+
 3. Commenting  
+
 4. Executing Commands  
+
 5. Asking for help  
+
 
      
 
