@@ -161,7 +161,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2.1" data-path="molecular-markers.html"><a href="molecular-markers.html#paths"><i class="fa fa-check"></i><b>2.1</b> Paths</a></li>
 <li class="chapter" data-level="2.2" data-path="molecular-markers.html"><a href="molecular-markers.html#reading-in-data-from-spreadsheets"><i class="fa fa-check"></i><b>2.2</b> Reading in data from spreadsheets</a></li>
 <li class="chapter" data-level="2.3" data-path="molecular-markers.html"><a href="molecular-markers.html#simple-capture-recapture-example"><i class="fa fa-check"></i><b>2.3</b> Simple capture recapture example</a></li>
-<li class="chapter" data-level="2.4" data-path="molecular-markers.html"><a href="molecular-markers.html#homework-1"><i class="fa fa-check"></i><b>2.4</b> Homework</a></li>
+<li class="chapter" data-level="2.4" data-path="molecular-markers.html"><a href="molecular-markers.html#homework-1"><i class="fa fa-check"></i><b>2.4</b> Homework</a>
+<ul>
+<li class="chapter" data-level="2.4.1" data-path="molecular-markers.html"><a href="molecular-markers.html#homework-2-write-a-script-that-does-the-following"><i class="fa fa-check"></i><b>2.4.1</b> <em>Homework 2: Write a script that does the following:</em></a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="literature.html"><a href="literature.html"><i class="fa fa-check"></i><b>3</b> Literature</a></li>
 <li class="chapter" data-level="4" data-path="methods.html"><a href="methods.html"><i class="fa fa-check"></i><b>4</b> Methods</a></li>
@@ -236,22 +239,23 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="sourceCode" id="cb50"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb50-1"><a href="molecular-markers.html#cb50-1" aria-hidden="true" tabindex="-1"></a>sim <span class="ot">&lt;-</span> <span class="fu">simCapture</span>(<span class="at">n=</span><span class="dv">300</span>,<span class="at">s=</span><span class="dv">50</span>,<span class="at">dist.func=</span><span class="fu">drawCapRatesUnif</span>(<span class="fl">0.1</span>,<span class="dv">1</span>)) <span class="co"># Simulate capture data</span></span>
 <span id="cb50-2"><a href="molecular-markers.html#cb50-2" aria-hidden="true" tabindex="-1"></a>sim</span></code></pre></div>
 <pre><code>##   capture.class No.Ind
-## 1             1     34
-## 2             2      8</code></pre>
+## 1             1     41
+## 2             2      3
+## 3             3      1</code></pre>
 <p>Now that we have simulated data, we can use one of the <code>fitEcm</code> function to estimate population size. What arguments do we need for that function? Notice that the help page tells you what format your data should be in.</p>
 <div class="sourceCode" id="cb52"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb52-1"><a href="molecular-markers.html#cb52-1" aria-hidden="true" tabindex="-1"></a>ecm <span class="ot">&lt;-</span> <span class="fu">fitEcm</span>(<span class="at">data=</span>sim,<span class="at">max.pop=</span><span class="dv">500</span>) <span class="co"># estimate population size</span></span></code></pre></div>
 <p>The <code>fitEcm</code> page also describes that output. We are most interested in the population size estimate, which is called <code>ml.pop.size</code>. We can extract that using:</p>
 <div class="sourceCode" id="cb53"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb53-1"><a href="molecular-markers.html#cb53-1" aria-hidden="true" tabindex="-1"></a>ecm<span class="sc">$</span>ml.pop.size</span></code></pre></div>
-<pre><code>## [1] 136</code></pre>
+<pre><code>## [1] 228</code></pre>
 <p>How much uncertainty is there in our estimate? We can use bootstrap resampling to create confidence intervals. Look up the command <code>boostrapCapwire</code></p>
 <div class="sourceCode" id="cb55"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb55-1"><a href="molecular-markers.html#cb55-1" aria-hidden="true" tabindex="-1"></a>boot <span class="ot">&lt;-</span> <span class="fu">bootstrapCapwire</span>(<span class="at">x=</span>ecm,<span class="at">bootstraps=</span><span class="dv">1000</span>,<span class="at">CI=</span><span class="fu">c</span>(<span class="fl">0.025</span>,<span class="fl">0.975</span>)) <span class="co"># estimate confidence intervals</span></span>
 <span id="cb55-2"><a href="molecular-markers.html#cb55-2" aria-hidden="true" tabindex="-1"></a>boot</span></code></pre></div>
 <pre><code>## $ml.pop.size
-## [1] 136
+## [1] 228
 ## 
 ## $conf.int
 ##  2.5% 97.5% 
-##    77   290</code></pre>
+##   119   500</code></pre>
 <p>Using this 95% confidence interval means there is a 95% chance the real answer is within that range. Why is it so large?! What happens if we have more samples?</p>
 <p> 
  
@@ -260,15 +264,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="homework-1" class="section level2" number="2.4">
 <h2><span class="header-section-number">2.4</span> Homework</h2>
 <p>Now that we know how to estimate population sizes, we will use the wombat data from before. Start a new script for this.</p>
-<p>###<em>Homework 2: Write a script that does the following:</em>
-1. Read in “wombats.csv”</p>
-<ol start="2" style="list-style-type: decimal">
+<div id="homework-2-write-a-script-that-does-the-following" class="section level3" number="2.4.1">
+<h3><span class="header-section-number">2.4.1</span> <em>Homework 2: Write a script that does the following:</em></h3>
+<ol style="list-style-type: decimal">
+<li><p>Read in “wombats.csv”</p></li>
 <li><p>Estimate the total population size.</p></li>
 <li><p>Estimate confidence intervals for the total population size.</p></li>
 <li><p>Estimate male and female population sizes.</p></li>
 <li><p>What is the ratio of males to females in this population?</p></li>
 </ol>
 
+</div>
 </div>
 </div>
             </section>

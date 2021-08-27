@@ -16,6 +16,7 @@ paths
 reading-in-data-from-spreadsheets
 simple-capture-recapture-example
 homework-1
+homework-2-write-a-script-that-does-the-following
 literature
 methods
 applications

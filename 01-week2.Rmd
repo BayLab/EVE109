@@ -90,7 +90,7 @@ Using this 95% confidence interval means there is a 95% chance the real answer i
 
 Now that we know how to estimate population sizes, we will use the wombat data from before. Start a new script for this.
 
-###*Homework 2: Write a script that does the following:*
+### *Homework 2: Write a script that does the following:*
 1. Read in "wombats.csv"
 
 2. Estimate the total population size.
