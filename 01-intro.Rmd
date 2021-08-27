@@ -1,27 +1,19 @@
 # Molecular Markers
 
-## Getting data from github
+## Paths
 
-For this course, all the information and data we need will be stored in github. You saw github last week when we accessed the first tutorial. We can also use github to share and download data so that we are all working with the same files. A collection of files and scripts on github is called a *repository*. Each week we will download a new repository with the files needed for that week. Right now, you are looking at the webpage for the week 2 repository. Notice the URL is <http://github.com/rachaelbay/EVE109-Week2>. Each week, you can replace the "Week2" with the current week for the section tutorial and homework assignments.
+For this course, I will upload the datasets you need to this website and you will download them to your own computer. You will then need to figure out how tell R where to find them. You can find out what directory you are currently in using the `getwd()` command:
 
-First, we need to copy the repository to our own computer. This is called *cloning*. We can easily do this by clicking the green button that says "Clone or download", then clicking the clipboard button to copy the URL:
+```{r}
+getwd()
+```
 
-![](Week2_files/figure-markdown_github/Screen1.png)
+Directories are hierarchical: the represent folders within folders just like you view them when you navigate with your mouse. You can also set which directory R will use to look for files. This is called your 'working directory' and you can set it using `setwd()`. For example, if I create a folder called "EVE109 inside my documents folder where I want to store all my materials for this class, I can then tell R I want it to look in that directory for files:
+```{r eval=F}
+setwd("~/Documents/EVE109")
+```
 
-We can download this repository onto our computer by creating an R Project:  
-1. In RStudio, click *File* then *New Project*.  
-2. On the next screen, click *Version control*.  
-3. On the next screen, click *Git*.  
-4. Paste in the URL you copied, and name the project. You should also tell it where to save these files using the *Browse* button so that you can come back to them later. For example, the following screen shows me saving the repository to the "Documents" on my computer:
-
-![](Week2_files/figure-markdown_github/Screen2.png)
-
-&nbsp;
-
-Once you click "Create Project" the files will download from github (you must be connected to the internet!) and you will have everything you need for this week's section and homework.
-
-Note: Where did you download the data on your computer? A common mistake is to lose track of your downloads. Navigate to the location where you downloaded the repository. There should be a folder inside called "data". Each week, this folder will contain data needed for the week's homework. You should see a spreadsheet called "wombats.csv". Open it in a spreadsheet program (Excel or Numbers). 
-&nbsp;
+If you get an error that your file cannot be found, a good first step is to check your working directory.
 
 &nbsp;
 &nbsp;
