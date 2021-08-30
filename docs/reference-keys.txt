@@ -1,4 +1,4 @@
-discussion-section
+introduction
 installing-r-and-rstudio
 tour-of-rstudio
 installing-packages
@@ -18,8 +18,3 @@ simple-capture-recapture-example
 homework-1
 homework-2-write-a-script-that-does-the-following
 literature
-methods
-applications
-example-one
-example-two
-final-words
