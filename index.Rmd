@@ -282,7 +282,7 @@ plot(mydata$year,mydata$prop)
 
 ### *Homework 1: Write a script that does the following:*
 
-1. Plot the use of your name over time (Or pick a different name). Only include points for one gender.
+1. Plot the use of your name over time (Or pick a different name). Only include points for one sex.
 
 2. What proportion of babies had your name when it was most popular?
 
