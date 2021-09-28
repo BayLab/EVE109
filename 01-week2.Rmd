@@ -21,6 +21,8 @@ If you get an error that your file cannot be found, a good first step is to chec
 
 ## Reading in data from spreadsheets
 
+Today we will be working with data from the paper we read in class. You can download the dataset [here](data/wombats.csv)
+
 A lot of data we use is stored in spreadsheets. However, when we store them in a normal Excel format (.xlsx) they come with a lot of extra formatting that R has trouble reading. One way to avoid this is to store them in a comma separated value format (.csv). Open "wombats.csv" in a text editor and look at it. It's not easy for us to read, but you can see that it is a very simple format where each entry is separated by a comma. You were able to open it in a spreadsheet program and R can read it easily. If you are making your own data, you can save spreadsheets as .csv files from most spreadsheet programs.
 
 Now we want to read that data into RStudio. We can do that using the command `read.csv`. Remember do assign the resulting data frame to an object:
