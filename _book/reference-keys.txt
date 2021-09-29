@@ -17,3 +17,8 @@ reading-in-data-from-spreadsheets
 simple-capture-recapture-example
 homework-1
 homework-2-write-a-script-that-does-the-following
+genetic-diversity
+manipulating-dataframes
+using-the-adegenet-package-to-calulate-heterozygosity
+plotting-heterozygosity
+homework-2
