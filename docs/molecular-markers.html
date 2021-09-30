@@ -30,7 +30,7 @@
   
   
 <link rel="prev" href="index.html"/>
-
+<link rel="next" href="genetic-diversity.html"/>
 <script src="libs/header-attrs-2.8/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -166,6 +166,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2.4.1" data-path="molecular-markers.html"><a href="molecular-markers.html#homework-2-write-a-script-that-does-the-following"><i class="fa fa-check"></i><b>2.4.1</b> <em>Homework 2: Write a script that does the following:</em></a></li>
 </ul></li>
 </ul></li>
+<li class="chapter" data-level="3" data-path="genetic-diversity.html"><a href="genetic-diversity.html"><i class="fa fa-check"></i><b>3</b> Genetic Diversity</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="genetic-diversity.html"><a href="genetic-diversity.html#manipulating-dataframes"><i class="fa fa-check"></i><b>3.1</b> Manipulating dataframes</a></li>
+<li class="chapter" data-level="3.2" data-path="genetic-diversity.html"><a href="genetic-diversity.html#using-the-adegenet-package-to-calulate-heterozygosity"><i class="fa fa-check"></i><b>3.2</b> Using the <strong>adegenet</strong> package to calulate heterozygosity</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="genetic-diversity.html"><a href="genetic-diversity.html#plotting-heterozygosity"><i class="fa fa-check"></i><b>3.2.1</b> Plotting heterozygosity</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="genetic-diversity.html"><a href="genetic-diversity.html#homework-2"><i class="fa fa-check"></i><b>3.3</b> Homework</a></li>
+</ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 
@@ -202,6 +211,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="reading-in-data-from-spreadsheets" class="section level2" number="2.2">
 <h2><span class="header-section-number">2.2</span> Reading in data from spreadsheets</h2>
+<p>Today we will be working with data from the paper we read in class. You can download the dataset <a href="data/wombats.csv">here</a></p>
 <p>A lot of data we use is stored in spreadsheets. However, when we store them in a normal Excel format (.xlsx) they come with a lot of extra formatting that R has trouble reading. One way to avoid this is to store them in a comma separated value format (.csv). Open “wombats.csv” in a text editor and look at it. It’s not easy for us to read, but you can see that it is a very simple format where each entry is separated by a comma. You were able to open it in a spreadsheet program and R can read it easily. If you are making your own data, you can save spreadsheets as .csv files from most spreadsheet programs.</p>
 <p>Now we want to read that data into RStudio. We can do that using the command <code>read.csv</code>. Remember do assign the resulting data frame to an object:</p>
 <div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb45-1"><a href="molecular-markers.html#cb45-1" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;data/wombats.csv&quot;</span>) <span class="co"># Read in a file</span></span></code></pre></div>
@@ -245,7 +255,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## 
 ## $conf.int
 ##  2.5% 97.5% 
-##   187   500</code></pre>
+##   158   500</code></pre>
 <p>Using this 95% confidence interval means there is a 95% chance the real answer is within that range. Why is it so large?! What happens if we have more samples?</p>
 <p> 
  
@@ -272,8 +282,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           </div>
         </div>
       </div>
-<a href="index.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-
+<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="genetic-diversity.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
