@@ -178,15 +178,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3.3.1" data-path="genetic-diversity.html"><a href="genetic-diversity.html#homework-3-write-a-script-that-does-the-following"><i class="fa fa-check"></i><b>3.3.1</b> <em>Homework 3: Write a script that does the following:</em></a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="genetic-diversity-1.html"><a href="genetic-diversity-1.html"><i class="fa fa-check"></i><b>4</b> Genetic Diversity</a>
+<li class="chapter" data-level="4" data-path="population-structure.html"><a href="population-structure.html"><i class="fa fa-check"></i><b>4</b> Population Structure</a>
 <ul>
-<li class="chapter" data-level="4.1" data-path="genetic-diversity-1.html"><a href="genetic-diversity-1.html#the-aggregate-and-apply-functions"><i class="fa fa-check"></i><b>4.1</b> The <code>aggregate</code> and <code>apply</code> functions</a></li>
-<li class="chapter" data-level="4.2" data-path="genetic-diversity-1.html"><a href="genetic-diversity-1.html#running-a-clustering-analysis-and-deciding-on-a-k-value"><i class="fa fa-check"></i><b>4.2</b> Running a clustering analysis and deciding on a K value</a></li>
-<li class="chapter" data-level="4.3" data-path="genetic-diversity-1.html"><a href="genetic-diversity-1.html#the-q-matrix"><i class="fa fa-check"></i><b>4.3</b> The Q matrix</a></li>
-<li class="chapter" data-level="4.4" data-path="genetic-diversity-1.html"><a href="genetic-diversity-1.html#plotting-1"><i class="fa fa-check"></i><b>4.4</b> Plotting</a></li>
-<li class="chapter" data-level="4.5" data-path="genetic-diversity-1.html"><a href="genetic-diversity-1.html#homework-3"><i class="fa fa-check"></i><b>4.5</b> Homework</a>
+<li class="chapter" data-level="4.1" data-path="population-structure.html"><a href="population-structure.html#the-aggregate-and-apply-functions"><i class="fa fa-check"></i><b>4.1</b> The <code>aggregate</code> and <code>apply</code> functions</a></li>
+<li class="chapter" data-level="4.2" data-path="population-structure.html"><a href="population-structure.html#running-a-clustering-analysis-and-deciding-on-a-k-value"><i class="fa fa-check"></i><b>4.2</b> Running a clustering analysis and deciding on a K value</a></li>
+<li class="chapter" data-level="4.3" data-path="population-structure.html"><a href="population-structure.html#the-q-matrix"><i class="fa fa-check"></i><b>4.3</b> The Q matrix</a></li>
+<li class="chapter" data-level="4.4" data-path="population-structure.html"><a href="population-structure.html#plotting-1"><i class="fa fa-check"></i><b>4.4</b> Plotting</a></li>
+<li class="chapter" data-level="4.5" data-path="population-structure.html"><a href="population-structure.html#homework-3"><i class="fa fa-check"></i><b>4.5</b> Homework</a>
 <ul>
-<li class="chapter" data-level="4.5.1" data-path="genetic-diversity-1.html"><a href="genetic-diversity-1.html#homework-4-write-a-script-that-does-the-following"><i class="fa fa-check"></i><b>4.5.1</b> <em>Homework 4: Write a script that does the following:</em></a></li>
+<li class="chapter" data-level="4.5.1" data-path="population-structure.html"><a href="population-structure.html#homework-4-write-a-script-that-does-the-following"><i class="fa fa-check"></i><b>4.5.1</b> <em>Homework 4: Write a script that does the following:</em></a></li>
 </ul></li>
 </ul></li>
 <li class="divider"></li>
@@ -327,7 +327,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p> </p>
 <p>You can also ask for columns by name using the <code>$</code> notation. This means you can use the column name to ask for a single column out of the dataframe. Note that this does not work for rows.</p>
 <div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="index.html#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(babynames<span class="sc">$</span>name)</span></code></pre></div>
-<pre><code>## [1] &quot;Mary&quot;      &quot;Anna&quot;      &quot;Emma&quot;      &quot;Elizabeth&quot; &quot;Minnie&quot;    &quot;Margaret&quot;</code></pre>
+<pre><code>## [1] &quot;Mary&quot;      &quot;Anna&quot;      &quot;Emma&quot;      &quot;Elizabeth&quot; &quot;Minnie&quot;   
+## [6] &quot;Margaret&quot;</code></pre>
 <p> </p>
 <p>You can use the <code>subset</code> function to ask for rows that meet certain criteria. Notice the double <code>==</code>. You use this when you are comparing values.</p>
 <div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="index.html#cb31-1" aria-hidden="true" tabindex="-1"></a>myname <span class="ot">&lt;-</span> <span class="st">&quot;Rachael&quot;</span></span>

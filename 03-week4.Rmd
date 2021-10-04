@@ -1,4 +1,4 @@
-# Genetic Diversity
+# Population Structure
 
 ## The `aggregate` and `apply` functions
 

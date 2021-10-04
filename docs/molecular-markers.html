@@ -178,15 +178,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3.3.1" data-path="genetic-diversity.html"><a href="genetic-diversity.html#homework-3-write-a-script-that-does-the-following"><i class="fa fa-check"></i><b>3.3.1</b> <em>Homework 3: Write a script that does the following:</em></a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="genetic-diversity-1.html"><a href="genetic-diversity-1.html"><i class="fa fa-check"></i><b>4</b> Genetic Diversity</a>
+<li class="chapter" data-level="4" data-path="population-structure.html"><a href="population-structure.html"><i class="fa fa-check"></i><b>4</b> Population Structure</a>
 <ul>
-<li class="chapter" data-level="4.1" data-path="genetic-diversity-1.html"><a href="genetic-diversity-1.html#the-aggregate-and-apply-functions"><i class="fa fa-check"></i><b>4.1</b> The <code>aggregate</code> and <code>apply</code> functions</a></li>
-<li class="chapter" data-level="4.2" data-path="genetic-diversity-1.html"><a href="genetic-diversity-1.html#running-a-clustering-analysis-and-deciding-on-a-k-value"><i class="fa fa-check"></i><b>4.2</b> Running a clustering analysis and deciding on a K value</a></li>
-<li class="chapter" data-level="4.3" data-path="genetic-diversity-1.html"><a href="genetic-diversity-1.html#the-q-matrix"><i class="fa fa-check"></i><b>4.3</b> The Q matrix</a></li>
-<li class="chapter" data-level="4.4" data-path="genetic-diversity-1.html"><a href="genetic-diversity-1.html#plotting-1"><i class="fa fa-check"></i><b>4.4</b> Plotting</a></li>
-<li class="chapter" data-level="4.5" data-path="genetic-diversity-1.html"><a href="genetic-diversity-1.html#homework-3"><i class="fa fa-check"></i><b>4.5</b> Homework</a>
+<li class="chapter" data-level="4.1" data-path="population-structure.html"><a href="population-structure.html#the-aggregate-and-apply-functions"><i class="fa fa-check"></i><b>4.1</b> The <code>aggregate</code> and <code>apply</code> functions</a></li>
+<li class="chapter" data-level="4.2" data-path="population-structure.html"><a href="population-structure.html#running-a-clustering-analysis-and-deciding-on-a-k-value"><i class="fa fa-check"></i><b>4.2</b> Running a clustering analysis and deciding on a K value</a></li>
+<li class="chapter" data-level="4.3" data-path="population-structure.html"><a href="population-structure.html#the-q-matrix"><i class="fa fa-check"></i><b>4.3</b> The Q matrix</a></li>
+<li class="chapter" data-level="4.4" data-path="population-structure.html"><a href="population-structure.html#plotting-1"><i class="fa fa-check"></i><b>4.4</b> Plotting</a></li>
+<li class="chapter" data-level="4.5" data-path="population-structure.html"><a href="population-structure.html#homework-3"><i class="fa fa-check"></i><b>4.5</b> Homework</a>
 <ul>
-<li class="chapter" data-level="4.5.1" data-path="genetic-diversity-1.html"><a href="genetic-diversity-1.html#homework-4-write-a-script-that-does-the-following"><i class="fa fa-check"></i><b>4.5.1</b> <em>Homework 4: Write a script that does the following:</em></a></li>
+<li class="chapter" data-level="4.5.1" data-path="population-structure.html"><a href="population-structure.html#homework-4-write-a-script-that-does-the-following"><i class="fa fa-check"></i><b>4.5.1</b> <em>Homework 4: Write a script that does the following:</em></a></li>
 </ul></li>
 </ul></li>
 <li class="divider"></li>
@@ -254,22 +254,22 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="sourceCode" id="cb50"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb50-1"><a href="molecular-markers.html#cb50-1" aria-hidden="true" tabindex="-1"></a>sim <span class="ot">&lt;-</span> <span class="fu">simCapture</span>(<span class="at">n=</span><span class="dv">300</span>,<span class="at">s=</span><span class="dv">50</span>,<span class="at">dist.func=</span><span class="fu">drawCapRatesUnif</span>(<span class="fl">0.1</span>,<span class="dv">1</span>)) <span class="co"># Simulate capture data</span></span>
 <span id="cb50-2"><a href="molecular-markers.html#cb50-2" aria-hidden="true" tabindex="-1"></a>sim</span></code></pre></div>
 <pre><code>##   capture.class No.Ind
-## 1             1     40
-## 2             2      5</code></pre>
+## 1             1     46
+## 2             2      2</code></pre>
 <p>Now that we have simulated data, we can use one of the <code>fitEcm</code> function to estimate population size. What arguments do we need for that function? Notice that the help page tells you what format your data should be in.</p>
 <div class="sourceCode" id="cb52"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb52-1"><a href="molecular-markers.html#cb52-1" aria-hidden="true" tabindex="-1"></a>ecm <span class="ot">&lt;-</span> <span class="fu">fitEcm</span>(<span class="at">data=</span>sim,<span class="at">max.pop=</span><span class="dv">500</span>) <span class="co"># estimate population size</span></span></code></pre></div>
 <p>The <code>fitEcm</code> page also describes that output. We are most interested in the population size estimate, which is called <code>ml.pop.size</code>. We can extract that using:</p>
 <div class="sourceCode" id="cb53"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb53-1"><a href="molecular-markers.html#cb53-1" aria-hidden="true" tabindex="-1"></a>ecm<span class="sc">$</span>ml.pop.size</span></code></pre></div>
-<pre><code>## [1] 228</code></pre>
+<pre><code>## [1] 500</code></pre>
 <p>How much uncertainty is there in our estimate? We can use bootstrap resampling to create confidence intervals. Look up the command <code>boostrapCapwire</code></p>
 <div class="sourceCode" id="cb55"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb55-1"><a href="molecular-markers.html#cb55-1" aria-hidden="true" tabindex="-1"></a>boot <span class="ot">&lt;-</span> <span class="fu">bootstrapCapwire</span>(<span class="at">x=</span>ecm,<span class="at">bootstraps=</span><span class="dv">1000</span>,<span class="at">CI=</span><span class="fu">c</span>(<span class="fl">0.025</span>,<span class="fl">0.975</span>)) <span class="co"># estimate confidence intervals</span></span>
 <span id="cb55-2"><a href="molecular-markers.html#cb55-2" aria-hidden="true" tabindex="-1"></a>boot</span></code></pre></div>
 <pre><code>## $ml.pop.size
-## [1] 228
+## [1] 500
 ## 
 ## $conf.int
 ##  2.5% 97.5% 
-##   119   500</code></pre>
+##   228   500</code></pre>
 <p>Using this 95% confidence interval means there is a 95% chance the real answer is within that range. Why is it so large?! What happens if we have more samples?</p>
 <p> 
  
