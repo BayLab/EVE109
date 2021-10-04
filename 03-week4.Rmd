@@ -1,0 +1,176 @@
+# Genetic Diversity
+
+## The `aggregate` and `apply` functions
+
+Today we'll two useful functions that you can use for dataframes, `apply` and `aggregate`. Let's use the `palmerpenguins` dataset again:
+
+
+```{r}
+library(palmerpenguins)
+head(penguins)
+```
+
+&nbsp;
+
+One thing we might want to do is find out which individual has the highest value for each column. We can use the `apply` function to do the same thing to each column:
+```{r}
+?apply
+apply(penguins[,3:6],MARGIN=2,which.max)
+```
+
+Notice that we only used columns 3-6 because these are numeric (rather than categorical). The second argument, *MARGIN*, is asking whether we should be doing the function for each row (MARGIN=1), or each column (MARGIN=2). The final argument is the function we want to use. `which.max` asks for the index (in this case, which row) has the maximum value.
+
+&nbsp;
+
+Another useful function is `aggregate`. Sometimes you might want to summarize groups within a dataframe. `aggregate` does this easily. For example, what if we want to average values for each species:
+```{r}
+?aggregate
+aggregate(penguins[,3:6],by=list(penguins$species),mean)
+```
+
+This gives us the mean for each set of rows that share a value in the "species" column. The second argument, *by*, tells how to group. The third argument is the function to use.
+
+&nbsp;
+
+These commands will come in handy today!
+
+Let's take just the quantitative data for a moment:
+
+&nbsp;
+&nbsp;
+&nbsp;
+
+## Running a clustering analysis and deciding on a K value
+
+The example file for use in class today can be downloaded [here](data/week4_example.geno)
+
+A common way to analyze population structure is using hierarchical clustering. Probably the most heavily used program to do this is called STRUCTURE. However, we'll stick to similar tools you can use in R. Today we'll use `LEA` for our clustering analysis. LEA cannot be downloaded from the normal R database, so use the following code:
+```{r, eval=FALSE}
+install.packages("BiocManager")
+install.packages("LEA")
+```
+
+Then load the library
+```{r}
+library(LEA)
+```
+
+&nbsp;
+
+For the analysis today, we're going to use SNP data. Open the file you downloaded called **week4_example.geno** using a text editor. This file is in *geno* format. That means there is one line per individual and genotypes are coded as 0,1,or 2. 0 and 2 are homozygotes and 1 is a heterozygote. 9 means missing data. Notice that this only works when you are looking at SNPs with just 2 alleles (biallelic).
+
+&nbsp;
+
+We'll use the package LEA to read this file in and look at population structure. Make sure you have the right path!!
+```{r, results='hide'}
+project <- snmf("data/week4_example.geno",
+               K = 1:5, 
+               entropy = TRUE, 
+               repetitions = 10,
+               project = "new")
+```
+
+Remember what K values are? That means 'how many populations should we try to split this data in to?'. Here we run 10 *repetitions* per K value. That's because each run is slightly different so you want to have confidence in your answer. You'll see what entropy means in a second. You'll get a bunch of output in your console when you run this command. It will also create a new folder on your computer called "example.snmf". It contains a bunch of different files for each run of the clustering program. We will be able to use these files to analyze and visualize our results.
+
+&nbsp;
+
+Now we'll chose the "best" value of K. Know that there are several ways to do this and they don't always agree, so this should be interpreted with caution. Here we will use cross-entropy loss. This basically asks how consistently our model is able to categorize the samples. The lower the cross-entropy the better the model is doing. Let's plot all the values of K:
+ 
+```{r}
+plot(project,col="blue",pch=19)
+```
+
+&nbsp;
+
+When I ran this, **K=4** had the lowest cross entropy. This plot might look slightly different each time you run it.
+
+&nbsp;
+&nbsp;
+&nbsp;
+
+## The Q matrix
+Now that we've decided which value of K to look at, we can look at the ancestry estimates for each individual. 
+
+```{r}
+qmatrix <- Q(project,K=4,run=1)
+```
+
+&nbsp;
+
+This command pulls out the ancestry matrix (called the *Q matrix*) for the first run with K=3. Let's look at the Q matrix. 
+```{r}
+head(qmatrix)
+```
+
+&nbsp;
+
+Here, each row is an individual and each column is one of the inferred clusters. First, lets give the individuals "IDs" as rownames. You'll see that this is important later. Next, one thing we could do is look at which cluster has the highest ancestry for each individual. The `which.max` function just gives you the index (which column in this case) of the highest value.
+
+```{r}
+rownames(qmatrix) <- 1:nrow(qmatrix)
+maxCluster <- apply(qmatrix,1,which.max)
+maxCluster
+```
+
+&nbsp;
+
+If we pretend `maxCluster` gives refers to the population from which the individual came, we can use the `aggregate` function to look at average cluster membership across each population:
+
+```{r}
+aggregate(qmatrix,by=list(maxCluster),mean)
+```
+
+NOTE: Although we are using `maxCluster` as an indicator of population here, usually we would use some sort of **a priori** information we had, such as geographic location or maybe morphological species, depending on our question. This distinction will be important for your homework!
+
+&nbsp;
+&nbsp;
+&nbsp;
+
+## Plotting
+
+Now lets plot the ancestry results. Basically, we just want to make a barplot of the qmatrix. You can do that with the `barchart` function in the LEA package:
+
+```{r}
+barchart(project, K=4, run=1,
+         border=NA, space=0)
+```
+
+We can also try to label each bar with information. For example, lets try to label with the population assignment that we inferred, `maxCluster`:
+```{r}
+barchart(project, K=4, run=1,
+         border=NA, space=0) -> bp
+axis(1,at=1:length(bp$order),label=maxCluster[bp$order],las=2,cex.axis=0.4)
+```
+
+&nbsp;
+The grayscale is boring!! R has many many options for color packages and you could even make one of your own! For example, [here is a fun one inspired by favorite La Croix flavors!](https://github.com/johannesbjork/LaCroixColoR)
+```{r eval=FALSE}
+install.packages("devtools")
+devtools::install_github("johannesbjork/LaCroixColoR")
+```
+And now use it in our bar chart:
+```{r}
+library(LaCroixColoR)
+my.cols=lacroix_palette("PassionFruit",n=4,type="discrete")
+barchart(project, K=4, run=1,
+         border=NA, space=0,col=my.cols) -> bp
+axis(1,at=1:length(bp$order),label=maxCluster[bp$order],las=2,cex.axis=0.4)
+```
+
+## Homework
+
+For homework, we will analyze the data from Sendell-Price et al. (2021). I am providing two relevant files:
+[*price_genos.geno*](data/price_genos.geno) is the genotypes file for a subset of the SNP markers used in the paper
+[*price_pops.csv*](data/price_pops.csv) is a file with the sampling location info for each indidividual included in the genotypes file. Note that they are in the same order as in the genotypes file.
+
+### *Homework 4: Write a script that does the following:*
+
+1. Read in the metadata file. Print a table showing how many individuals we have from each population.
+
+2. Run the clustering analysis using the snmf command. Create a cross-entropy plot.
+
+3. Get a Q matrix for K=5 (used in the paper). Add sample IDs from the metadata file as rownames to the Q matrix. Print the head of the Q matrix.
+
+4. For the "TAS" population, what are the average ancestry proportions from each cluster?
+
+5. Plot the ancestry barplot with populations labelled at the bottom. Color palette is up to you :)

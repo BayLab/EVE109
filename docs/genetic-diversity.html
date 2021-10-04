@@ -30,7 +30,7 @@
   
   
 <link rel="prev" href="molecular-markers.html"/>
-
+<link rel="next" href="genetic-diversity-1.html"/>
 <script src="libs/header-attrs-2.8/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -173,7 +173,21 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="3.2.1" data-path="genetic-diversity.html"><a href="genetic-diversity.html#plotting-heterozygosity"><i class="fa fa-check"></i><b>3.2.1</b> Plotting heterozygosity</a></li>
 </ul></li>
-<li class="chapter" data-level="3.3" data-path="genetic-diversity.html"><a href="genetic-diversity.html#homework-2"><i class="fa fa-check"></i><b>3.3</b> Homework</a></li>
+<li class="chapter" data-level="3.3" data-path="genetic-diversity.html"><a href="genetic-diversity.html#homework-2"><i class="fa fa-check"></i><b>3.3</b> Homework</a>
+<ul>
+<li class="chapter" data-level="3.3.1" data-path="genetic-diversity.html"><a href="genetic-diversity.html#homework-3-write-a-script-that-does-the-following"><i class="fa fa-check"></i><b>3.3.1</b> <em>Homework 3: Write a script that does the following:</em></a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="genetic-diversity-1.html"><a href="genetic-diversity-1.html"><i class="fa fa-check"></i><b>4</b> Genetic Diversity</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="genetic-diversity-1.html"><a href="genetic-diversity-1.html#the-aggregate-and-apply-functions"><i class="fa fa-check"></i><b>4.1</b> The <code>aggregate</code> and <code>apply</code> functions</a></li>
+<li class="chapter" data-level="4.2" data-path="genetic-diversity-1.html"><a href="genetic-diversity-1.html#running-a-clustering-analysis-and-deciding-on-a-k-value"><i class="fa fa-check"></i><b>4.2</b> Running a clustering analysis and deciding on a K value</a></li>
+<li class="chapter" data-level="4.3" data-path="genetic-diversity-1.html"><a href="genetic-diversity-1.html#the-q-matrix"><i class="fa fa-check"></i><b>4.3</b> The Q matrix</a></li>
+<li class="chapter" data-level="4.4" data-path="genetic-diversity-1.html"><a href="genetic-diversity-1.html#plotting-1"><i class="fa fa-check"></i><b>4.4</b> Plotting</a></li>
+<li class="chapter" data-level="4.5" data-path="genetic-diversity-1.html"><a href="genetic-diversity-1.html#homework-3"><i class="fa fa-check"></i><b>4.5</b> Homework</a>
+<ul>
+<li class="chapter" data-level="4.5.1" data-path="genetic-diversity-1.html"><a href="genetic-diversity-1.html#homework-4-write-a-script-that-does-the-following"><i class="fa fa-check"></i><b>4.5.1</b> <em>Homework 4: Write a script that does the following:</em></a></li>
+</ul></li>
 </ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -409,13 +423,17 @@ The first thing we need to do is let the adegenet read in the microsatellite dat
 <div id="homework-2" class="section level2" number="3.3">
 <h2><span class="header-section-number">3.3</span> Homework</h2>
 <p>Now that we know how to estimate observed and expected heterozygosity, we’ll look at changes over time. Start a new script for your homework</p>
-<p>###<em>Homework 3: Write a script that does the following:</em>
-1. Read in “genotypes.csv” and subset the dataframe to Mt Buller samples only. How many samples do you have from each year?
-2. Calculate mean observed heterozygosity for each year. Put these into a single dataframe.
-3. Calculate mean expected heterozygosity for each year. Add these to the dataframe from question 2.
-4. Plot mean expected heterozygosity over time.
-5. Add a vertical lines to your plot to show when introductions took place (hint - use the <code>abline</code> command)</p>
+<div id="homework-3-write-a-script-that-does-the-following" class="section level3" number="3.3.1">
+<h3><span class="header-section-number">3.3.1</span> <em>Homework 3: Write a script that does the following:</em></h3>
+<ol style="list-style-type: decimal">
+<li><p>Read in “genotypes.csv” and subset the dataframe to Mt Buller samples only. How many samples do you have from each year?</p></li>
+<li><p>Calculate mean observed heterozygosity for each year. Put these into a single dataframe.</p></li>
+<li><p>Calculate mean expected heterozygosity for each year. Add these to the dataframe from question 2.</p></li>
+<li><p>Plot mean expected heterozygosity over time.</p></li>
+<li><p>Add a vertical lines to your plot to show when introductions took place (hint - use the <code>abline</code> command)</p></li>
+</ol>
 
+</div>
 </div>
 </div>
             </section>
@@ -423,8 +441,8 @@ The first thing we need to do is let the adegenet read in the microsatellite dat
           </div>
         </div>
       </div>
-<a href="molecular-markers.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-
+<a href="molecular-markers.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="genetic-diversity-1.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

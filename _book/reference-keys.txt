@@ -22,3 +22,13 @@ manipulating-dataframes
 using-the-adegenet-package-to-calulate-heterozygosity
 plotting-heterozygosity
 homework-2
+genetic-diversity-1
+manipulating-dataframes-1
+using-the-adegenet-package-to-calulate-heterozygosity-1
+plotting-heterozygosity-1
+homework-3
+homework-3-write-a-script-that-does-the-following
+the-aggregate-and-apply-functions
+running-a-clustering-analysis-and-deciding-on-a-k-value
+the-q-matrix
+plotting-1
