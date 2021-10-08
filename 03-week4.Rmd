@@ -47,7 +47,7 @@ The example file for use in class today can be downloaded [here](data/week4_exam
 A common way to analyze population structure is using hierarchical clustering. Probably the most heavily used program to do this is called STRUCTURE. However, we'll stick to similar tools you can use in R. Today we'll use `LEA` for our clustering analysis. LEA cannot be downloaded from the normal R database, so use the following code:
 ```{r, eval=FALSE}
 install.packages("BiocManager")
-install.packages("LEA")
+BiocManager::install("LEA")
 ```
 
 Then load the library
@@ -160,8 +160,8 @@ axis(1,at=1:length(bp$order),label=maxCluster[bp$order],las=2,cex.axis=0.4)
 ## Homework
 
 For homework, we will analyze the data from Sendell-Price et al. (2021). I am providing two relevant files:
-[*price_genos.geno*](data/price_genos.geno) is the genotypes file for a subset of the SNP markers used in the paper
-[*price_pops.csv*](data/price_pops.csv) is a file with the sampling location info for each indidividual included in the genotypes file. Note that they are in the same order as in the genotypes file.
+[**price_genos.geno**](data/price_genos.geno) is the genotypes file for a subset of the SNP markers used in the paper
+[**price_pops.csv**](data/price_pops.csv) is a file with the sampling location info for each indidividual included in the genotypes file. Note that they are in the same order as in the genotypes file.
 
 ### *Homework 4: Write a script that does the following:*
 

@@ -1,0 +1,193 @@
+# Haplotype networks
+
+## Indexing
+Today we'll use the "Arthritis" dataset from the `vcd` package to learn some functions. Let's install it:
+```{r, eval=FALSE}
+install.packages("vcd")
+```
+
+```{r,message=FALSE}
+library(vcd)
+data(Arthritis)
+?Arthritis
+head(Arthritis)
+```
+
+
+&nbsp;
+
+R and other programing languages use "indexing" to subset data. Indexing uses the order of entries (for example values in a vector or rows in a dataframe) to isolate particular entries. We've already used indexing to subset, maybe without even knowing it. For example, we know the command below gives us the *first* through *fourth* rows and the *first* through *third* columns. The numbers inside the brackes are called "indexes".
+
+```{r}
+Arthritis[1:4,1:3]
+```
+
+&nbsp;
+
+We can also use indexing to subet by a certain criteria. The command `which` returns indexes for all entries that meet a certain criteria. We saw a similar effect last week when we used `which.max`, but `which` is a more general command:
+
+```{r}
+ind <- which(Arthritis$Sex=="Male")
+ind
+```
+
+This gives us the indexes of the rows in the Arthritis data frame where the patient was male. If we want to retrieve these rows, we can use that vector to pull out those rows:
+
+```{r}
+Arthritis[ind,]
+```
+
+Note that we could have just as easily done this:
+
+```{r,eval=F}
+Arthritis[Arthritis$Sex=="Male",]
+```
+When you do a command like this R finds the indexes and returns the rows for you, without you having to think about indexes. However, it can still be useful to know how indexes work, as we will see in the section today.
+
+&nbsp;
+&nbsp;
+&nbsp;
+
+## Using `table` to count across multiple columns
+
+Previously we used the `table` function to count the number of times each value was observed in a specific column. Today we'll use the same function to create a matrix of counts across two different variables. First let's get some data. Install the package `vcd`, load the library and pull up the **Arthritis** dataset:
+
+Notice that several of the columns are categorical. That means we can count how many times a certain category shows up.
+
+Before, we made a table with just one column, like this:
+
+```{r}
+table(Arthritis$Improved)
+```
+
+But what if we want to sort by another factor simultaneously. For example, we can see improvement based on treatment:
+```{r}
+table(Arthritis$Treatment,Arthritis$Improved)
+```
+
+&nbsp;
+&nbsp;
+&nbsp;
+
+## Creating a haplotype network
+
+Today we will use mtDNA sequences from an example dataset to learn to create a haplotype network. The package we will use is called `pegas`. Install this package and load the library.
+
+```{r, eval=FALSE}
+install.packages("pegas")
+```
+
+```{r,message=FALSE,warning=FALSE}
+library(pegas)
+```
+
+We will take advantage of a dataset called `woodmouse` that is part of the `pegas` package:
+
+
+```{r}
+data(woodmouse)
+woodmouse
+```
+
+Notice that woodmouse only has 15 individuals. We want to work with a few more, so we will artificially expand the dataset. We can do this by sampling with replacement using the command `sample`. Here we create a vector of the numbers 1:15, randomly sampled 100 times. We use that to choose individuals to sample (some multiple times) from the woodmouse dataset:
+
+
+```{r}
+data <- woodmouse[sample(1:15,size=100,replace=T),]
+data
+```
+
+&nbsp;
+
+Now we have 100 individuals! First, let's make up some metadata that we can use later. You can use the `labels` function to pull sample names out of `data`. We will also assign each sample to a random "north" or "south" location.
+```{r}
+loc <- sample(c("north","south"),100,replace=T)
+names <- labels(data)
+meta <- data.frame(cbind(names,loc))
+head(meta)
+```
+
+NOTE: If we were doing this on real data, we would usually read in the populations from a spreadsheet. Here we just make them up to illustrate how the process works!
+
+&nbsp;
+
+When we sequence DNA, some individuals will have the same haplotype. So the first step is to check how many haplotypes there are and which individuals share haplotypes. We do this with the `haplotype` function:
+
+
+
+```{r}
+hap <- haplotype(data)
+hap
+```
+
+&nbsp;
+
+In the output you can see the frequencies of each of the 15 haplotypes. Now we want a list of which individuals have which haplotypes:
+
+```{r}
+hapInfo <- stack(setNames(attr(hap,"index"),rownames(hap)))
+head(hapInfo)
+```
+This command is a bit complicated. Briefly, it takes a list of individuals for each haplotype, and makes a dataframe that tells you which individual has which haplotype. The tricky part is that it returns the *indexes* of the individuals, not their actual data. Let's change the column names to make more sense:
+
+```{r}
+names(hapInfo) <- c("index","haplotype")
+```
+
+&nbsp;
+
+Now, we can use that index to merge the `meta` dataframe with the `hapInfo` data frame:
+
+```{r}
+merged <- data.frame(cbind(hapInfo,meta[hapInfo$index,]))
+head(merged)
+```
+
+&nbsp;
+
+Great! Now lets start to make a haplotype network! This is pretty simple in `pegas` using the `haploNet` function. Below we plot the network for out haplotype set `hap`. We use the "freq" attribute to size the circles so that each circle is proportional to the number of samples with that haplotype:
+```{r}
+net <- haploNet(hap)
+plot(net,size=attr(net,"freq"))
+```
+
+Cool, now we want to add colors. Take a look at the `haploNet` help page, paying particular attention to the `pie` argument:
+```{r,eval=F}
+?haploNet
+```
+
+&nbsp;
+
+So what we need is a matrix where *rows* are the different haplotypes and *columns* are the different locations. We can use the `merged` dataframe we made above along with the `table` command to produce this matrix:
+
+```{r}
+pie <- table(merged$haplotype,merged$loc)
+head(pie)
+```
+This table shows, for each haplotype, how many individuals come from the north and how many come from the south. Remember, this is completely made up data so we don't expect any pattern here. Now we can use this to color the circles in the haplotype network, including adding a legend:
+
+&nbsp;
+
+```{r}
+plot(net,size=attr(net,"freq"),pie=pie)
+legend("bottomleft", colnames(pie), col=rainbow(ncol(pie)), pch=19, ncol=2)
+```
+
+## Homework
+&nbsp;
+For homework you will create a haplotype network using the mtDNA data from Cliff et al. (2015). Here are the files you will need:
+[**cliff_metadata.csv**](data/cliff_metadata.csv) contains sample IDs along with population information and haplotype inferred within the paper
+[**cliff_mtDNA.fasta**](data/cliff_mtDNA.fasta) contains mtDNA sequences from the paper.
+&nbsp;
+
+### *Homework 5: Write a script that does the following:*
+
+1. Read in the fasta file "mtDNA.fa" and the metadata file "metadata.csv" (hint: to read the .fa file you will use the command read.dna with argument format="fasta")
+
+2. Create a haplotype network (no colors)
+
+3. Create a table that shows the number of each haplotype in each population
+
+4. Create a haplotype network (with colors)
+
+5. Add a legend (this might look messy - that's okay)

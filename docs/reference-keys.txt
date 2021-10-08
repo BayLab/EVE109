@@ -30,3 +30,9 @@ the-q-matrix
 plotting-1
 homework-3
 homework-4-write-a-script-that-does-the-following
+haplotype-networks
+indexing
+using-table-to-count-across-multiple-columns
+creating-a-haplotype-network
+homework-4
+homework-5-write-a-script-that-does-the-following

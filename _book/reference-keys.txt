@@ -32,3 +32,11 @@ the-aggregate-and-apply-functions
 running-a-clustering-analysis-and-deciding-on-a-k-value
 the-q-matrix
 plotting-1
+population-structure
+homework-4-write-a-script-that-does-the-following
+haplotype-networks
+indexing
+using-table-to-count-across-multiple-columns
+creating-a-haplotype-network
+homework-4
+homework-5-write-a-script-that-does-the-following
