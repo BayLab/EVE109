@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Week 10 Intro to this week’s data | EVE 109: Molecular Ecology</title>
+  <meta name="description" content="Tutorials and datasets for discussion and homeowork excesises for EVE 109: Molecular Ecology" />
+  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Week 10 Intro to this week’s data | EVE 109: Molecular Ecology" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Tutorials and datasets for discussion and homeowork excesises for EVE 109: Molecular Ecology" />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Week 10 Intro to this week’s data | EVE 109: Molecular Ecology" />
+  
+  <meta name="twitter:description" content="Tutorials and datasets for discussion and homeowork excesises for EVE 109: Molecular Ecology" />
+  
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="sex-biased-gene-flow.html"/>
+
+<script src="libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">EVE109 FQ21</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introduction</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#installing-r-and-rstudio"><i class="fa fa-check"></i><b>1.1</b> Installing R and RStudio</a></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#tour-of-rstudio"><i class="fa fa-check"></i><b>1.2</b> Tour of RStudio</a></li>
+<li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#installing-packages"><i class="fa fa-check"></i><b>1.3</b> Installing packages</a></li>
+<li class="chapter" data-level="1.4" data-path="index.html"><a href="index.html#basic-functions-in-r"><i class="fa fa-check"></i><b>1.4</b> Basic functions in R</a>
+<ul>
+<li class="chapter" data-level="1.4.1" data-path="index.html"><a href="index.html#exercise-write-a-script-to-find-out-what-fraction-of-your-life-youve-been-at-uc-davis"><i class="fa fa-check"></i><b>1.4.1</b> <em>Exercise</em>: Write a script to find out what fraction of your life you’ve been at UC Davis</a></li>
+</ul></li>
+<li class="chapter" data-level="1.5" data-path="index.html"><a href="index.html#classes"><i class="fa fa-check"></i><b>1.5</b> Classes</a></li>
+<li class="chapter" data-level="1.6" data-path="index.html"><a href="index.html#vectors-and-dataframes"><i class="fa fa-check"></i><b>1.6</b> Vectors and dataframes</a></li>
+<li class="chapter" data-level="1.7" data-path="index.html"><a href="index.html#subsetting"><i class="fa fa-check"></i><b>1.7</b> Subsetting</a></li>
+<li class="chapter" data-level="1.8" data-path="index.html"><a href="index.html#plotting"><i class="fa fa-check"></i><b>1.8</b> Plotting</a>
+<ul>
+<li class="chapter" data-level="1.8.1" data-path="index.html"><a href="index.html#exercise-describe-this-plot-in-plain-english.-what-conclusions-can-we-draw"><i class="fa fa-check"></i><b>1.8.1</b> <em>Exercise</em>: Describe this plot in plain english. What conclusions can we draw?</a></li>
+</ul></li>
+<li class="chapter" data-level="1.9" data-path="index.html"><a href="index.html#homework"><i class="fa fa-check"></i><b>1.9</b> Homework</a>
+<ul>
+<li class="chapter" data-level="1.9.1" data-path="index.html"><a href="index.html#homework-1-write-a-script-that-does-the-following"><i class="fa fa-check"></i><b>1.9.1</b> <em>Homework 1: Write a script that does the following:</em></a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="molecular-markers.html"><a href="molecular-markers.html"><i class="fa fa-check"></i><b>2</b> Molecular Markers</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="molecular-markers.html"><a href="molecular-markers.html#paths"><i class="fa fa-check"></i><b>2.1</b> Paths</a></li>
+<li class="chapter" data-level="2.2" data-path="molecular-markers.html"><a href="molecular-markers.html#reading-in-data-from-spreadsheets"><i class="fa fa-check"></i><b>2.2</b> Reading in data from spreadsheets</a></li>
+<li class="chapter" data-level="2.3" data-path="molecular-markers.html"><a href="molecular-markers.html#simple-capture-recapture-example"><i class="fa fa-check"></i><b>2.3</b> Simple capture recapture example</a></li>
+<li class="chapter" data-level="2.4" data-path="molecular-markers.html"><a href="molecular-markers.html#homework-1"><i class="fa fa-check"></i><b>2.4</b> Homework</a>
+<ul>
+<li class="chapter" data-level="2.4.1" data-path="molecular-markers.html"><a href="molecular-markers.html#homework-2-write-a-script-that-does-the-following"><i class="fa fa-check"></i><b>2.4.1</b> <em>Homework 2: Write a script that does the following:</em></a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="genetic-diversity.html"><a href="genetic-diversity.html"><i class="fa fa-check"></i><b>3</b> Genetic Diversity</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="genetic-diversity.html"><a href="genetic-diversity.html#manipulating-dataframes"><i class="fa fa-check"></i><b>3.1</b> Manipulating dataframes</a></li>
+<li class="chapter" data-level="3.2" data-path="genetic-diversity.html"><a href="genetic-diversity.html#using-the-adegenet-package-to-calulate-heterozygosity"><i class="fa fa-check"></i><b>3.2</b> Using the <strong>adegenet</strong> package to calulate heterozygosity</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="genetic-diversity.html"><a href="genetic-diversity.html#plotting-heterozygosity"><i class="fa fa-check"></i><b>3.2.1</b> Plotting heterozygosity</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="genetic-diversity.html"><a href="genetic-diversity.html#homework-2"><i class="fa fa-check"></i><b>3.3</b> Homework</a>
+<ul>
+<li class="chapter" data-level="3.3.1" data-path="genetic-diversity.html"><a href="genetic-diversity.html#homework-3-write-a-script-that-does-the-following"><i class="fa fa-check"></i><b>3.3.1</b> <em>Homework 3: Write a script that does the following:</em></a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="population-structure.html"><a href="population-structure.html"><i class="fa fa-check"></i><b>4</b> Population Structure</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="population-structure.html"><a href="population-structure.html#the-aggregate-and-apply-functions"><i class="fa fa-check"></i><b>4.1</b> The <code>aggregate</code> and <code>apply</code> functions</a></li>
+<li class="chapter" data-level="4.2" data-path="population-structure.html"><a href="population-structure.html#running-a-clustering-analysis-and-deciding-on-a-k-value"><i class="fa fa-check"></i><b>4.2</b> Running a clustering analysis and deciding on a K value</a></li>
+<li class="chapter" data-level="4.3" data-path="population-structure.html"><a href="population-structure.html#the-q-matrix"><i class="fa fa-check"></i><b>4.3</b> The Q matrix</a></li>
+<li class="chapter" data-level="4.4" data-path="population-structure.html"><a href="population-structure.html#plotting-1"><i class="fa fa-check"></i><b>4.4</b> Plotting</a></li>
+<li class="chapter" data-level="4.5" data-path="population-structure.html"><a href="population-structure.html#homework-3"><i class="fa fa-check"></i><b>4.5</b> Homework</a>
+<ul>
+<li class="chapter" data-level="4.5.1" data-path="population-structure.html"><a href="population-structure.html#homework-4-write-a-script-that-does-the-following"><i class="fa fa-check"></i><b>4.5.1</b> <em>Homework 4: Write a script that does the following:</em></a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="haplotype-networks.html"><a href="haplotype-networks.html"><i class="fa fa-check"></i><b>5</b> Haplotype networks</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="haplotype-networks.html"><a href="haplotype-networks.html#indexing"><i class="fa fa-check"></i><b>5.1</b> Indexing</a></li>
+<li class="chapter" data-level="5.2" data-path="haplotype-networks.html"><a href="haplotype-networks.html#using-table-to-count-across-multiple-columns"><i class="fa fa-check"></i><b>5.2</b> Using <code>table</code> to count across multiple columns</a></li>
+<li class="chapter" data-level="5.3" data-path="haplotype-networks.html"><a href="haplotype-networks.html#creating-a-haplotype-network"><i class="fa fa-check"></i><b>5.3</b> Creating a haplotype network</a></li>
+<li class="chapter" data-level="5.4" data-path="haplotype-networks.html"><a href="haplotype-networks.html#homework-4"><i class="fa fa-check"></i><b>5.4</b> Homework</a>
+<ul>
+<li class="chapter" data-level="5.4.1" data-path="haplotype-networks.html"><a href="haplotype-networks.html#homework-5-write-a-script-that-does-the-following"><i class="fa fa-check"></i><b>5.4.1</b> <em>Homework 5: Write a script that does the following:</em></a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="project-time.html"><a href="project-time.html"><i class="fa fa-check"></i><b>6</b> Project Time!</a></li>
+<li class="chapter" data-level="7" data-path="speciation-and-hybridization.html"><a href="speciation-and-hybridization.html"><i class="fa fa-check"></i><b>7</b> Speciation and Hybridization</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="speciation-and-hybridization.html"><a href="speciation-and-hybridization.html#match"><i class="fa fa-check"></i><b>7.1</b> Match</a></li>
+<li class="chapter" data-level="7.2" data-path="speciation-and-hybridization.html"><a href="speciation-and-hybridization.html#dealing-with-missing-data"><i class="fa fa-check"></i><b>7.2</b> Dealing with missing data</a></li>
+<li class="chapter" data-level="7.3" data-path="speciation-and-hybridization.html"><a href="speciation-and-hybridization.html#writing-your-own-functions"><i class="fa fa-check"></i><b>7.3</b> Writing your own functions</a></li>
+<li class="chapter" data-level="7.4" data-path="speciation-and-hybridization.html"><a href="speciation-and-hybridization.html#hybrid-allele-frequencies"><i class="fa fa-check"></i><b>7.4</b> Hybrid allele frequencies</a></li>
+<li class="chapter" data-level="7.5" data-path="speciation-and-hybridization.html"><a href="speciation-and-hybridization.html#making-a-pca"><i class="fa fa-check"></i><b>7.5</b> Making a PCA</a></li>
+<li class="chapter" data-level="7.6" data-path="speciation-and-hybridization.html"><a href="speciation-and-hybridization.html#homework-5"><i class="fa fa-check"></i><b>7.6</b> Homework</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="veterans-day.html"><a href="veterans-day.html"><i class="fa fa-check"></i><b>8</b> Veteran’s Day</a></li>
+<li class="chapter" data-level="9" data-path="sex-biased-gene-flow.html"><a href="sex-biased-gene-flow.html"><i class="fa fa-check"></i><b>9</b> Sex-biased gene flow</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="sex-biased-gene-flow.html"><a href="sex-biased-gene-flow.html#multiple-plots"><i class="fa fa-check"></i><b>9.1</b> Multiple plots</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="intro-to-this-weeks-data.html"><a href="intro-to-this-weeks-data.html"><i class="fa fa-check"></i><b>10</b> Intro to this week’s data</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="intro-to-this-weeks-data.html"><a href="intro-to-this-weeks-data.html#homework-6"><i class="fa fa-check"></i><b>10.1</b> Homework</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">EVE 109: Molecular Ecology</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="intro-to-this-weeks-data" class="section level1" number="10">
+<h1><span class="header-section-number">Week 10</span> Intro to this week’s data</h1>
+<p>Since you guys are all R experts now, this week you’ll use the documentation to figure out the analysis on your own. First, though, I’ll walk you through the data. We’re using the SNP data from the Portnoy et al. (2015) paper. There are two files:</p>
+<p><a href="data/portnoy_genotypes.vcf">portnoy_genotypes.vcf</a> contains the genotypes for each individual
+<a href="data/portnoy_metadata.csv">portnoy_metadata.csv</a> contains metadata for each individual</p>
+<p> </p>
+<p>You’ll need three different libraries (two new):</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="intro-to-this-weeks-data.html#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;vcfR&quot;</span>)</span>
+<span id="cb8-2"><a href="intro-to-this-weeks-data.html#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;hierfstat&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="intro-to-this-weeks-data.html#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(vcfR)</span>
+<span id="cb9-2"><a href="intro-to-this-weeks-data.html#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(hierfstat)</span>
+<span id="cb9-3"><a href="intro-to-this-weeks-data.html#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(adegenet)</span></code></pre></div>
+<p> </p>
+<p>The SNP data for today is a VCF (Variant Call Format) file. This is a very common format for analyzing raw SNP data. Take a look at this file in a text editor. There’s a lot of extra information that we do not need for our SNP analysis. We can use the <code>vcfR</code> library to read that file in and convert it to the <em>genind</em> format (remember we used this format to calculate heterozygosity?). This is the format that the <code>adegenet</code> package likes.</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="intro-to-this-weeks-data.html#cb10-1" aria-hidden="true" tabindex="-1"></a>v <span class="ot">&lt;-</span> <span class="fu">read.vcfR</span>(<span class="st">&quot;data/portnoy_genotypes.vcf&quot;</span>)</span></code></pre></div>
+<pre><code>## Scanning file to determine attributes.
+## File attributes:
+##   meta lines: 64
+##   header_line: 65
+##   variant count: 5914
+##   column count: 129
+## 
+Meta line 64 read in.
+## All meta lines processed.
+## gt matrix initialized.
+## Character matrix gt created.
+##   Character matrix gt rows: 5914
+##   Character matrix gt cols: 129
+##   skip: 0
+##   nrows: 5914
+##   row_num: 0
+## 
+Processed variant 1000
+Processed variant 2000
+Processed variant 3000
+Processed variant 4000
+Processed variant 5000
+Processed variant: 5914
+## All variants processed</code></pre>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="intro-to-this-weeks-data.html#cb12-1" aria-hidden="true" tabindex="-1"></a>gen <span class="ot">&lt;-</span> <span class="fu">vcfR2genind</span>(v)</span>
+<span id="cb12-2"><a href="intro-to-this-weeks-data.html#cb12-2" aria-hidden="true" tabindex="-1"></a>gen</span></code></pre></div>
+<pre><code>## /// GENIND OBJECT /////////
+## 
+##  // 120 individuals; 5,914 loci; 11,838 alleles; size: 8.7 Mb
+## 
+##  // Basic content
+##    @tab:  120 x 11838 matrix of allele counts
+##    @loc.n.all: number of alleles per locus (range: 2-3)
+##    @loc.fac: locus factor for the 11838 columns of @tab
+##    @all.names: list of allele names for each locus
+##    @ploidy: ploidy of each individual  (range: 2-2)
+##    @type:  codom
+##    @call: adegenet::df2genind(X = t(x), sep = sep)
+## 
+##  // Optional content
+##    - empty -</code></pre>
+<p>Let’s explore this file a little:</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="intro-to-this-weeks-data.html#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dim</span>(gen<span class="sc">$</span>tab) <span class="co"># gen$tab is a matrix where each row is an individual</span></span></code></pre></div>
+<pre><code>## [1]   120 11838</code></pre>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="intro-to-this-weeks-data.html#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(gen<span class="sc">$</span>tab[,<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>])</span></code></pre></div>
+<pre><code>##        E881_L109_46.0 E881_L109_46.1 E881_L109_71.0 E881_L109_71.1
+## AK_001              2              0              2              0
+## AK_003              2              0              2              0
+## AK_004              1              1              1              1
+## AK_005              1              1              1              1
+## AK_006              2              0              2              0
+## AK_007              1              1              1              1
+##        E897_L100_57.0 E897_L100_57.1 E1071_L100_38.0 E1071_L100_38.1
+## AK_001              2              0               2               0
+## AK_003              2              0               0               2
+## AK_004              2              0               2               0
+## AK_005              2              0               2               0
+## AK_006             NA             NA               2               0
+## AK_007              1              1               2               0
+##        E1071_L100_61.0 E1071_L100_61.1
+## AK_001               1               1
+## AK_003               2               0
+## AK_004               2               0
+## AK_005               2               0
+## AK_006               2               0
+## AK_007               2               0</code></pre>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="intro-to-this-weeks-data.html#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rownames</span>(gen<span class="sc">$</span>tab) <span class="co">#these are the sample names in order</span></span></code></pre></div>
+<pre><code>##   [1] &quot;AK_001&quot; &quot;AK_003&quot; &quot;AK_004&quot; &quot;AK_005&quot; &quot;AK_006&quot; &quot;AK_007&quot; &quot;AK_008&quot; &quot;AK_009&quot;
+##   [9] &quot;AK_010&quot; &quot;AK_011&quot; &quot;AK_012&quot; &quot;AK_013&quot; &quot;AK_014&quot; &quot;AK_015&quot; &quot;AK_016&quot; &quot;AK_017&quot;
+##  [17] &quot;AK_018&quot; &quot;AK_019&quot; &quot;AK_020&quot; &quot;AK_021&quot; &quot;AK_022&quot; &quot;AK_023&quot; &quot;AK_024&quot; &quot;AK_026&quot;
+##  [25] &quot;AK_028&quot; &quot;AK_029&quot; &quot;AK_030&quot; &quot;AK_031&quot; &quot;AK_034&quot; &quot;AK_035&quot; &quot;AK_036&quot; &quot;LK_001&quot;
+##  [33] &quot;LK_003&quot; &quot;LK_005&quot; &quot;LK_006&quot; &quot;LK_008&quot; &quot;LK_009&quot; &quot;LK_010&quot; &quot;LK_011&quot; &quot;LK_012&quot;
+##  [41] &quot;LK_013&quot; &quot;LK_014&quot; &quot;LK_015&quot; &quot;LK_016&quot; &quot;LK_017&quot; &quot;LK_018&quot; &quot;LK_019&quot; &quot;LK_020&quot;
+##  [49] &quot;LK_021&quot; &quot;LK_022&quot; &quot;LK_023&quot; &quot;LK_024&quot; &quot;LK_025&quot; &quot;LK_026&quot; &quot;LK_027&quot; &quot;LK_028&quot;
+##  [57] &quot;LK_029&quot; &quot;LK_030&quot; &quot;LK_031&quot; &quot;LK_032&quot; &quot;LK_033&quot; &quot;LK_034&quot; &quot;NC_001&quot; &quot;NC_002&quot;
+##  [65] &quot;NC_003&quot; &quot;NC_004&quot; &quot;NC_005&quot; &quot;NC_006&quot; &quot;NC_007&quot; &quot;NC_008&quot; &quot;NC_010&quot; &quot;NC_011&quot;
+##  [73] &quot;NC_013&quot; &quot;NC_014&quot; &quot;NC_015&quot; &quot;NC_016&quot; &quot;NC_017&quot; &quot;NC_018&quot; &quot;NC_019&quot; &quot;NC_022&quot;
+##  [81] &quot;NC_023&quot; &quot;NC_024&quot; &quot;NC_026&quot; &quot;NC_028&quot; &quot;PC_001&quot; &quot;PC_002&quot; &quot;PC_003&quot; &quot;PC_004&quot;
+##  [89] &quot;PC_005&quot; &quot;PC_006&quot; &quot;PC_007&quot; &quot;PC_008&quot; &quot;PC_009&quot; &quot;PC_010&quot; &quot;PC_011&quot; &quot;PC_012&quot;
+##  [97] &quot;PC_013&quot; &quot;PC_014&quot; &quot;PC_015&quot; &quot;PC_016&quot; &quot;PC_017&quot; &quot;PC_018&quot; &quot;PC_019&quot; &quot;PC_020&quot;
+## [105] &quot;PC_021&quot; &quot;PC_022&quot; &quot;PC_024&quot; &quot;PC_025&quot; &quot;PC_026&quot; &quot;PC_027&quot; &quot;PC_028&quot; &quot;PC_029&quot;
+## [113] &quot;PC_030&quot; &quot;PC_031&quot; &quot;PC_032&quot; &quot;PC_036&quot; &quot;PC_037&quot; &quot;PC_038&quot; &quot;PC_039&quot; &quot;PC_040&quot;</code></pre>
+<p> </p>
+<p>Now we can take a look at the metadata:</p>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="intro-to-this-weeks-data.html#cb20-1" aria-hidden="true" tabindex="-1"></a>meta <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;data/portnoy_metadata.csv&quot;</span>)</span>
+<span id="cb20-2"><a href="intro-to-this-weeks-data.html#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(meta)</span></code></pre></div>
+<pre><code>##   Sample_Name Collection.Date Location.Code       Locality     Sex
+## 1      NC_001        10/27/00            NC North Carolina Unknown
+## 2      NC_002        10/27/00            NC North Carolina Unknown
+## 3      NC_003        10/27/00            NC North Carolina Unknown
+## 4      NC_004        10/27/00            NC North Carolina Unknown
+## 5      NC_005        10/27/00            NC North Carolina Unknown
+## 6      NC_006        10/27/00            NC North Carolina Unknown</code></pre>
+<p>The first column is the sample names, but notice they are in a different order than in your genotype object. Other columns you might be interested in are “Locality” and “Sex”</p>
+<p> 
+ 
+ </p>
+<p>##Documentation</p>
+<p>The main package we will use for analysis is <code>adegenet</code>. <a href="http://adegenet.r-forge.r-project.org/files/tutorial-basics.pdf">Here is some helpful documentation</a>.</p>
+<p>Some helpful sections:  
+5.4 Measuring and testing population structure  
+6.2 Performing a Principal Component Analysis on genind objects</p>
+<p> 
+ 
+ </p>
+<div id="homework-6" class="section level2" number="10.1">
+<h2><span class="header-section-number">10.1</span> Homework</h2>
+<p>Use the data provided and the documentation to do the following:</p>
+<p>###<em>Homework 8: Write a script that does the following:</em></p>
+<ol style="list-style-type: decimal">
+<li><p>Calculate Fst for males and females separately</p></li>
+<li><p>Create a 2-panel figure with separate PCAs for males and females.</p></li>
+</ol>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="sex-biased-gene-flow.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["Website.pdf", "Website.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>

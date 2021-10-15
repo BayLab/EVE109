@@ -1,0 +1,221 @@
+# Speciation and Hybridization
+
+## Match
+
+First of all, great news - no packages to install today!! The first command we'll learn is `match`. `match` helps you match up two vectors that have the same values (or subset of values). For example, so far I've always given you metadata in the same order as your genotype files. But what if I didnt? We can use `match` to reorder the metadata so that it matches the genotype dataframe. Here's how it works. First, let's make two vectors with roughly the same values in different orders.
+
+```{r} 
+A <- c("FOX","BEAR","DOG","CAT","MOUSE")
+B <- c("BEAR","CAT","MOUSE","FOX","DOG")
+match(A,B)
+```
+`match` looks at each value in the first vector and returns the *index* of that value in the second vector. Note that the order matters:
+```{r} 
+match(B,A)
+```
+We can then use match to reorder the vectors to match:
+```{r} 
+C <- B[match(A,B)]
+C
+```
+So here we've taken the `B` vector and reordered it to match A.
+
+&nbsp;
+&nbsp;
+&nbsp;
+
+## Dealing with missing data
+
+Sometimes data aren't perfect. Sometimes we have missing values. How do we deal with them, or at least find them? Let's look at he `airquality` example dataset:
+
+
+```{r} 
+data("airquality")
+head(airquality)
+```
+
+Notice that there are several **NA** values. The first thing we might want to do is to identify all rows that have **NA** values. We can identify rows with missing data in a particular column using the `is.na` function:
+
+```{r} 
+is.na(airquality$Ozone)
+```
+We can then ask for the indexes of those "TRUE" values and subset the data with those indexes:
+
+```{r} 
+ind <- is.na(airquality$Ozone)
+sub <- airquality[ind,]
+head(sub)
+```
+More likely, though, we'll want to want a subset *without* missing data. We can get this using `!` which, in programming languages often makes a function the opposite meaning. So, `!is.na` helps us find entries that do not have missing data:
+
+```{r} 
+ind <- !is.na(airquality$Ozone)
+sub <- airquality[ind,]
+head(sub)
+```
+
+
+What if we want to look at missing data across the entire dataframe? First, we can use the function `complete.cases` to ask which rows have no missing data. We can also use the `which` function to ask for the indexes of those rows. These indexes could be used to subset the dataframe into only complete rows:
+
+```{r} 
+complete.cases(airquality)
+which(complete.cases(airquality))
+sub <- airquality[which(complete.cases(airquality)),]
+head(sub)
+```
+This is useful if you need the indexes to work across multiple dataframes (more on that later). But, if you just want to remove rows with missing data, you can just us `na.omit`:
+
+```{r} 
+sub <- na.omit(airquality)
+head(sub)
+```
+
+Finally, some functions will not automatically work if you have missing data. For example, look what happens when you try to fine the mean Ozone value across the dataset:
+
+```{r} 
+mean(airquality$Ozone)
+```
+We need to tell the function what to do with NA values. The easiest thing to do is just ignore them:
+
+```{r} 
+mean(airquality$Ozone,na.rm=T)
+```
+
+&nbsp;
+&nbsp;
+&nbsp;
+
+## Writing your own functions
+
+So far, we've used a bunch of different functions that are provided by either the basic installation of R or various packages. But you can also write your own! 
+
+Let's say we are interested in a very specific metric calculated as follows: (mean of all values)/(number of non-missing datapoints)&nbsp;
+We want to calculate this for each row. We know that we can do row by row calculations using the `apply` function, but how do we put this weird function into `apply`? First, we need to define our own function. This is how we do that:
+
+```{r} 
+ourfunction <- function(x) {
+  top <- mean(x,na.rm=T)
+  bottom <- length(!is.na(x))
+  metric <- top/bottom
+  return(top)
+}
+```
+Here we can think of `x` as each row that will be passed through the function. At the end of the function we use `return` to tell the function what value we want to get out. We could apply this to any set of numbers:
+
+```{r} 
+a <- c(1,4,54,72,4,1)
+ourfunction(a)
+```
+
+Or we can apply our new function to each row in the dataframe:
+
+```{r} 
+ourmetric <- apply(airquality,MARGIN=1,ourfunction)
+ourmetric
+```
+
+
+## Hybrid allele frequencies
+
+Today we'll be looking at the data from Lamer et al. (2015). There are two files, a [genotype table](data/lamar_genotypes.csv) and [metadata](data/lamar_metadata.csv). Let's first read in the genotype table:
+
+```{r} 
+genofile <- read.csv("data/lamar_genotypes.csv")
+head(genofile)
+```
+Here the first column is a sample ID. The rest of the columns are genotypes at diagnostic SNPs that distinguish between the two carp species in the paper. Values are 0, 1, or 2 and indicate the number of bighead carp alleles at that SNP. So, for example, a 2 means that individual is homozygous for the bighead carp allele while a 0 means that individual is homozygous for the silver carp allele. Let's split the dataframe into the sample IDs and a frame with just the genotypes:
+
+```{r} 
+IDs <- genofile[,1]
+genos <- genofile[,2:ncol(genofile)]
+```
+Now let's read in the metadata:
+
+```{r} 
+meta <- read.csv("data/lamar_metadata.csv",stringsAsFactors = T)
+head(meta)
+```
+Notice that the metadata and the genotypes are *not* in the same order. We'll use match like we did above to reorder the metadata:
+
+```{r} 
+ordermeta <- meta[match(IDs,meta$ID),]
+```
+
+Now that the genotype and metadata are aligned, we can do lots of different calculations. Maybe we want to calculate the fraction of bighead carp alleles for each individual. We can write a function for that:
+
+```{r} 
+allelefreq <- function(x) {
+  length <- length(na.omit(x))
+  sum <- sum(x, na.rm=T)
+  freq <- sum/(length*2)
+  return(freq)
+}
+```
+The first line of the function calculates the length of the vector (the number of loci at which an individual is genotyped) - notice that we have omitted missing data. The second line simply adds the genotypes. We can do this because we know that hetorozygous individuals are coded as 1 and homozygous bighead carp individuals are coded as 2. The third row calculates the frequency of bighead carp alleles. Why do we have to multiple length by 2? Now we can apply that function to our genotype data:
+
+```{r} 
+bigAlleles <- apply(genos,1,allelefreq)
+summary(bigAlleles)
+```
+
+Now we can do things like look at the mean frequency across different species classes (how accurate were our field IDs) or rivers (which river has the most introduced alleles?):
+
+```{r} 
+aggregate(bigAlleles,list(ordermeta$Field.ID),mean)
+a <- aggregate(bigAlleles,list(ordermeta$River),mean)
+```
+
+
+
+&nbsp;
+&nbsp;
+&nbsp;
+
+## Making a PCA
+
+Now we want to make a PCA to visualize the similarity between individuals. We can do this with the `prcomp` function, but this function doesn't like missing data. There are some ways to deal with missing genotypes without having to discard them, but since we have a lot of data we will just remove individuals that have any missing data for now. We also have to subset the metadata to match:
+
+```{r} 
+subgen <- na.omit(genos)
+head(subgen)
+submeta <- ordermeta[complete.cases(genos),]
+head(submeta)
+```
+This works because we *know* that `genos` and `ordermeta` are in the same order. Now we can use this subsetted data to calculate a PCA and plot it:
+```{r} 
+pca <- prcomp(subgen)
+plot(pca$x)
+```
+
+This doesn't really mean anything if we don't categorize the dots. For now, let's color them by "River":
+
+```{r} 
+plot(pca$x,col=submeta$River,pch=19)
+legend("topright", legend=levels(submeta$River), pch=19, col=1:nlevels(submeta$River))
+```
+
+As you can see, there doesn't seem to be obvious separation by River. What do you think is driving the patterns you see in this PCA?
+
+&nbsp;
+&nbsp;
+&nbsp;
+
+## Homework
+
+For homework we will continue using the data from Lamer et al. (2015).There are two relevant files:
+
+[lamar_genotypes.csv](data/lamar_genotypes.csv) Has SNP genotypes for each individual
+
+[lamar_metadata.csv](data/lamar_metadata.csv) contains information about location of sampling
+
+&nbsp;
+
+###*Homework 5: Write a script that does the following:*
+
+1. Read in the "lamar_genotypes.csv" and "lamar_metadata.csv". Reorder the metadata so that samples in the same order as in the genotypes file.
+
+2. Write a function that returns the proportion of data for each individual that is missing. Apply the function to your genotype data and print the summary.
+
+3. Create a PCA. Color by Field.ID and add a legend.
+
+

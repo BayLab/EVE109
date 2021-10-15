@@ -176,7 +176,9 @@ legend("bottomleft", colnames(pie), col=rainbow(ncol(pie)), pch=19, ncol=2)
 ## Homework
 &nbsp;
 For homework you will create a haplotype network using the mtDNA data from Cliff et al. (2015). Here are the files you will need:
+
 [**cliff_metadata.csv**](data/cliff_metadata.csv) contains sample IDs along with population information and haplotype inferred within the paper
+
 [**cliff_mtDNA.fasta**](data/cliff_mtDNA.fasta) contains mtDNA sequences from the paper.
 &nbsp;
 

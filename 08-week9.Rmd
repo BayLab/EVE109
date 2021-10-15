@@ -1,0 +1,116 @@
+# Sex-biased gene flow
+
+## Multiple plots
+
+Often it's useful to look at multiple plots side by side. Today we'll learn an easy way to do that. Once again, we'll use the `Arthritis` dataset.
+
+```{r}
+library(vcd)
+data(Arthritis)
+head(Arthritis)
+```
+
+&nbsp;
+
+Maybe we want to compare outcomes for the treated vs. placebo patients. We could plot each like this:
+```{r}
+treated <- subset(Arthritis,Treatment=="Treated")
+table.treated <- table(treated$Improved)
+barplot(table.treated)
+
+placebo <- subset(Arthritis,Treatment=="Placebo")
+table.placebo <- table(placebo$Improved)
+barplot(table.placebo)
+```
+
+&nbsp;
+
+To really compare the results, though, it might be most useful to look at these side-by-side. We can to that by altering the graphical parameters:
+```{r}
+par(mfrow=c(1,2)) # 1 row and two columns of plots
+barplot(table.treated,main="Treated")
+barplot(table.placebo,main="Placebo")
+```
+
+Now we can see that there is clearly more "Marked" improvement in the treated patients.
+
+&nbsp;
+&nbsp;
+&nbsp;
+
+## Intro to this week's data
+
+Since you guys are all R experts now, this week you'll use the documentation to figure out the analysis on your own. First, though, I'll walk you through the data. We're using the SNP data from the Portnoy et al. (2015) paper. There are two files:
+
+[portnoy_genotypes.vcf](data/portnoy_genotypes.vcf) contains the genotypes for each individual
+[portnoy_metadata.csv](data/portnoy_metadata.csv) contains metadata for each individual
+
+&nbsp;
+
+You'll need three different libraries (two new):
+
+```{r,eval=F}
+install.packages("vcfR")
+install.packages("hierfstat")
+```
+
+```{r, warning=F,message=F}
+library(vcfR)
+library(hierfstat)
+library(adegenet)
+```
+&nbsp;
+
+The SNP data for today is a VCF (Variant Call Format) file. This is a very common format for analyzing raw SNP data. Take a look at this file in a text editor. There's a lot of extra information that we do not need for our SNP analysis. We can use the `vcfR` library to read that file in and convert it to the *genind* format (remember we used this format to calculate heterozygosity?). This is the format that the `adegenet` package likes.
+
+```{r,message=F}
+v <- read.vcfR("data/portnoy_genotypes.vcf")
+gen <- vcfR2genind(v)
+gen
+```
+
+Let's explore this file a little:
+
+```{r}
+dim(gen$tab) # gen$tab is a matrix where each row is an individual
+head(gen$tab[,1:10])
+rownames(gen$tab) #these are the sample names in order
+```
+
+&nbsp;
+
+Now we can take a look at the metadata:
+
+```{r}
+meta <- read.csv("data/portnoy_metadata.csv")
+head(meta)
+```
+
+The first column is the sample names, but notice they are in a different order than in your genotype object. Other columns you might be interested in are "Locality" and "Sex"
+
+&nbsp;
+&nbsp;
+&nbsp;
+
+##Documentation
+
+The main package we will use for analysis is `adegenet`. [Here is some helpful documentation](http://adegenet.r-forge.r-project.org/files/tutorial-basics.pdf).
+
+Some helpful sections: &nbsp;
+5.4 Measuring and testing population structure &nbsp;
+6.2 Performing a Principal Component Analysis on genind objects
+
+
+&nbsp;
+&nbsp;
+&nbsp;
+
+## Homework
+
+Use the data provided and the documentation to do the following:
+
+###*Homework 8: Write a script that does the following:*
+
+1. Calculate Fst for males and females separately
+
+2. Create a 2-panel figure with separate PCAs for males and females.

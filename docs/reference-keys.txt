@@ -36,3 +36,16 @@ using-table-to-count-across-multiple-columns
 creating-a-haplotype-network
 homework-4
 homework-5-write-a-script-that-does-the-following
+project-time
+speciation-and-hybridization
+match
+dealing-with-missing-data
+writing-your-own-functions
+hybrid-allele-frequencies
+making-a-pca
+homework-5
+veterans-day
+sex-biased-gene-flow
+multiple-plots
+intro-to-this-weeks-data
+homework-6

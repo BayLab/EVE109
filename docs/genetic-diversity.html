@@ -199,6 +199,23 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="5.4.1" data-path="haplotype-networks.html"><a href="haplotype-networks.html#homework-5-write-a-script-that-does-the-following"><i class="fa fa-check"></i><b>5.4.1</b> <em>Homework 5: Write a script that does the following:</em></a></li>
 </ul></li>
 </ul></li>
+<li class="chapter" data-level="6" data-path="project-time.html"><a href="project-time.html"><i class="fa fa-check"></i><b>6</b> Project Time!</a></li>
+<li class="chapter" data-level="7" data-path="speciation-and-hybridization.html"><a href="speciation-and-hybridization.html"><i class="fa fa-check"></i><b>7</b> Speciation and Hybridization</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="speciation-and-hybridization.html"><a href="speciation-and-hybridization.html#match"><i class="fa fa-check"></i><b>7.1</b> Match</a></li>
+<li class="chapter" data-level="7.2" data-path="speciation-and-hybridization.html"><a href="speciation-and-hybridization.html#dealing-with-missing-data"><i class="fa fa-check"></i><b>7.2</b> Dealing with missing data</a></li>
+<li class="chapter" data-level="7.3" data-path="speciation-and-hybridization.html"><a href="speciation-and-hybridization.html#writing-your-own-functions"><i class="fa fa-check"></i><b>7.3</b> Writing your own functions</a></li>
+<li class="chapter" data-level="7.4" data-path="speciation-and-hybridization.html"><a href="speciation-and-hybridization.html#hybrid-allele-frequencies"><i class="fa fa-check"></i><b>7.4</b> Hybrid allele frequencies</a></li>
+<li class="chapter" data-level="7.5" data-path="speciation-and-hybridization.html"><a href="speciation-and-hybridization.html#making-a-pca"><i class="fa fa-check"></i><b>7.5</b> Making a PCA</a></li>
+<li class="chapter" data-level="7.6" data-path="speciation-and-hybridization.html"><a href="speciation-and-hybridization.html#homework-5"><i class="fa fa-check"></i><b>7.6</b> Homework</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="veterans-day.html"><a href="veterans-day.html"><i class="fa fa-check"></i><b>8</b> Veteran’s Day</a></li>
+<li class="chapter" data-level="9" data-path="sex-biased-gene-flow.html"><a href="sex-biased-gene-flow.html"><i class="fa fa-check"></i><b>9</b> Sex-biased gene flow</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="sex-biased-gene-flow.html"><a href="sex-biased-gene-flow.html#multiple-plots"><i class="fa fa-check"></i><b>9.1</b> Multiple plots</a></li>
+<li class="chapter" data-level="9.2" data-path="sex-biased-gene-flow.html"><a href="sex-biased-gene-flow.html#intro-to-this-weeks-data"><i class="fa fa-check"></i><b>9.2</b> Intro to this week’s data</a></li>
+<li class="chapter" data-level="9.3" data-path="sex-biased-gene-flow.html"><a href="sex-biased-gene-flow.html#homework-6"><i class="fa fa-check"></i><b>9.3</b> Homework</a></li>
+</ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 
@@ -228,32 +245,32 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="sourceCode" id="cb58"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb58-1"><a href="genetic-diversity.html#cb58-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(palmerpenguins)</span>
 <span id="cb58-2"><a href="genetic-diversity.html#cb58-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(penguins)</span></code></pre></div>
 <pre><code>## # A tibble: 6 × 9
-##   species island  bill_length_mm bill_depth_mm flipper_length_… body_mass_g sex    year  mean
-##   &lt;fct&gt;   &lt;fct&gt;            &lt;dbl&gt;         &lt;dbl&gt;            &lt;int&gt;       &lt;int&gt; &lt;fct&gt; &lt;int&gt; &lt;dbl&gt;
-## 1 Adelie  Torger…           39.1          18.7              181        3750 male   2007  997.
-## 2 Adelie  Torger…           39.5          17.4              186        3800 fema…  2007 1011.
-## 3 Adelie  Torger…           40.3          18                195        3250 fema…  2007  876.
-## 4 Adelie  Torger…           NA            NA                 NA          NA &lt;NA&gt;   2007   NA 
-## 5 Adelie  Torger…           36.7          19.3              193        3450 fema…  2007  925.
-## 6 Adelie  Torger…           39.3          20.6              190        3650 male   2007  975.</code></pre>
+##   species island    bill_length_mm bill_depth_mm flipper_length_mm body_mass_g sex     year  mean
+##   &lt;fct&gt;   &lt;fct&gt;              &lt;dbl&gt;         &lt;dbl&gt;             &lt;int&gt;       &lt;int&gt; &lt;fct&gt;  &lt;int&gt; &lt;dbl&gt;
+## 1 Adelie  Torgersen           39.1          18.7               181        3750 male    2007  997.
+## 2 Adelie  Torgersen           39.5          17.4               186        3800 female  2007 1011.
+## 3 Adelie  Torgersen           40.3          18                 195        3250 female  2007  876.
+## 4 Adelie  Torgersen           NA            NA                  NA          NA &lt;NA&gt;    2007   NA 
+## 5 Adelie  Torgersen           36.7          19.3               193        3450 female  2007  925.
+## 6 Adelie  Torgersen           39.3          20.6               190        3650 male    2007  975.</code></pre>
 <p>One quick way to explore the data is using <code>summary</code>:</p>
 <div class="sourceCode" id="cb60"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb60-1"><a href="genetic-diversity.html#cb60-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(penguins)</span></code></pre></div>
-<pre><code>##       species          island    bill_length_mm  bill_depth_mm   flipper_length_mm
-##  Adelie   :152   Biscoe   :168   Min.   :32.10   Min.   :13.10   Min.   :172.0    
-##  Chinstrap: 68   Dream    :124   1st Qu.:39.23   1st Qu.:15.60   1st Qu.:190.0    
-##  Gentoo   :124   Torgersen: 52   Median :44.45   Median :17.30   Median :197.0    
-##                                  Mean   :43.92   Mean   :17.15   Mean   :200.9    
-##                                  3rd Qu.:48.50   3rd Qu.:18.70   3rd Qu.:213.0    
-##                                  Max.   :59.60   Max.   :21.50   Max.   :231.0    
-##                                  NA&#39;s   :2       NA&#39;s   :2       NA&#39;s   :2        
-##   body_mass_g       sex           year           mean       
-##  Min.   :2700   female:165   Min.   :2007   Min.   : 738.9  
-##  1st Qu.:3550   male  :168   1st Qu.:2007   1st Qu.: 950.9  
-##  Median :4050   NA&#39;s  : 11   Median :2008   Median :1076.6  
-##  Mean   :4202                Mean   :2008   Mean   :1115.9  
-##  3rd Qu.:4750                3rd Qu.:2009   3rd Qu.:1257.5  
-##  Max.   :6300                Max.   :2009   Max.   :1646.3  
-##  NA&#39;s   :2                                  NA&#39;s   :2</code></pre>
+<pre><code>##       species          island    bill_length_mm  bill_depth_mm   flipper_length_mm  body_mass_g  
+##  Adelie   :152   Biscoe   :168   Min.   :32.10   Min.   :13.10   Min.   :172.0     Min.   :2700  
+##  Chinstrap: 68   Dream    :124   1st Qu.:39.23   1st Qu.:15.60   1st Qu.:190.0     1st Qu.:3550  
+##  Gentoo   :124   Torgersen: 52   Median :44.45   Median :17.30   Median :197.0     Median :4050  
+##                                  Mean   :43.92   Mean   :17.15   Mean   :200.9     Mean   :4202  
+##                                  3rd Qu.:48.50   3rd Qu.:18.70   3rd Qu.:213.0     3rd Qu.:4750  
+##                                  Max.   :59.60   Max.   :21.50   Max.   :231.0     Max.   :6300  
+##                                  NA&#39;s   :2       NA&#39;s   :2       NA&#39;s   :2         NA&#39;s   :2     
+##      sex           year           mean       
+##  female:165   Min.   :2007   Min.   : 738.9  
+##  male  :168   1st Qu.:2007   1st Qu.: 950.9  
+##  NA&#39;s  : 11   Median :2008   Median :1076.6  
+##               Mean   :2008   Mean   :1115.9  
+##               3rd Qu.:2009   3rd Qu.:1257.5  
+##               Max.   :2009   Max.   :1646.3  
+##                              NA&#39;s   :2</code></pre>
 <p>For quantitative columns, this gives you basic summary statistics and for categorical columns it gives you counts of each value. We could have also looked at the categorical data using the <code>table</code> command:</p>
 <div class="sourceCode" id="cb62"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb62-1"><a href="genetic-diversity.html#cb62-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(penguins<span class="sc">$</span>Species)</span></code></pre></div>
 <pre><code>## Warning: Unknown or uninitialised column: `Species`.</code></pre>
@@ -278,20 +295,20 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb68-2"><a href="genetic-diversity.html#cb68-2" aria-hidden="true" tabindex="-1"></a>means2 <span class="ot">&lt;-</span> <span class="fu">rowMeans</span>(quant) <span class="co"># Calculate means</span></span>
 <span id="cb68-3"><a href="genetic-diversity.html#cb68-3" aria-hidden="true" tabindex="-1"></a>newpenguins <span class="ot">&lt;-</span> <span class="fu">cbind</span>(penguins,means2) <span class="co"># cbind (column bind) to iris dataframe</span></span>
 <span id="cb68-4"><a href="genetic-diversity.html#cb68-4" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(newpenguins)</span></code></pre></div>
-<pre><code>##   species    island bill_length_mm bill_depth_mm flipper_length_mm body_mass_g    sex year
-## 1  Adelie Torgersen           39.1          18.7               181        3750   male 2007
-## 2  Adelie Torgersen           39.5          17.4               186        3800 female 2007
-## 3  Adelie Torgersen           40.3          18.0               195        3250 female 2007
-## 4  Adelie Torgersen             NA            NA                NA          NA   &lt;NA&gt; 2007
-## 5  Adelie Torgersen           36.7          19.3               193        3450 female 2007
-## 6  Adelie Torgersen           39.3          20.6               190        3650   male 2007
-##       mean   means2
-## 1  997.200  997.200
-## 2 1010.725 1010.725
-## 3  875.825  875.825
-## 4       NA       NA
-## 5  924.750  924.750
-## 6  974.975  974.975</code></pre>
+<pre><code>##   species    island bill_length_mm bill_depth_mm flipper_length_mm body_mass_g    sex year     mean
+## 1  Adelie Torgersen           39.1          18.7               181        3750   male 2007  997.200
+## 2  Adelie Torgersen           39.5          17.4               186        3800 female 2007 1010.725
+## 3  Adelie Torgersen           40.3          18.0               195        3250 female 2007  875.825
+## 4  Adelie Torgersen             NA            NA                NA          NA   &lt;NA&gt; 2007       NA
+## 5  Adelie Torgersen           36.7          19.3               193        3450 female 2007  924.750
+## 6  Adelie Torgersen           39.3          20.6               190        3650   male 2007  974.975
+##     means2
+## 1  997.200
+## 2 1010.725
+## 3  875.825
+## 4       NA
+## 5  924.750
+## 6  974.975</code></pre>
 </div>
 <div id="using-the-adegenet-package-to-calulate-heterozygosity" class="section level2" number="3.2">
 <h2><span class="header-section-number">3.2</span> Using the <strong>adegenet</strong> package to calulate heterozygosity</h2>
@@ -300,27 +317,27 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="sourceCode" id="cb70"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb70-1"><a href="genetic-diversity.html#cb70-1" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;data/weeks_genotypes.csv&quot;</span>) <span class="co"># Read in a file</span></span></code></pre></div>
 <p>Take a look at the data:</p>
 <div class="sourceCode" id="cb71"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb71-1"><a href="genetic-diversity.html#cb71-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(data)</span></code></pre></div>
-<pre><code>##   ID      Pop Year    LOC1    LOC2    LOC3    LOC4    LOC5    LOC6    LOC7    LOC8    LOC9
-## 1  1 MtBuller 2010 311/311 245/249 303/303 195/201 218/218 211/211 321/321 240/240 157/157
-## 2  2 MtBuller 2010 311/311 245/249 303/303 195/201 218/218 211/211 321/321 240/240 157/157
-## 3  3 MtBuller 2010 311/311 245/249 303/303   NA/NA 218/218 211/211 321/321 240/240 157/157
-## 4  4 MtBuller 2010 311/311 249/249 303/303 195/195 218/218 211/211 321/321 240/240 157/157
-## 5  5 MtBuller 2010 309/311 249/249 303/303 195/201 218/218 211/211 321/321 240/240 157/157
-## 6  6 MtBuller 2010 309/311   NA/NA 303/303 201/201 218/218 211/211 321/321 240/240 157/157
-##     LOC10   LOC11   LOC12   LOC13   LOC14   LOC15   LOC16   LOC17   LOC18   LOC19   LOC20
-## 1 113/113 178/178 125/125 309/318 119/119 144/146 214/214 241/241 160/160 150/150 117/117
-## 2 113/113 178/178 125/125 309/309 119/148 144/146 214/214 241/241 160/160 150/150 117/117
-## 3 113/113 178/178 125/125 309/309 119/119 144/144 214/216 241/241 160/160 150/150 117/117
-## 4 113/113 178/178 125/125 309/309 119/119 144/146 214/214 241/241 160/160 150/150 117/117
-## 5 113/115 178/178 125/125 309/318 148/148 144/146 216/216 241/241 160/160 150/150 117/117
-## 6 113/115 178/178 125/125 309/318 119/148 144/144 214/214 241/241 160/160 150/150 117/117
-##     LOC21   LOC22   LOC23   LOC24
-## 1 141/141 137/137 157/157 177/177
-## 2 141/141 137/137 157/157 177/177
-## 3 141/141 137/137 157/157 177/177
-## 4 141/141 137/137 157/157 177/177
-## 5 141/141 137/141 157/157 177/177
-## 6 141/141 137/137 157/157 177/177</code></pre>
+<pre><code>##   ID      Pop Year    LOC1    LOC2    LOC3    LOC4    LOC5    LOC6    LOC7    LOC8    LOC9   LOC10
+## 1  1 MtBuller 2010 311/311 245/249 303/303 195/201 218/218 211/211 321/321 240/240 157/157 113/113
+## 2  2 MtBuller 2010 311/311 245/249 303/303 195/201 218/218 211/211 321/321 240/240 157/157 113/113
+## 3  3 MtBuller 2010 311/311 245/249 303/303   NA/NA 218/218 211/211 321/321 240/240 157/157 113/113
+## 4  4 MtBuller 2010 311/311 249/249 303/303 195/195 218/218 211/211 321/321 240/240 157/157 113/113
+## 5  5 MtBuller 2010 309/311 249/249 303/303 195/201 218/218 211/211 321/321 240/240 157/157 113/115
+## 6  6 MtBuller 2010 309/311   NA/NA 303/303 201/201 218/218 211/211 321/321 240/240 157/157 113/115
+##     LOC11   LOC12   LOC13   LOC14   LOC15   LOC16   LOC17   LOC18   LOC19   LOC20   LOC21   LOC22
+## 1 178/178 125/125 309/318 119/119 144/146 214/214 241/241 160/160 150/150 117/117 141/141 137/137
+## 2 178/178 125/125 309/309 119/148 144/146 214/214 241/241 160/160 150/150 117/117 141/141 137/137
+## 3 178/178 125/125 309/309 119/119 144/144 214/216 241/241 160/160 150/150 117/117 141/141 137/137
+## 4 178/178 125/125 309/309 119/119 144/146 214/214 241/241 160/160 150/150 117/117 141/141 137/137
+## 5 178/178 125/125 309/318 148/148 144/146 216/216 241/241 160/160 150/150 117/117 141/141 137/141
+## 6 178/178 125/125 309/318 119/148 144/144 214/214 241/241 160/160 150/150 117/117 141/141 137/137
+##     LOC23   LOC24
+## 1 157/157 177/177
+## 2 157/157 177/177
+## 3 157/157 177/177
+## 4 157/157 177/177
+## 5 157/157 177/177
+## 6 157/157 177/177</code></pre>
 <p>The first column is an id assigned to each individual. The second column gives the populations from which the individual was sampled. The third column gives the year of sampling. The remaining columns give the microsatellite data. Each individual has two numbers which represent the fragment lengths (read on a gel). If the two fragment lengths are the same, the individual is a heterozygote. If they are different, the individual is a homozygote.</p>
 <p>We will use the package <strong>adegenet</strong> to read in the microsatellite data and calculate heterozygosity. The manual for this package is <a href="https://github.com/thibautjombart/adegenet/wiki">here</a>. Install the package and call the library:</p>
 <div class="sourceCode" id="cb73"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb73-1"><a href="genetic-diversity.html#cb73-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;adegenet&quot;</span>)</span></code></pre></div>
@@ -347,12 +364,12 @@ The first thing we need to do is let the adegenet read in the microsatellite dat
 <span id="cb79-2"><a href="genetic-diversity.html#cb79-2" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(results) <span class="co"># Show the different output values we can look at</span></span></code></pre></div>
 <pre><code>## [1] &quot;n&quot;         &quot;n.by.pop&quot;  &quot;loc.n.all&quot; &quot;pop.n.all&quot; &quot;NA.perc&quot;   &quot;Hobs&quot;      &quot;Hexp&quot;</code></pre>
 <div class="sourceCode" id="cb81"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb81-1"><a href="genetic-diversity.html#cb81-1" aria-hidden="true" tabindex="-1"></a>results<span class="sc">$</span>Hobs <span class="co"># Show observed heterozygosity</span></span></code></pre></div>
-<pre><code>##      LOC1      LOC2      LOC3      LOC4      LOC5      LOC6      LOC7      LOC8      LOC9 
-## 0.1150097 0.6812749 0.2913386 0.5984405 0.4799235 0.2972973 0.3556405 0.3754864 0.3512476 
-##     LOC10     LOC11     LOC12     LOC13     LOC14     LOC15     LOC16     LOC17     LOC18 
-## 0.6382979 0.4335260 0.2160612 0.5393474 0.5965583 0.4990366 0.2103250 0.3754789 0.2471264 
-##     LOC19     LOC20     LOC21     LOC22     LOC23     LOC24 
-## 0.2480620 0.1739962 0.1685824 0.3850575 0.2553191 0.2528736</code></pre>
+<pre><code>##      LOC1      LOC2      LOC3      LOC4      LOC5      LOC6      LOC7      LOC8      LOC9     LOC10 
+## 0.1150097 0.6812749 0.2913386 0.5984405 0.4799235 0.2972973 0.3556405 0.3754864 0.3512476 0.6382979 
+##     LOC11     LOC12     LOC13     LOC14     LOC15     LOC16     LOC17     LOC18     LOC19     LOC20 
+## 0.4335260 0.2160612 0.5393474 0.5965583 0.4990366 0.2103250 0.3754789 0.2471264 0.2480620 0.1739962 
+##     LOC21     LOC22     LOC23     LOC24 
+## 0.1685824 0.3850575 0.2553191 0.2528736</code></pre>
 <p> </p>
 <p>Notice that observed and expected heterozygosity have been calculated, but across the entire dataset. What if we supply different populations? We use the <code>seppop</code> function to tell it we want separate measurements for each population</p>
 <div class="sourceCode" id="cb83"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb83-1"><a href="genetic-diversity.html#cb83-1" aria-hidden="true" tabindex="-1"></a>genindPop <span class="ot">&lt;-</span> <span class="fu">df2genind</span>(alleles,<span class="at">sep=</span><span class="st">&quot;/&quot;</span>,</span>
@@ -400,19 +417,19 @@ The first thing we need to do is let the adegenet read in the microsatellite dat
 <div class="sourceCode" id="cb85"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb85-1"><a href="genetic-diversity.html#cb85-1" aria-hidden="true" tabindex="-1"></a>MtBuller <span class="ot">&lt;-</span> <span class="fu">summary</span>(genindPop<span class="sc">$</span>MtBuller)</span>
 <span id="cb85-2"><a href="genetic-diversity.html#cb85-2" aria-hidden="true" tabindex="-1"></a>MtHiggenbotham <span class="ot">&lt;-</span> <span class="fu">summary</span>(genindPop<span class="sc">$</span>MtHigginbotham)</span>
 <span id="cb85-3"><a href="genetic-diversity.html#cb85-3" aria-hidden="true" tabindex="-1"></a>MtBuller<span class="sc">$</span>Hobs <span class="co"># Observed heterozygosity for all Mt Buller Samples</span></span></code></pre></div>
-<pre><code>##      LOC1      LOC2      LOC3      LOC4      LOC5      LOC6      LOC7      LOC8      LOC9 
-## 0.1196172 0.6526055 0.2120482 0.5649038 0.3937947 0.2583732 0.2911695 0.3325359 0.3381295 
-##     LOC10     LOC11     LOC12     LOC13     LOC14     LOC15     LOC16     LOC17     LOC18 
-## 0.6201923 0.3317422 0.2696897 0.5083532 0.5751790 0.4892086 0.2625298 0.2559809 0.3086124 
-##     LOC19     LOC20     LOC21     LOC22     LOC23     LOC24 
-## 0.1654676 0.1527446 0.1360382 0.3110048 0.1558753 0.1531100</code></pre>
+<pre><code>##      LOC1      LOC2      LOC3      LOC4      LOC5      LOC6      LOC7      LOC8      LOC9     LOC10 
+## 0.1196172 0.6526055 0.2120482 0.5649038 0.3937947 0.2583732 0.2911695 0.3325359 0.3381295 0.6201923 
+##     LOC11     LOC12     LOC13     LOC14     LOC15     LOC16     LOC17     LOC18     LOC19     LOC20 
+## 0.3317422 0.2696897 0.5083532 0.5751790 0.4892086 0.2625298 0.2559809 0.3086124 0.1654676 0.1527446 
+##     LOC21     LOC22     LOC23     LOC24 
+## 0.1360382 0.3110048 0.1558753 0.1531100</code></pre>
 <div class="sourceCode" id="cb87"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb87-1"><a href="genetic-diversity.html#cb87-1" aria-hidden="true" tabindex="-1"></a>MtBuller<span class="sc">$</span>Hexp <span class="co"># Expected heterozygosity for all Mt Buller Samples</span></span></code></pre></div>
-<pre><code>##      LOC1      LOC2      LOC3      LOC4      LOC5      LOC6      LOC7      LOC8      LOC9 
-## 0.1129982 0.6064596 0.2329279 0.6085111 0.4022334 0.2458735 0.2869544 0.3583595 0.3399151 
-##     LOC10     LOC11     LOC12     LOC13     LOC14     LOC15     LOC16     LOC17     LOC18 
-## 0.6384350 0.3431457 0.3045010 0.5145363 0.5734332 0.5079217 0.3030058 0.2639076 0.3282291 
-##     LOC19     LOC20     LOC21     LOC22     LOC23     LOC24 
-## 0.1647056 0.1750275 0.1629775 0.3484438 0.1637021 0.1735194</code></pre>
+<pre><code>##      LOC1      LOC2      LOC3      LOC4      LOC5      LOC6      LOC7      LOC8      LOC9     LOC10 
+## 0.1129982 0.6064596 0.2329279 0.6085111 0.4022334 0.2458735 0.2869544 0.3583595 0.3399151 0.6384350 
+##     LOC11     LOC12     LOC13     LOC14     LOC15     LOC16     LOC17     LOC18     LOC19     LOC20 
+## 0.3431457 0.3045010 0.5145363 0.5734332 0.5079217 0.3030058 0.2639076 0.3282291 0.1647056 0.1750275 
+##     LOC21     LOC22     LOC23     LOC24 
+## 0.1629775 0.3484438 0.1637021 0.1735194</code></pre>
 <p> 
  
  </p>
@@ -420,7 +437,7 @@ The first thing we need to do is let the adegenet read in the microsatellite dat
 <h3><span class="header-section-number">3.2.1</span> Plotting heterozygosity</h3>
 <p>Let’s use a barplot to look at variation in heterozygostiy across all our markers:</p>
 <div class="sourceCode" id="cb89"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb89-1"><a href="genetic-diversity.html#cb89-1" aria-hidden="true" tabindex="-1"></a><span class="fu">barplot</span>(MtBuller<span class="sc">$</span>Hobs)</span></code></pre></div>
-<p><img src="Website_files/figure-html/unnamed-chunk-53-1.png" width="672" /></p>
+<p><img src="Website_files/figure-html/unnamed-chunk-57-1.png" width="672" /></p>
 <p>When we have a bunch of markers, we often take the mean across all those markers:</p>
 <div class="sourceCode" id="cb90"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb90-1"><a href="genetic-diversity.html#cb90-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(MtHiggenbotham<span class="sc">$</span>Hobs) <span class="co"># Mean observed heterozygosity in the Mt Higgenbotham population</span></span></code></pre></div>
 <pre><code>## [1] 0.5262125</code></pre>

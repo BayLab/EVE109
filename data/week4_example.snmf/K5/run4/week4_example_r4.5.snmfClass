@@ -1,6 +1,6 @@
 new("snmfClass", directory = "K5/run4/", snmfClass.file = "week4_example_r4.5.snmfClass", 
-    K = 5L, run = 4L, CPU = 1L, seed = 814293823L, alpha = 10, 
+    K = 5L, run = 4L, CPU = 1L, seed = 450228321L, alpha = 10, 
     percentage = 0.05, I = 0L, iterations = 200L, entropy = TRUE, 
-    tolerance = 1e-05, crossEntropy = 0.590571389937947, ploidy = 2L, 
+    tolerance = 1e-05, crossEntropy = 0.63654674205885, ploidy = 2L, 
     Q.input.file = "", Q.output.file = "week4_example_r4.5.Q", 
     G.output.file = "week4_example_r4.5.G")
