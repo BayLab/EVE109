@@ -207,14 +207,20 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.3" data-path="speciation-and-hybridization.html"><a href="speciation-and-hybridization.html#writing-your-own-functions"><i class="fa fa-check"></i><b>7.3</b> Writing your own functions</a></li>
 <li class="chapter" data-level="7.4" data-path="speciation-and-hybridization.html"><a href="speciation-and-hybridization.html#hybrid-allele-frequencies"><i class="fa fa-check"></i><b>7.4</b> Hybrid allele frequencies</a></li>
 <li class="chapter" data-level="7.5" data-path="speciation-and-hybridization.html"><a href="speciation-and-hybridization.html#making-a-pca"><i class="fa fa-check"></i><b>7.5</b> Making a PCA</a></li>
-<li class="chapter" data-level="7.6" data-path="speciation-and-hybridization.html"><a href="speciation-and-hybridization.html#homework-5"><i class="fa fa-check"></i><b>7.6</b> Homework</a></li>
+<li class="chapter" data-level="7.6" data-path="speciation-and-hybridization.html"><a href="speciation-and-hybridization.html#homework-5"><i class="fa fa-check"></i><b>7.6</b> Homework</a>
+<ul>
+<li class="chapter" data-level="7.6.1" data-path="speciation-and-hybridization.html"><a href="speciation-and-hybridization.html#homework-5-write-a-script-that-does-the-following-1"><i class="fa fa-check"></i><b>7.6.1</b> <em>Homework 5: Write a script that does the following:</em></a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="8" data-path="veterans-day.html"><a href="veterans-day.html"><i class="fa fa-check"></i><b>8</b> Veteran’s Day</a></li>
 <li class="chapter" data-level="9" data-path="sex-biased-gene-flow.html"><a href="sex-biased-gene-flow.html"><i class="fa fa-check"></i><b>9</b> Sex-biased gene flow</a>
 <ul>
 <li class="chapter" data-level="9.1" data-path="sex-biased-gene-flow.html"><a href="sex-biased-gene-flow.html#multiple-plots"><i class="fa fa-check"></i><b>9.1</b> Multiple plots</a></li>
 <li class="chapter" data-level="9.2" data-path="sex-biased-gene-flow.html"><a href="sex-biased-gene-flow.html#intro-to-this-weeks-data"><i class="fa fa-check"></i><b>9.2</b> Intro to this week’s data</a></li>
-<li class="chapter" data-level="9.3" data-path="sex-biased-gene-flow.html"><a href="sex-biased-gene-flow.html#homework-6"><i class="fa fa-check"></i><b>9.3</b> Homework</a></li>
+<li class="chapter" data-level="9.3" data-path="sex-biased-gene-flow.html"><a href="sex-biased-gene-flow.html#homework-6"><i class="fa fa-check"></i><b>9.3</b> Homework</a>
+<ul>
+<li class="chapter" data-level="9.3.1" data-path="sex-biased-gene-flow.html"><a href="sex-biased-gene-flow.html#homework-8-write-a-script-that-does-the-following"><i class="fa fa-check"></i><b>9.3.1</b> <em>Homework 8: Write a script that does the following:</em></a></li>
+</ul></li>
 </ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -353,17 +359,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## All sequences of same length: 965 
 ## 
 ## Labels:
-## No0910S
-## No1208S
-## No0912S
+## No1202S
+## No0913S
+## No305
+## No1114S
+## No1206S
 ## No306
-## No1103S
-## No1208S
 ## ...
 ## 
 ## Base composition:
 ##     a     c     g     t 
-## 0.307 0.261 0.126 0.306 
+## 0.306 0.261 0.126 0.306 
 ## (Total: 96.5 kb)</code></pre>
 <p> </p>
 <p>Now we have 100 individuals! First, let’s make up some metadata that we can use later. You can use the <code>labels</code> function to pull sample names out of <code>data</code>. We will also assign each sample to a random “north” or “south” location.</p>
@@ -372,12 +378,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb134-3"><a href="haplotype-networks.html#cb134-3" aria-hidden="true" tabindex="-1"></a>meta <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="fu">cbind</span>(names,loc))</span>
 <span id="cb134-4"><a href="haplotype-networks.html#cb134-4" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(meta)</span></code></pre></div>
 <pre><code>##     names   loc
-## 1 No0910S south
-## 2 No1208S south
-## 3 No0912S south
-## 4   No306 south
-## 5 No1103S south
-## 6 No1208S north</code></pre>
+## 1 No1202S south
+## 2 No0913S south
+## 3   No305 north
+## 4 No1114S south
+## 5 No1206S north
+## 6   No306 south</code></pre>
 <p>NOTE: If we were doing this on real data, we would usually read in the populations from a spreadsheet. Here we just make them up to illustrate how the process works!</p>
 <p> </p>
 <p>When we sequence DNA, some individuals will have the same haplotype. So the first step is to check how many haplotypes there are and which individuals share haplotypes. We do this with the <code>haplotype</code> function:</p>
@@ -392,18 +398,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## Haplotype labels and frequencies:
 ## 
 ##    I   II  III   IV    V   VI  VII VIII   IX    X   XI  XII XIII  XIV   XV 
-##    4    4    6    7   12    4   10   11    8    2   10    8    6    6    2</code></pre>
+##    6    8   10    8    6    9    8    5    3    9    6    5    7    3    7</code></pre>
 <p> </p>
 <p>In the output you can see the frequencies of each of the 15 haplotypes. Now we want a list of which individuals have which haplotypes:</p>
 <div class="sourceCode" id="cb138"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb138-1"><a href="haplotype-networks.html#cb138-1" aria-hidden="true" tabindex="-1"></a>hapInfo <span class="ot">&lt;-</span> <span class="fu">stack</span>(<span class="fu">setNames</span>(<span class="fu">attr</span>(hap,<span class="st">&quot;index&quot;</span>),<span class="fu">rownames</span>(hap)))</span>
 <span id="cb138-2"><a href="haplotype-networks.html#cb138-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(hapInfo)</span></code></pre></div>
 <pre><code>##   values ind
 ## 1      1   I
-## 2     12   I
-## 3     55   I
-## 4     80   I
-## 5      2  II
-## 6      6  II</code></pre>
+## 2     47   I
+## 3     63   I
+## 4     69   I
+## 5     97   I
+## 6     99   I</code></pre>
 <p>This command is a bit complicated. Briefly, it takes a list of individuals for each haplotype, and makes a dataframe that tells you which individual has which haplotype. The tricky part is that it returns the <em>indexes</em> of the individuals, not their actual data. Let’s change the column names to make more sense:</p>
 <div class="sourceCode" id="cb140"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb140-1"><a href="haplotype-networks.html#cb140-1" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(hapInfo) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;index&quot;</span>,<span class="st">&quot;haplotype&quot;</span>)</span></code></pre></div>
 <p> </p>
@@ -411,17 +417,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="sourceCode" id="cb141"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb141-1"><a href="haplotype-networks.html#cb141-1" aria-hidden="true" tabindex="-1"></a>merged <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="fu">cbind</span>(hapInfo,meta[hapInfo<span class="sc">$</span>index,]))</span>
 <span id="cb141-2"><a href="haplotype-networks.html#cb141-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(merged)</span></code></pre></div>
 <pre><code>##    index haplotype   names   loc
-## 1      1         I No0910S south
-## 12    12         I No0910S north
-## 55    55         I No0910S north
-## 80    80         I No0910S north
-## 2      2        II No1208S south
-## 6      6        II No1208S north</code></pre>
+## 1      1         I No1202S south
+## 47    47         I No1202S south
+## 63    63         I No1202S north
+## 69    69         I No1202S north
+## 97    97         I No1202S north
+## 99    99         I No1202S south</code></pre>
 <p> </p>
 <p>Great! Now lets start to make a haplotype network! This is pretty simple in <code>pegas</code> using the <code>haploNet</code> function. Below we plot the network for out haplotype set <code>hap</code>. We use the “freq” attribute to size the circles so that each circle is proportional to the number of samples with that haplotype:</p>
 <div class="sourceCode" id="cb143"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb143-1"><a href="haplotype-networks.html#cb143-1" aria-hidden="true" tabindex="-1"></a>net <span class="ot">&lt;-</span> <span class="fu">haploNet</span>(hap)</span>
 <span id="cb143-2"><a href="haplotype-networks.html#cb143-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(net,<span class="at">size=</span><span class="fu">attr</span>(net,<span class="st">&quot;freq&quot;</span>))</span></code></pre></div>
-<p><img src="Website_files/figure-html/unnamed-chunk-91-1.png" width="672" /></p>
+<p><img src="Website_files/figure-html/unnamed-chunk-87-1.png" width="672" /></p>
 <p>Cool, now we want to add colors. Take a look at the <code>haploNet</code> help page, paying particular attention to the <code>pie</code> argument:</p>
 <div class="sourceCode" id="cb144"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb144-1"><a href="haplotype-networks.html#cb144-1" aria-hidden="true" tabindex="-1"></a>?haploNet</span></code></pre></div>
 <p> </p>
@@ -430,17 +436,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb145-2"><a href="haplotype-networks.html#cb145-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(pie)</span></code></pre></div>
 <pre><code>##      
 ##       north south
-##   I       3     1
-##   II      1     3
-##   III     4     2
-##   IV      3     4
-##   V       4     8
-##   VI      2     2</code></pre>
+##   I       3     3
+##   II      4     4
+##   III     7     3
+##   IV      5     3
+##   V       3     3
+##   VI      3     6</code></pre>
 <p>This table shows, for each haplotype, how many individuals come from the north and how many come from the south. Remember, this is completely made up data so we don’t expect any pattern here. Now we can use this to color the circles in the haplotype network, including adding a legend:</p>
 <p> </p>
 <div class="sourceCode" id="cb147"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb147-1"><a href="haplotype-networks.html#cb147-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(net,<span class="at">size=</span><span class="fu">attr</span>(net,<span class="st">&quot;freq&quot;</span>),<span class="at">pie=</span>pie)</span>
 <span id="cb147-2"><a href="haplotype-networks.html#cb147-2" aria-hidden="true" tabindex="-1"></a><span class="fu">legend</span>(<span class="st">&quot;bottomleft&quot;</span>, <span class="fu">colnames</span>(pie), <span class="at">col=</span><span class="fu">rainbow</span>(<span class="fu">ncol</span>(pie)), <span class="at">pch=</span><span class="dv">19</span>, <span class="at">ncol=</span><span class="dv">2</span>)</span></code></pre></div>
-<p><img src="Website_files/figure-html/unnamed-chunk-94-1.png" width="672" /></p>
+<p><img src="Website_files/figure-html/unnamed-chunk-90-1.png" width="672" /></p>
 </div>
 <div id="homework-4" class="section level2" number="5.4">
 <h2><span class="header-section-number">5.4</span> Homework</h2>

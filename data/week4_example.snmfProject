@@ -30,5 +30,5 @@ new("snmfProject", snmfProject.file = "week4_example.snmfProject",
     "K1/run10/week4_example_r10.1.snmfClass", "K2/run10/week4_example_r10.2.snmfClass", 
     "K3/run10/week4_example_r10.3.snmfClass", "K4/run10/week4_example_r10.4.snmfClass", 
     "K5/run10/week4_example_r10.5.snmfClass"), n = 50L, L = 400L, 
-    creationTime = structure(1634332551.85154, class = c("POSIXct", 
+    creationTime = structure(1634333006.07725, class = c("POSIXct", 
     "POSIXt")))

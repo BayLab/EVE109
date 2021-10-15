@@ -207,14 +207,20 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.3" data-path="speciation-and-hybridization.html"><a href="speciation-and-hybridization.html#writing-your-own-functions"><i class="fa fa-check"></i><b>7.3</b> Writing your own functions</a></li>
 <li class="chapter" data-level="7.4" data-path="speciation-and-hybridization.html"><a href="speciation-and-hybridization.html#hybrid-allele-frequencies"><i class="fa fa-check"></i><b>7.4</b> Hybrid allele frequencies</a></li>
 <li class="chapter" data-level="7.5" data-path="speciation-and-hybridization.html"><a href="speciation-and-hybridization.html#making-a-pca"><i class="fa fa-check"></i><b>7.5</b> Making a PCA</a></li>
-<li class="chapter" data-level="7.6" data-path="speciation-and-hybridization.html"><a href="speciation-and-hybridization.html#homework-5"><i class="fa fa-check"></i><b>7.6</b> Homework</a></li>
+<li class="chapter" data-level="7.6" data-path="speciation-and-hybridization.html"><a href="speciation-and-hybridization.html#homework-5"><i class="fa fa-check"></i><b>7.6</b> Homework</a>
+<ul>
+<li class="chapter" data-level="7.6.1" data-path="speciation-and-hybridization.html"><a href="speciation-and-hybridization.html#homework-5-write-a-script-that-does-the-following-1"><i class="fa fa-check"></i><b>7.6.1</b> <em>Homework 5: Write a script that does the following:</em></a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="8" data-path="veterans-day.html"><a href="veterans-day.html"><i class="fa fa-check"></i><b>8</b> Veteran’s Day</a></li>
 <li class="chapter" data-level="9" data-path="sex-biased-gene-flow.html"><a href="sex-biased-gene-flow.html"><i class="fa fa-check"></i><b>9</b> Sex-biased gene flow</a>
 <ul>
 <li class="chapter" data-level="9.1" data-path="sex-biased-gene-flow.html"><a href="sex-biased-gene-flow.html#multiple-plots"><i class="fa fa-check"></i><b>9.1</b> Multiple plots</a></li>
 <li class="chapter" data-level="9.2" data-path="sex-biased-gene-flow.html"><a href="sex-biased-gene-flow.html#intro-to-this-weeks-data"><i class="fa fa-check"></i><b>9.2</b> Intro to this week’s data</a></li>
-<li class="chapter" data-level="9.3" data-path="sex-biased-gene-flow.html"><a href="sex-biased-gene-flow.html#homework-6"><i class="fa fa-check"></i><b>9.3</b> Homework</a></li>
+<li class="chapter" data-level="9.3" data-path="sex-biased-gene-flow.html"><a href="sex-biased-gene-flow.html#homework-6"><i class="fa fa-check"></i><b>9.3</b> Homework</a>
+<ul>
+<li class="chapter" data-level="9.3.1" data-path="sex-biased-gene-flow.html"><a href="sex-biased-gene-flow.html#homework-8-write-a-script-that-does-the-following"><i class="fa fa-check"></i><b>9.3.1</b> <em>Homework 8: Write a script that does the following:</em></a></li>
+</ul></li>
 </ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -256,17 +262,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="sourceCode" id="cb199"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb199-1"><a href="sex-biased-gene-flow.html#cb199-1" aria-hidden="true" tabindex="-1"></a>treated <span class="ot">&lt;-</span> <span class="fu">subset</span>(Arthritis,Treatment<span class="sc">==</span><span class="st">&quot;Treated&quot;</span>)</span>
 <span id="cb199-2"><a href="sex-biased-gene-flow.html#cb199-2" aria-hidden="true" tabindex="-1"></a>table.treated <span class="ot">&lt;-</span> <span class="fu">table</span>(treated<span class="sc">$</span>Improved)</span>
 <span id="cb199-3"><a href="sex-biased-gene-flow.html#cb199-3" aria-hidden="true" tabindex="-1"></a><span class="fu">barplot</span>(table.treated)</span></code></pre></div>
-<p><img src="Website_files/figure-html/unnamed-chunk-120-1.png" width="672" /></p>
+<p><img src="Website_files/figure-html/unnamed-chunk-116-1.png" width="672" /></p>
 <div class="sourceCode" id="cb200"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb200-1"><a href="sex-biased-gene-flow.html#cb200-1" aria-hidden="true" tabindex="-1"></a>placebo <span class="ot">&lt;-</span> <span class="fu">subset</span>(Arthritis,Treatment<span class="sc">==</span><span class="st">&quot;Placebo&quot;</span>)</span>
 <span id="cb200-2"><a href="sex-biased-gene-flow.html#cb200-2" aria-hidden="true" tabindex="-1"></a>table.placebo <span class="ot">&lt;-</span> <span class="fu">table</span>(placebo<span class="sc">$</span>Improved)</span>
 <span id="cb200-3"><a href="sex-biased-gene-flow.html#cb200-3" aria-hidden="true" tabindex="-1"></a><span class="fu">barplot</span>(table.placebo)</span></code></pre></div>
-<p><img src="Website_files/figure-html/unnamed-chunk-120-2.png" width="672" /></p>
+<p><img src="Website_files/figure-html/unnamed-chunk-116-2.png" width="672" /></p>
 <p> </p>
 <p>To really compare the results, though, it might be most useful to look at these side-by-side. We can to that by altering the graphical parameters:</p>
 <div class="sourceCode" id="cb201"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb201-1"><a href="sex-biased-gene-flow.html#cb201-1" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow=</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>)) <span class="co"># 1 row and two columns of plots</span></span>
 <span id="cb201-2"><a href="sex-biased-gene-flow.html#cb201-2" aria-hidden="true" tabindex="-1"></a><span class="fu">barplot</span>(table.treated,<span class="at">main=</span><span class="st">&quot;Treated&quot;</span>)</span>
 <span id="cb201-3"><a href="sex-biased-gene-flow.html#cb201-3" aria-hidden="true" tabindex="-1"></a><span class="fu">barplot</span>(table.placebo,<span class="at">main=</span><span class="st">&quot;Placebo&quot;</span>)</span></code></pre></div>
-<p><img src="Website_files/figure-html/unnamed-chunk-121-1.png" width="672" /></p>
+<p><img src="Website_files/figure-html/unnamed-chunk-117-1.png" width="672" /></p>
 <p>Now we can see that there is clearly more “Marked” improvement in the treated patients.</p>
 <p> 
  
@@ -386,12 +392,14 @@ Processed variant: 5914
 <div id="homework-6" class="section level2" number="9.3">
 <h2><span class="header-section-number">9.3</span> Homework</h2>
 <p>Use the data provided and the documentation to do the following:</p>
-<p>###<em>Homework 8: Write a script that does the following:</em></p>
+<div id="homework-8-write-a-script-that-does-the-following" class="section level3" number="9.3.1">
+<h3><span class="header-section-number">9.3.1</span> <em>Homework 8: Write a script that does the following:</em></h3>
 <ol style="list-style-type: decimal">
 <li><p>Calculate Fst for males and females separately</p></li>
 <li><p>Create a 2-panel figure with separate PCAs for males and females.</p></li>
 </ol>
 
+</div>
 </div>
 </div>
             </section>

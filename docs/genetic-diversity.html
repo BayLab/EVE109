@@ -207,14 +207,20 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.3" data-path="speciation-and-hybridization.html"><a href="speciation-and-hybridization.html#writing-your-own-functions"><i class="fa fa-check"></i><b>7.3</b> Writing your own functions</a></li>
 <li class="chapter" data-level="7.4" data-path="speciation-and-hybridization.html"><a href="speciation-and-hybridization.html#hybrid-allele-frequencies"><i class="fa fa-check"></i><b>7.4</b> Hybrid allele frequencies</a></li>
 <li class="chapter" data-level="7.5" data-path="speciation-and-hybridization.html"><a href="speciation-and-hybridization.html#making-a-pca"><i class="fa fa-check"></i><b>7.5</b> Making a PCA</a></li>
-<li class="chapter" data-level="7.6" data-path="speciation-and-hybridization.html"><a href="speciation-and-hybridization.html#homework-5"><i class="fa fa-check"></i><b>7.6</b> Homework</a></li>
+<li class="chapter" data-level="7.6" data-path="speciation-and-hybridization.html"><a href="speciation-and-hybridization.html#homework-5"><i class="fa fa-check"></i><b>7.6</b> Homework</a>
+<ul>
+<li class="chapter" data-level="7.6.1" data-path="speciation-and-hybridization.html"><a href="speciation-and-hybridization.html#homework-5-write-a-script-that-does-the-following-1"><i class="fa fa-check"></i><b>7.6.1</b> <em>Homework 5: Write a script that does the following:</em></a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="8" data-path="veterans-day.html"><a href="veterans-day.html"><i class="fa fa-check"></i><b>8</b> Veteran’s Day</a></li>
 <li class="chapter" data-level="9" data-path="sex-biased-gene-flow.html"><a href="sex-biased-gene-flow.html"><i class="fa fa-check"></i><b>9</b> Sex-biased gene flow</a>
 <ul>
 <li class="chapter" data-level="9.1" data-path="sex-biased-gene-flow.html"><a href="sex-biased-gene-flow.html#multiple-plots"><i class="fa fa-check"></i><b>9.1</b> Multiple plots</a></li>
 <li class="chapter" data-level="9.2" data-path="sex-biased-gene-flow.html"><a href="sex-biased-gene-flow.html#intro-to-this-weeks-data"><i class="fa fa-check"></i><b>9.2</b> Intro to this week’s data</a></li>
-<li class="chapter" data-level="9.3" data-path="sex-biased-gene-flow.html"><a href="sex-biased-gene-flow.html#homework-6"><i class="fa fa-check"></i><b>9.3</b> Homework</a></li>
+<li class="chapter" data-level="9.3" data-path="sex-biased-gene-flow.html"><a href="sex-biased-gene-flow.html#homework-6"><i class="fa fa-check"></i><b>9.3</b> Homework</a>
+<ul>
+<li class="chapter" data-level="9.3.1" data-path="sex-biased-gene-flow.html"><a href="sex-biased-gene-flow.html#homework-8-write-a-script-that-does-the-following"><i class="fa fa-check"></i><b>9.3.1</b> <em>Homework 8: Write a script that does the following:</em></a></li>
+</ul></li>
 </ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -437,7 +443,7 @@ The first thing we need to do is let the adegenet read in the microsatellite dat
 <h3><span class="header-section-number">3.2.1</span> Plotting heterozygosity</h3>
 <p>Let’s use a barplot to look at variation in heterozygostiy across all our markers:</p>
 <div class="sourceCode" id="cb89"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb89-1"><a href="genetic-diversity.html#cb89-1" aria-hidden="true" tabindex="-1"></a><span class="fu">barplot</span>(MtBuller<span class="sc">$</span>Hobs)</span></code></pre></div>
-<p><img src="Website_files/figure-html/unnamed-chunk-57-1.png" width="672" /></p>
+<p><img src="Website_files/figure-html/unnamed-chunk-53-1.png" width="672" /></p>
 <p>When we have a bunch of markers, we often take the mean across all those markers:</p>
 <div class="sourceCode" id="cb90"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb90-1"><a href="genetic-diversity.html#cb90-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(MtHiggenbotham<span class="sc">$</span>Hobs) <span class="co"># Mean observed heterozygosity in the Mt Higgenbotham population</span></span></code></pre></div>
 <pre><code>## [1] 0.5262125</code></pre>

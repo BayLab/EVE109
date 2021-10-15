@@ -207,14 +207,20 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.3" data-path="speciation-and-hybridization.html"><a href="speciation-and-hybridization.html#writing-your-own-functions"><i class="fa fa-check"></i><b>7.3</b> Writing your own functions</a></li>
 <li class="chapter" data-level="7.4" data-path="speciation-and-hybridization.html"><a href="speciation-and-hybridization.html#hybrid-allele-frequencies"><i class="fa fa-check"></i><b>7.4</b> Hybrid allele frequencies</a></li>
 <li class="chapter" data-level="7.5" data-path="speciation-and-hybridization.html"><a href="speciation-and-hybridization.html#making-a-pca"><i class="fa fa-check"></i><b>7.5</b> Making a PCA</a></li>
-<li class="chapter" data-level="7.6" data-path="speciation-and-hybridization.html"><a href="speciation-and-hybridization.html#homework-5"><i class="fa fa-check"></i><b>7.6</b> Homework</a></li>
+<li class="chapter" data-level="7.6" data-path="speciation-and-hybridization.html"><a href="speciation-and-hybridization.html#homework-5"><i class="fa fa-check"></i><b>7.6</b> Homework</a>
+<ul>
+<li class="chapter" data-level="7.6.1" data-path="speciation-and-hybridization.html"><a href="speciation-and-hybridization.html#homework-5-write-a-script-that-does-the-following-1"><i class="fa fa-check"></i><b>7.6.1</b> <em>Homework 5: Write a script that does the following:</em></a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="8" data-path="veterans-day.html"><a href="veterans-day.html"><i class="fa fa-check"></i><b>8</b> Veteran’s Day</a></li>
 <li class="chapter" data-level="9" data-path="sex-biased-gene-flow.html"><a href="sex-biased-gene-flow.html"><i class="fa fa-check"></i><b>9</b> Sex-biased gene flow</a>
 <ul>
 <li class="chapter" data-level="9.1" data-path="sex-biased-gene-flow.html"><a href="sex-biased-gene-flow.html#multiple-plots"><i class="fa fa-check"></i><b>9.1</b> Multiple plots</a></li>
 <li class="chapter" data-level="9.2" data-path="sex-biased-gene-flow.html"><a href="sex-biased-gene-flow.html#intro-to-this-weeks-data"><i class="fa fa-check"></i><b>9.2</b> Intro to this week’s data</a></li>
-<li class="chapter" data-level="9.3" data-path="sex-biased-gene-flow.html"><a href="sex-biased-gene-flow.html#homework-6"><i class="fa fa-check"></i><b>9.3</b> Homework</a></li>
+<li class="chapter" data-level="9.3" data-path="sex-biased-gene-flow.html"><a href="sex-biased-gene-flow.html#homework-6"><i class="fa fa-check"></i><b>9.3</b> Homework</a>
+<ul>
+<li class="chapter" data-level="9.3.1" data-path="sex-biased-gene-flow.html"><a href="sex-biased-gene-flow.html#homework-8-write-a-script-that-does-the-following"><i class="fa fa-check"></i><b>9.3.1</b> <em>Homework 8: Write a script that does the following:</em></a></li>
+</ul></li>
 </ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -377,13 +383,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2><span class="header-section-number">1.8</span> Plotting</h2>
 <p>R is great for plotting. The simplest type of plot is just an x,y scatterplot:</p>
 <div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="index.html#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(mydata<span class="sc">$</span>year,mydata<span class="sc">$</span>prop)</span></code></pre></div>
-<p><img src="Website_files/figure-html/unnamed-chunk-24-1.png" width="672" /></p>
+<p><img src="Website_files/figure-html/unnamed-chunk-20-1.png" width="672" /></p>
 <p>Use <code>?</code> to look at the options for plotting. For example, here I add more informative axis labels and choose a nice color for the points:</p>
 <div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="index.html#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(mydata<span class="sc">$</span>year,mydata<span class="sc">$</span>prop,</span>
 <span id="cb36-2"><a href="index.html#cb36-2" aria-hidden="true" tabindex="-1"></a>     <span class="at">ylab=</span><span class="st">&quot;Proportion of babies&quot;</span>,</span>
 <span id="cb36-3"><a href="index.html#cb36-3" aria-hidden="true" tabindex="-1"></a>     <span class="at">xlab=</span><span class="st">&quot;Year&quot;</span>,</span>
 <span id="cb36-4"><a href="index.html#cb36-4" aria-hidden="true" tabindex="-1"></a>     <span class="at">col=</span><span class="st">&quot;aquamarine4&quot;</span>)</span></code></pre></div>
-<p><img src="Website_files/figure-html/unnamed-chunk-25-1.png" width="672" /></p>
+<p><img src="Website_files/figure-html/unnamed-chunk-21-1.png" width="672" /></p>
 <p>Notice that I used new lines (returns) to make this more readable. R doesn’t care where you put white space, so use it to make your code as organized as possible.
  </p>
 <p>Of course, it’s better if color is informative, so lets use it to learn something. Isn’t it weird that there are a bunch of points at 0 and other points with higher proportions during the same time frame? Maybe those points are different in some way. Lets try this:</p>
@@ -391,7 +397,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb37-2"><a href="index.html#cb37-2" aria-hidden="true" tabindex="-1"></a>     <span class="at">ylab=</span><span class="st">&quot;Proportion of babies&quot;</span>,</span>
 <span id="cb37-3"><a href="index.html#cb37-3" aria-hidden="true" tabindex="-1"></a>     <span class="at">xlab=</span><span class="st">&quot;Year&quot;</span>,</span>
 <span id="cb37-4"><a href="index.html#cb37-4" aria-hidden="true" tabindex="-1"></a>     <span class="at">col=</span><span class="fu">as.factor</span>(mydata<span class="sc">$</span>sex))</span></code></pre></div>
-<p><img src="Website_files/figure-html/unnamed-chunk-26-1.png" width="672" /></p>
+<p><img src="Website_files/figure-html/unnamed-chunk-22-1.png" width="672" /></p>
 <div id="exercise-describe-this-plot-in-plain-english.-what-conclusions-can-we-draw" class="section level3" number="1.8.1">
 <h3><span class="header-section-number">1.8.1</span> <em>Exercise</em>: Describe this plot in plain english. What conclusions can we draw?</h3>
 <p>       </p>
@@ -414,7 +420,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>If the answer requires a plot, follow the same format, with a comment indicating that this plot answers a homework question:</p>
 <div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="index.html#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Answer to Question 2</span></span>
 <span id="cb41-2"><a href="index.html#cb41-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(mydata<span class="sc">$</span>year,mydata<span class="sc">$</span>prop)</span></code></pre></div>
-<p><img src="Website_files/figure-html/unnamed-chunk-29-1.png" width="672" /></p>
+<p><img src="Website_files/figure-html/unnamed-chunk-25-1.png" width="672" /></p>
 <p> </p>
 <p><strong><em>Show your work and comment your code. You will only receive full credit for clean, organized code</em></strong></p>
 <p> </p>

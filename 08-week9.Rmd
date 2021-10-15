@@ -109,7 +109,7 @@ Some helpful sections: &nbsp;
 
 Use the data provided and the documentation to do the following:
 
-###*Homework 8: Write a script that does the following:*
+### *Homework 8: Write a script that does the following:*
 
 1. Calculate Fst for males and females separately
 

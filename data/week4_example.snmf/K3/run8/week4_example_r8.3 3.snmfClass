@@ -1,6 +1,0 @@
-new("snmfClass", directory = "K3/run8/", snmfClass.file = "week4_example_r8.3.snmfClass", 
-    K = 3L, run = 8L, CPU = 1L, seed = 1423667175L, alpha = 10, 
-    percentage = 0.05, I = 0L, iterations = 200L, entropy = TRUE, 
-    tolerance = 1e-05, crossEntropy = 0.574705034052828, ploidy = 2L, 
-    Q.input.file = "", Q.output.file = "week4_example_r8.3.Q", 
-    G.output.file = "week4_example_r8.3.G")

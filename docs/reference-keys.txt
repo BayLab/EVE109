@@ -44,8 +44,10 @@ writing-your-own-functions
 hybrid-allele-frequencies
 making-a-pca
 homework-5
+homework-5-write-a-script-that-does-the-following-1
 veterans-day
 sex-biased-gene-flow
 multiple-plots
 intro-to-this-weeks-data
 homework-6
+homework-8-write-a-script-that-does-the-following

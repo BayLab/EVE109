@@ -210,7 +210,7 @@ For homework we will continue using the data from Lamer et al. (2015).There are 
 
 &nbsp;
 
-###*Homework 5: Write a script that does the following:*
+### *Homework 5: Write a script that does the following:*
 
 1. Read in the "lamar_genotypes.csv" and "lamar_metadata.csv". Reorder the metadata so that samples in the same order as in the genotypes file.
 

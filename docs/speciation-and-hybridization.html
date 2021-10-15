@@ -207,14 +207,20 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.3" data-path="speciation-and-hybridization.html"><a href="speciation-and-hybridization.html#writing-your-own-functions"><i class="fa fa-check"></i><b>7.3</b> Writing your own functions</a></li>
 <li class="chapter" data-level="7.4" data-path="speciation-and-hybridization.html"><a href="speciation-and-hybridization.html#hybrid-allele-frequencies"><i class="fa fa-check"></i><b>7.4</b> Hybrid allele frequencies</a></li>
 <li class="chapter" data-level="7.5" data-path="speciation-and-hybridization.html"><a href="speciation-and-hybridization.html#making-a-pca"><i class="fa fa-check"></i><b>7.5</b> Making a PCA</a></li>
-<li class="chapter" data-level="7.6" data-path="speciation-and-hybridization.html"><a href="speciation-and-hybridization.html#homework-5"><i class="fa fa-check"></i><b>7.6</b> Homework</a></li>
+<li class="chapter" data-level="7.6" data-path="speciation-and-hybridization.html"><a href="speciation-and-hybridization.html#homework-5"><i class="fa fa-check"></i><b>7.6</b> Homework</a>
+<ul>
+<li class="chapter" data-level="7.6.1" data-path="speciation-and-hybridization.html"><a href="speciation-and-hybridization.html#homework-5-write-a-script-that-does-the-following-1"><i class="fa fa-check"></i><b>7.6.1</b> <em>Homework 5: Write a script that does the following:</em></a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="8" data-path="veterans-day.html"><a href="veterans-day.html"><i class="fa fa-check"></i><b>8</b> Veteran’s Day</a></li>
 <li class="chapter" data-level="9" data-path="sex-biased-gene-flow.html"><a href="sex-biased-gene-flow.html"><i class="fa fa-check"></i><b>9</b> Sex-biased gene flow</a>
 <ul>
 <li class="chapter" data-level="9.1" data-path="sex-biased-gene-flow.html"><a href="sex-biased-gene-flow.html#multiple-plots"><i class="fa fa-check"></i><b>9.1</b> Multiple plots</a></li>
 <li class="chapter" data-level="9.2" data-path="sex-biased-gene-flow.html"><a href="sex-biased-gene-flow.html#intro-to-this-weeks-data"><i class="fa fa-check"></i><b>9.2</b> Intro to this week’s data</a></li>
-<li class="chapter" data-level="9.3" data-path="sex-biased-gene-flow.html"><a href="sex-biased-gene-flow.html#homework-6"><i class="fa fa-check"></i><b>9.3</b> Homework</a></li>
+<li class="chapter" data-level="9.3" data-path="sex-biased-gene-flow.html"><a href="sex-biased-gene-flow.html#homework-6"><i class="fa fa-check"></i><b>9.3</b> Homework</a>
+<ul>
+<li class="chapter" data-level="9.3.1" data-path="sex-biased-gene-flow.html"><a href="sex-biased-gene-flow.html#homework-8-write-a-script-that-does-the-following"><i class="fa fa-check"></i><b>9.3.1</b> <em>Homework 8: Write a script that does the following:</em></a></li>
+</ul></li>
 </ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -502,11 +508,11 @@ We want to calculate this for each row. We know that we can do row by row calcul
 <p>This works because we <em>know</em> that <code>genos</code> and <code>ordermeta</code> are in the same order. Now we can use this subsetted data to calculate a PCA and plot it:</p>
 <div class="sourceCode" id="cb195"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb195-1"><a href="speciation-and-hybridization.html#cb195-1" aria-hidden="true" tabindex="-1"></a>pca <span class="ot">&lt;-</span> <span class="fu">prcomp</span>(subgen)</span>
 <span id="cb195-2"><a href="speciation-and-hybridization.html#cb195-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(pca<span class="sc">$</span>x)</span></code></pre></div>
-<p><img src="Website_files/figure-html/unnamed-chunk-117-1.png" width="672" /></p>
+<p><img src="Website_files/figure-html/unnamed-chunk-113-1.png" width="672" /></p>
 <p>This doesn’t really mean anything if we don’t categorize the dots. For now, let’s color them by “River”:</p>
 <div class="sourceCode" id="cb196"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb196-1"><a href="speciation-and-hybridization.html#cb196-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(pca<span class="sc">$</span>x,<span class="at">col=</span>submeta<span class="sc">$</span>River,<span class="at">pch=</span><span class="dv">19</span>)</span>
 <span id="cb196-2"><a href="speciation-and-hybridization.html#cb196-2" aria-hidden="true" tabindex="-1"></a><span class="fu">legend</span>(<span class="st">&quot;topright&quot;</span>, <span class="at">legend=</span><span class="fu">levels</span>(submeta<span class="sc">$</span>River), <span class="at">pch=</span><span class="dv">19</span>, <span class="at">col=</span><span class="dv">1</span><span class="sc">:</span><span class="fu">nlevels</span>(submeta<span class="sc">$</span>River))</span></code></pre></div>
-<p><img src="Website_files/figure-html/unnamed-chunk-118-1.png" width="672" /></p>
+<p><img src="Website_files/figure-html/unnamed-chunk-114-1.png" width="672" /></p>
 <p>As you can see, there doesn’t seem to be obvious separation by River. What do you think is driving the patterns you see in this PCA?</p>
 <p> 
  
@@ -518,13 +524,15 @@ We want to calculate this for each row. We know that we can do row by row calcul
 <p><a href="data/lamar_genotypes.csv">lamar_genotypes.csv</a> Has SNP genotypes for each individual</p>
 <p><a href="data/lamar_metadata.csv">lamar_metadata.csv</a> contains information about location of sampling</p>
 <p> </p>
-<p>###<em>Homework 5: Write a script that does the following:</em></p>
+<div id="homework-5-write-a-script-that-does-the-following-1" class="section level3" number="7.6.1">
+<h3><span class="header-section-number">7.6.1</span> <em>Homework 5: Write a script that does the following:</em></h3>
 <ol style="list-style-type: decimal">
 <li><p>Read in the “lamar_genotypes.csv” and “lamar_metadata.csv.” Reorder the metadata so that samples in the same order as in the genotypes file.</p></li>
 <li><p>Write a function that returns the proportion of data for each individual that is missing. Apply the function to your genotype data and print the summary.</p></li>
 <li><p>Create a PCA. Color by Field.ID and add a legend.</p></li>
 </ol>
 
+</div>
 </div>
 </div>
             </section>

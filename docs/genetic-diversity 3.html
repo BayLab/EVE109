@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Week 3 Genetic Diversity | EVE 109: Molecular Ecology</title>
+  <meta name="description" content="Tutorials and datasets for discussion and homeowork excesises for EVE 109: Molecular Ecology" />
+  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Week 3 Genetic Diversity | EVE 109: Molecular Ecology" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Tutorials and datasets for discussion and homeowork excesises for EVE 109: Molecular Ecology" />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Week 3 Genetic Diversity | EVE 109: Molecular Ecology" />
+  
+  <meta name="twitter:description" content="Tutorials and datasets for discussion and homeowork excesises for EVE 109: Molecular Ecology" />
+  
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="molecular-markers.html"/>
+<link rel="next" href="population-structure.html"/>
+<script src="libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">EVE109 FQ21</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introduction</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#installing-r-and-rstudio"><i class="fa fa-check"></i><b>1.1</b> Installing R and RStudio</a></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#tour-of-rstudio"><i class="fa fa-check"></i><b>1.2</b> Tour of RStudio</a></li>
+<li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#installing-packages"><i class="fa fa-check"></i><b>1.3</b> Installing packages</a></li>
+<li class="chapter" data-level="1.4" data-path="index.html"><a href="index.html#basic-functions-in-r"><i class="fa fa-check"></i><b>1.4</b> Basic functions in R</a>
+<ul>
+<li class="chapter" data-level="1.4.1" data-path="index.html"><a href="index.html#exercise-write-a-script-to-find-out-what-fraction-of-your-life-youve-been-at-uc-davis"><i class="fa fa-check"></i><b>1.4.1</b> <em>Exercise</em>: Write a script to find out what fraction of your life you’ve been at UC Davis</a></li>
+</ul></li>
+<li class="chapter" data-level="1.5" data-path="index.html"><a href="index.html#classes"><i class="fa fa-check"></i><b>1.5</b> Classes</a></li>
+<li class="chapter" data-level="1.6" data-path="index.html"><a href="index.html#vectors-and-dataframes"><i class="fa fa-check"></i><b>1.6</b> Vectors and dataframes</a></li>
+<li class="chapter" data-level="1.7" data-path="index.html"><a href="index.html#subsetting"><i class="fa fa-check"></i><b>1.7</b> Subsetting</a></li>
+<li class="chapter" data-level="1.8" data-path="index.html"><a href="index.html#plotting"><i class="fa fa-check"></i><b>1.8</b> Plotting</a>
+<ul>
+<li class="chapter" data-level="1.8.1" data-path="index.html"><a href="index.html#exercise-describe-this-plot-in-plain-english.-what-conclusions-can-we-draw"><i class="fa fa-check"></i><b>1.8.1</b> <em>Exercise</em>: Describe this plot in plain english. What conclusions can we draw?</a></li>
+</ul></li>
+<li class="chapter" data-level="1.9" data-path="index.html"><a href="index.html#homework"><i class="fa fa-check"></i><b>1.9</b> Homework</a>
+<ul>
+<li class="chapter" data-level="1.9.1" data-path="index.html"><a href="index.html#homework-1-write-a-script-that-does-the-following"><i class="fa fa-check"></i><b>1.9.1</b> <em>Homework 1: Write a script that does the following:</em></a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="molecular-markers.html"><a href="molecular-markers.html"><i class="fa fa-check"></i><b>2</b> Molecular Markers</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="molecular-markers.html"><a href="molecular-markers.html#paths"><i class="fa fa-check"></i><b>2.1</b> Paths</a></li>
+<li class="chapter" data-level="2.2" data-path="molecular-markers.html"><a href="molecular-markers.html#reading-in-data-from-spreadsheets"><i class="fa fa-check"></i><b>2.2</b> Reading in data from spreadsheets</a></li>
+<li class="chapter" data-level="2.3" data-path="molecular-markers.html"><a href="molecular-markers.html#simple-capture-recapture-example"><i class="fa fa-check"></i><b>2.3</b> Simple capture recapture example</a></li>
+<li class="chapter" data-level="2.4" data-path="molecular-markers.html"><a href="molecular-markers.html#homework-1"><i class="fa fa-check"></i><b>2.4</b> Homework</a>
+<ul>
+<li class="chapter" data-level="2.4.1" data-path="molecular-markers.html"><a href="molecular-markers.html#homework-2-write-a-script-that-does-the-following"><i class="fa fa-check"></i><b>2.4.1</b> <em>Homework 2: Write a script that does the following:</em></a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="genetic-diversity.html"><a href="genetic-diversity.html"><i class="fa fa-check"></i><b>3</b> Genetic Diversity</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="genetic-diversity.html"><a href="genetic-diversity.html#manipulating-dataframes"><i class="fa fa-check"></i><b>3.1</b> Manipulating dataframes</a></li>
+<li class="chapter" data-level="3.2" data-path="genetic-diversity.html"><a href="genetic-diversity.html#using-the-adegenet-package-to-calulate-heterozygosity"><i class="fa fa-check"></i><b>3.2</b> Using the <strong>adegenet</strong> package to calulate heterozygosity</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="genetic-diversity.html"><a href="genetic-diversity.html#plotting-heterozygosity"><i class="fa fa-check"></i><b>3.2.1</b> Plotting heterozygosity</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="genetic-diversity.html"><a href="genetic-diversity.html#homework-2"><i class="fa fa-check"></i><b>3.3</b> Homework</a>
+<ul>
+<li class="chapter" data-level="3.3.1" data-path="genetic-diversity.html"><a href="genetic-diversity.html#homework-3-write-a-script-that-does-the-following"><i class="fa fa-check"></i><b>3.3.1</b> <em>Homework 3: Write a script that does the following:</em></a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="population-structure.html"><a href="population-structure.html"><i class="fa fa-check"></i><b>4</b> Population Structure</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="population-structure.html"><a href="population-structure.html#the-aggregate-and-apply-functions"><i class="fa fa-check"></i><b>4.1</b> The <code>aggregate</code> and <code>apply</code> functions</a></li>
+<li class="chapter" data-level="4.2" data-path="population-structure.html"><a href="population-structure.html#running-a-clustering-analysis-and-deciding-on-a-k-value"><i class="fa fa-check"></i><b>4.2</b> Running a clustering analysis and deciding on a K value</a></li>
+<li class="chapter" data-level="4.3" data-path="population-structure.html"><a href="population-structure.html#the-q-matrix"><i class="fa fa-check"></i><b>4.3</b> The Q matrix</a></li>
+<li class="chapter" data-level="4.4" data-path="population-structure.html"><a href="population-structure.html#plotting-1"><i class="fa fa-check"></i><b>4.4</b> Plotting</a></li>
+<li class="chapter" data-level="4.5" data-path="population-structure.html"><a href="population-structure.html#homework-3"><i class="fa fa-check"></i><b>4.5</b> Homework</a>
+<ul>
+<li class="chapter" data-level="4.5.1" data-path="population-structure.html"><a href="population-structure.html#homework-4-write-a-script-that-does-the-following"><i class="fa fa-check"></i><b>4.5.1</b> <em>Homework 4: Write a script that does the following:</em></a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="haplotype-networks.html"><a href="haplotype-networks.html"><i class="fa fa-check"></i><b>5</b> Haplotype networks</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="haplotype-networks.html"><a href="haplotype-networks.html#indexing"><i class="fa fa-check"></i><b>5.1</b> Indexing</a></li>
+<li class="chapter" data-level="5.2" data-path="haplotype-networks.html"><a href="haplotype-networks.html#using-table-to-count-across-multiple-columns"><i class="fa fa-check"></i><b>5.2</b> Using <code>table</code> to count across multiple columns</a></li>
+<li class="chapter" data-level="5.3" data-path="haplotype-networks.html"><a href="haplotype-networks.html#creating-a-haplotype-network"><i class="fa fa-check"></i><b>5.3</b> Creating a haplotype network</a></li>
+<li class="chapter" data-level="5.4" data-path="haplotype-networks.html"><a href="haplotype-networks.html#homework-4"><i class="fa fa-check"></i><b>5.4</b> Homework</a>
+<ul>
+<li class="chapter" data-level="5.4.1" data-path="haplotype-networks.html"><a href="haplotype-networks.html#homework-5-write-a-script-that-does-the-following"><i class="fa fa-check"></i><b>5.4.1</b> <em>Homework 5: Write a script that does the following:</em></a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="project-time.html"><a href="project-time.html"><i class="fa fa-check"></i><b>6</b> Project Time!</a></li>
+<li class="chapter" data-level="7" data-path="speciation-and-hybridization.html"><a href="speciation-and-hybridization.html"><i class="fa fa-check"></i><b>7</b> Speciation and Hybridization</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="speciation-and-hybridization.html"><a href="speciation-and-hybridization.html#match"><i class="fa fa-check"></i><b>7.1</b> Match</a></li>
+<li class="chapter" data-level="7.2" data-path="speciation-and-hybridization.html"><a href="speciation-and-hybridization.html#dealing-with-missing-data"><i class="fa fa-check"></i><b>7.2</b> Dealing with missing data</a></li>
+<li class="chapter" data-level="7.3" data-path="speciation-and-hybridization.html"><a href="speciation-and-hybridization.html#writing-your-own-functions"><i class="fa fa-check"></i><b>7.3</b> Writing your own functions</a></li>
+<li class="chapter" data-level="7.4" data-path="speciation-and-hybridization.html"><a href="speciation-and-hybridization.html#hybrid-allele-frequencies"><i class="fa fa-check"></i><b>7.4</b> Hybrid allele frequencies</a></li>
+<li class="chapter" data-level="7.5" data-path="speciation-and-hybridization.html"><a href="speciation-and-hybridization.html#making-a-pca"><i class="fa fa-check"></i><b>7.5</b> Making a PCA</a></li>
+<li class="chapter" data-level="7.6" data-path="speciation-and-hybridization.html"><a href="speciation-and-hybridization.html#homework-5"><i class="fa fa-check"></i><b>7.6</b> Homework</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="veterans-day.html"><a href="veterans-day.html"><i class="fa fa-check"></i><b>8</b> Veteran’s Day</a></li>
+<li class="chapter" data-level="9" data-path="sex-biased-gene-flow.html"><a href="sex-biased-gene-flow.html"><i class="fa fa-check"></i><b>9</b> Sex-biased gene flow</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="sex-biased-gene-flow.html"><a href="sex-biased-gene-flow.html#multiple-plots"><i class="fa fa-check"></i><b>9.1</b> Multiple plots</a></li>
+<li class="chapter" data-level="9.2" data-path="sex-biased-gene-flow.html"><a href="sex-biased-gene-flow.html#intro-to-this-weeks-data"><i class="fa fa-check"></i><b>9.2</b> Intro to this week’s data</a></li>
+<li class="chapter" data-level="9.3" data-path="sex-biased-gene-flow.html"><a href="sex-biased-gene-flow.html#homework-6"><i class="fa fa-check"></i><b>9.3</b> Homework</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">EVE 109: Molecular Ecology</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="genetic-diversity" class="section level1" number="3">
+<h1><span class="header-section-number">Week 3</span> Genetic Diversity</h1>
+<div id="manipulating-dataframes" class="section level2" number="3.1">
+<h2><span class="header-section-number">3.1</span> Manipulating dataframes</h2>
+<p>As we saw last week, the most common class we work with in R is a dataframe. This week, we’ll learn a few more ways to manipulate dataframes. This time we’ll use the built in <code>palmerpenguins</code> dataset:</p>
+<div class="sourceCode" id="cb57"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb57-1"><a href="genetic-diversity.html#cb57-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;palmerpenguins&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb58"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb58-1"><a href="genetic-diversity.html#cb58-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(palmerpenguins)</span>
+<span id="cb58-2"><a href="genetic-diversity.html#cb58-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(penguins)</span></code></pre></div>
+<pre><code>## # A tibble: 6 × 9
+##   species island    bill_length_mm bill_depth_mm flipper_length_mm body_mass_g sex     year  mean
+##   &lt;fct&gt;   &lt;fct&gt;              &lt;dbl&gt;         &lt;dbl&gt;             &lt;int&gt;       &lt;int&gt; &lt;fct&gt;  &lt;int&gt; &lt;dbl&gt;
+## 1 Adelie  Torgersen           39.1          18.7               181        3750 male    2007  997.
+## 2 Adelie  Torgersen           39.5          17.4               186        3800 female  2007 1011.
+## 3 Adelie  Torgersen           40.3          18                 195        3250 female  2007  876.
+## 4 Adelie  Torgersen           NA            NA                  NA          NA &lt;NA&gt;    2007   NA 
+## 5 Adelie  Torgersen           36.7          19.3               193        3450 female  2007  925.
+## 6 Adelie  Torgersen           39.3          20.6               190        3650 male    2007  975.</code></pre>
+<p>One quick way to explore the data is using <code>summary</code>:</p>
+<div class="sourceCode" id="cb60"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb60-1"><a href="genetic-diversity.html#cb60-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(penguins)</span></code></pre></div>
+<pre><code>##       species          island    bill_length_mm  bill_depth_mm   flipper_length_mm  body_mass_g  
+##  Adelie   :152   Biscoe   :168   Min.   :32.10   Min.   :13.10   Min.   :172.0     Min.   :2700  
+##  Chinstrap: 68   Dream    :124   1st Qu.:39.23   1st Qu.:15.60   1st Qu.:190.0     1st Qu.:3550  
+##  Gentoo   :124   Torgersen: 52   Median :44.45   Median :17.30   Median :197.0     Median :4050  
+##                                  Mean   :43.92   Mean   :17.15   Mean   :200.9     Mean   :4202  
+##                                  3rd Qu.:48.50   3rd Qu.:18.70   3rd Qu.:213.0     3rd Qu.:4750  
+##                                  Max.   :59.60   Max.   :21.50   Max.   :231.0     Max.   :6300  
+##                                  NA&#39;s   :2       NA&#39;s   :2       NA&#39;s   :2         NA&#39;s   :2     
+##      sex           year           mean       
+##  female:165   Min.   :2007   Min.   : 738.9  
+##  male  :168   1st Qu.:2007   1st Qu.: 950.9  
+##  NA&#39;s  : 11   Median :2008   Median :1076.6  
+##               Mean   :2008   Mean   :1115.9  
+##               3rd Qu.:2009   3rd Qu.:1257.5  
+##               Max.   :2009   Max.   :1646.3  
+##                              NA&#39;s   :2</code></pre>
+<p>For quantitative columns, this gives you basic summary statistics and for categorical columns it gives you counts of each value. We could have also looked at the categorical data using the <code>table</code> command:</p>
+<div class="sourceCode" id="cb62"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb62-1"><a href="genetic-diversity.html#cb62-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(penguins<span class="sc">$</span>Species)</span></code></pre></div>
+<pre><code>## Warning: Unknown or uninitialised column: `Species`.</code></pre>
+<pre><code>## &lt; table of extent 0 &gt;</code></pre>
+<p> </p>
+<p>Let’s take just the quantitative data for a moment:</p>
+<div class="sourceCode" id="cb65"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb65-1"><a href="genetic-diversity.html#cb65-1" aria-hidden="true" tabindex="-1"></a>quant <span class="ot">&lt;-</span> penguins[,<span class="dv">3</span><span class="sc">:</span><span class="dv">6</span>]</span>
+<span id="cb65-2"><a href="genetic-diversity.html#cb65-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(quant)</span></code></pre></div>
+<pre><code>## # A tibble: 6 × 4
+##   bill_length_mm bill_depth_mm flipper_length_mm body_mass_g
+##            &lt;dbl&gt;         &lt;dbl&gt;             &lt;int&gt;       &lt;int&gt;
+## 1           39.1          18.7               181        3750
+## 2           39.5          17.4               186        3800
+## 3           40.3          18                 195        3250
+## 4           NA            NA                  NA          NA
+## 5           36.7          19.3               193        3450
+## 6           39.3          20.6               190        3650</code></pre>
+<p>For easy summaries of rows or columns, we can us the commands <code>colSums</code>, <code>colMeans</code>, <code>rowSums</code>, and <code>rowMeans</code></p>
+<div class="sourceCode" id="cb67"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb67-1"><a href="genetic-diversity.html#cb67-1" aria-hidden="true" tabindex="-1"></a>means <span class="ot">&lt;-</span> <span class="fu">rowMeans</span>(quant)</span></code></pre></div>
+<p>Maybe we want to add a column to the initial iris dataframe that has the mean of the different measurements. We can do that in two different ways:</p>
+<div class="sourceCode" id="cb68"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb68-1"><a href="genetic-diversity.html#cb68-1" aria-hidden="true" tabindex="-1"></a>penguins<span class="sc">$</span>mean <span class="ot">&lt;-</span> <span class="fu">rowMeans</span>(quant) <span class="co"># Caluclate and name the new column at the same time or...</span></span>
+<span id="cb68-2"><a href="genetic-diversity.html#cb68-2" aria-hidden="true" tabindex="-1"></a>means2 <span class="ot">&lt;-</span> <span class="fu">rowMeans</span>(quant) <span class="co"># Calculate means</span></span>
+<span id="cb68-3"><a href="genetic-diversity.html#cb68-3" aria-hidden="true" tabindex="-1"></a>newpenguins <span class="ot">&lt;-</span> <span class="fu">cbind</span>(penguins,means2) <span class="co"># cbind (column bind) to iris dataframe</span></span>
+<span id="cb68-4"><a href="genetic-diversity.html#cb68-4" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(newpenguins)</span></code></pre></div>
+<pre><code>##   species    island bill_length_mm bill_depth_mm flipper_length_mm body_mass_g    sex year     mean
+## 1  Adelie Torgersen           39.1          18.7               181        3750   male 2007  997.200
+## 2  Adelie Torgersen           39.5          17.4               186        3800 female 2007 1010.725
+## 3  Adelie Torgersen           40.3          18.0               195        3250 female 2007  875.825
+## 4  Adelie Torgersen             NA            NA                NA          NA   &lt;NA&gt; 2007       NA
+## 5  Adelie Torgersen           36.7          19.3               193        3450 female 2007  924.750
+## 6  Adelie Torgersen           39.3          20.6               190        3650   male 2007  974.975
+##     means2
+## 1  997.200
+## 2 1010.725
+## 3  875.825
+## 4       NA
+## 5  924.750
+## 6  974.975</code></pre>
+</div>
+<div id="using-the-adegenet-package-to-calulate-heterozygosity" class="section level2" number="3.2">
+<h2><span class="header-section-number">3.2</span> Using the <strong>adegenet</strong> package to calulate heterozygosity</h2>
+<p>Today we’ll use microsatellite data from the Weeks et al. (2017) paper using genetic analysis to look at the effects of population recovery after an introduction. You can download it <a href="data/weeks_genotypes.csv">here</a>.</p>
+<p>Let’s read in this file:</p>
+<div class="sourceCode" id="cb70"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb70-1"><a href="genetic-diversity.html#cb70-1" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;data/weeks_genotypes.csv&quot;</span>) <span class="co"># Read in a file</span></span></code></pre></div>
+<p>Take a look at the data:</p>
+<div class="sourceCode" id="cb71"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb71-1"><a href="genetic-diversity.html#cb71-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(data)</span></code></pre></div>
+<pre><code>##   ID      Pop Year    LOC1    LOC2    LOC3    LOC4    LOC5    LOC6    LOC7    LOC8    LOC9   LOC10
+## 1  1 MtBuller 2010 311/311 245/249 303/303 195/201 218/218 211/211 321/321 240/240 157/157 113/113
+## 2  2 MtBuller 2010 311/311 245/249 303/303 195/201 218/218 211/211 321/321 240/240 157/157 113/113
+## 3  3 MtBuller 2010 311/311 245/249 303/303   NA/NA 218/218 211/211 321/321 240/240 157/157 113/113
+## 4  4 MtBuller 2010 311/311 249/249 303/303 195/195 218/218 211/211 321/321 240/240 157/157 113/113
+## 5  5 MtBuller 2010 309/311 249/249 303/303 195/201 218/218 211/211 321/321 240/240 157/157 113/115
+## 6  6 MtBuller 2010 309/311   NA/NA 303/303 201/201 218/218 211/211 321/321 240/240 157/157 113/115
+##     LOC11   LOC12   LOC13   LOC14   LOC15   LOC16   LOC17   LOC18   LOC19   LOC20   LOC21   LOC22
+## 1 178/178 125/125 309/318 119/119 144/146 214/214 241/241 160/160 150/150 117/117 141/141 137/137
+## 2 178/178 125/125 309/309 119/148 144/146 214/214 241/241 160/160 150/150 117/117 141/141 137/137
+## 3 178/178 125/125 309/309 119/119 144/144 214/216 241/241 160/160 150/150 117/117 141/141 137/137
+## 4 178/178 125/125 309/309 119/119 144/146 214/214 241/241 160/160 150/150 117/117 141/141 137/137
+## 5 178/178 125/125 309/318 148/148 144/146 216/216 241/241 160/160 150/150 117/117 141/141 137/141
+## 6 178/178 125/125 309/318 119/148 144/144 214/214 241/241 160/160 150/150 117/117 141/141 137/137
+##     LOC23   LOC24
+## 1 157/157 177/177
+## 2 157/157 177/177
+## 3 157/157 177/177
+## 4 157/157 177/177
+## 5 157/157 177/177
+## 6 157/157 177/177</code></pre>
+<p>The first column is an id assigned to each individual. The second column gives the populations from which the individual was sampled. The third column gives the year of sampling. The remaining columns give the microsatellite data. Each individual has two numbers which represent the fragment lengths (read on a gel). If the two fragment lengths are the same, the individual is a heterozygote. If they are different, the individual is a homozygote.</p>
+<p>We will use the package <strong>adegenet</strong> to read in the microsatellite data and calculate heterozygosity. The manual for this package is <a href="https://github.com/thibautjombart/adegenet/wiki">here</a>. Install the package and call the library:</p>
+<div class="sourceCode" id="cb73"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb73-1"><a href="genetic-diversity.html#cb73-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;adegenet&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb74"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb74-1"><a href="genetic-diversity.html#cb74-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(adegenet)</span></code></pre></div>
+<p> 
+The first thing we need to do is let the adegenet read in the microsatellite data. We can do this with the <code>df2genind</code>. Let’s ask for help on that command:</p>
+<div class="sourceCode" id="cb75"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb75-1"><a href="genetic-diversity.html#cb75-1" aria-hidden="true" tabindex="-1"></a>?df2genind</span></code></pre></div>
+<p>Look at the arguments. How can we format our allele data to meet the requirements of the package?</p>
+<div class="sourceCode" id="cb76"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb76-1"><a href="genetic-diversity.html#cb76-1" aria-hidden="true" tabindex="-1"></a>alleles <span class="ot">&lt;-</span> data[,<span class="dv">4</span><span class="sc">:</span><span class="fu">ncol</span>(data)]</span></code></pre></div>
+<p>The function <code>ncol</code> gives us the number of columns. So here we are asking for all columns except the first three, which do not contain genotype data. Okay, let’s see if that works</p>
+<div class="sourceCode" id="cb77"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb77-1"><a href="genetic-diversity.html#cb77-1" aria-hidden="true" tabindex="-1"></a>genind <span class="ot">&lt;-</span> <span class="fu">df2genind</span>(alleles,<span class="at">sep=</span><span class="st">&quot;/&quot;</span>,<span class="at">NA.char=</span><span class="st">&quot;NA/NA&quot;</span>)</span>
+<span id="cb77-2"><a href="genetic-diversity.html#cb77-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(genind)</span></code></pre></div>
+<pre><code>## 
+## // Number of individuals: 524
+## // Group sizes: 524
+## // Number of alleles per locus: 5 5 10 7 8 3 7 16 3 11 10 2 6 10 5 2 10 2 5 3 2 10 9 4
+## // Number of alleles per group: 155
+## // Percentage of missing data: 1.03 %
+## // Observed heterozygosity: 0.12 0.68 0.29 0.6 0.48 0.3 0.36 0.38 0.35 0.64 0.43 0.22 0.54 0.6 0.5 0.21 0.38 0.25 0.25 0.17 0.17 0.39 0.26 0.25
+## // Expected heterozygosity: 0.12 0.64 0.36 0.7 0.58 0.32 0.5 0.56 0.51 0.74 0.56 0.45 0.64 0.61 0.63 0.25 0.44 0.46 0.29 0.19 0.35 0.49 0.33 0.38</code></pre>
+<p> </p>
+<p>The object summary has most of the information we want:</p>
+<div class="sourceCode" id="cb79"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb79-1"><a href="genetic-diversity.html#cb79-1" aria-hidden="true" tabindex="-1"></a>results <span class="ot">&lt;-</span> <span class="fu">summary</span>(genind)</span>
+<span id="cb79-2"><a href="genetic-diversity.html#cb79-2" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(results) <span class="co"># Show the different output values we can look at</span></span></code></pre></div>
+<pre><code>## [1] &quot;n&quot;         &quot;n.by.pop&quot;  &quot;loc.n.all&quot; &quot;pop.n.all&quot; &quot;NA.perc&quot;   &quot;Hobs&quot;      &quot;Hexp&quot;</code></pre>
+<div class="sourceCode" id="cb81"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb81-1"><a href="genetic-diversity.html#cb81-1" aria-hidden="true" tabindex="-1"></a>results<span class="sc">$</span>Hobs <span class="co"># Show observed heterozygosity</span></span></code></pre></div>
+<pre><code>##      LOC1      LOC2      LOC3      LOC4      LOC5      LOC6      LOC7      LOC8      LOC9     LOC10 
+## 0.1150097 0.6812749 0.2913386 0.5984405 0.4799235 0.2972973 0.3556405 0.3754864 0.3512476 0.6382979 
+##     LOC11     LOC12     LOC13     LOC14     LOC15     LOC16     LOC17     LOC18     LOC19     LOC20 
+## 0.4335260 0.2160612 0.5393474 0.5965583 0.4990366 0.2103250 0.3754789 0.2471264 0.2480620 0.1739962 
+##     LOC21     LOC22     LOC23     LOC24 
+## 0.1685824 0.3850575 0.2553191 0.2528736</code></pre>
+<p> </p>
+<p>Notice that observed and expected heterozygosity have been calculated, but across the entire dataset. What if we supply different populations? We use the <code>seppop</code> function to tell it we want separate measurements for each population</p>
+<div class="sourceCode" id="cb83"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb83-1"><a href="genetic-diversity.html#cb83-1" aria-hidden="true" tabindex="-1"></a>genindPop <span class="ot">&lt;-</span> <span class="fu">df2genind</span>(alleles,<span class="at">sep=</span><span class="st">&quot;/&quot;</span>,</span>
+<span id="cb83-2"><a href="genetic-diversity.html#cb83-2" aria-hidden="true" tabindex="-1"></a>                    <span class="at">NA.char=</span><span class="st">&quot;NA/NA&quot;</span>,</span>
+<span id="cb83-3"><a href="genetic-diversity.html#cb83-3" aria-hidden="true" tabindex="-1"></a>                    <span class="at">pop=</span>data<span class="sc">$</span>Pop)</span>
+<span id="cb83-4"><a href="genetic-diversity.html#cb83-4" aria-hidden="true" tabindex="-1"></a>genindPop <span class="ot">&lt;-</span> <span class="fu">seppop</span>(genindPop)</span>
+<span id="cb83-5"><a href="genetic-diversity.html#cb83-5" aria-hidden="true" tabindex="-1"></a>genindPop</span></code></pre></div>
+<pre><code>## $MtBuller
+## /// GENIND OBJECT /////////
+## 
+##  // 420 individuals; 24 loci; 155 alleles; size: 316.4 Kb
+## 
+##  // Basic content
+##    @tab:  420 x 155 matrix of allele counts
+##    @loc.n.all: number of alleles per locus (range: 2-16)
+##    @loc.fac: locus factor for the 155 columns of @tab
+##    @all.names: list of allele names for each locus
+##    @ploidy: ploidy of each individual  (range: 2-2)
+##    @type:  codom
+##    @call: .local(x = x, i = i, j = j, pop = ..1, treatOther = ..2, quiet = ..3, 
+##     drop = drop)
+## 
+##  // Optional content
+##    @pop: population of each individual (group size range: 420-420)
+## 
+## $MtHigginbotham
+## /// GENIND OBJECT /////////
+## 
+##  // 104 individuals; 24 loci; 155 alleles; size: 102.9 Kb
+## 
+##  // Basic content
+##    @tab:  104 x 155 matrix of allele counts
+##    @loc.n.all: number of alleles per locus (range: 2-16)
+##    @loc.fac: locus factor for the 155 columns of @tab
+##    @all.names: list of allele names for each locus
+##    @ploidy: ploidy of each individual  (range: 2-2)
+##    @type:  codom
+##    @call: .local(x = x, i = i, j = j, pop = ..1, treatOther = ..2, quiet = ..3, 
+##     drop = drop)
+## 
+##  // Optional content
+##    @pop: population of each individual (group size range: 104-104)</code></pre>
+<p> </p>
+<p>Notice the two locations are now separate. We can get the heterozygosity separately for each population:</p>
+<div class="sourceCode" id="cb85"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb85-1"><a href="genetic-diversity.html#cb85-1" aria-hidden="true" tabindex="-1"></a>MtBuller <span class="ot">&lt;-</span> <span class="fu">summary</span>(genindPop<span class="sc">$</span>MtBuller)</span>
+<span id="cb85-2"><a href="genetic-diversity.html#cb85-2" aria-hidden="true" tabindex="-1"></a>MtHiggenbotham <span class="ot">&lt;-</span> <span class="fu">summary</span>(genindPop<span class="sc">$</span>MtHigginbotham)</span>
+<span id="cb85-3"><a href="genetic-diversity.html#cb85-3" aria-hidden="true" tabindex="-1"></a>MtBuller<span class="sc">$</span>Hobs <span class="co"># Observed heterozygosity for all Mt Buller Samples</span></span></code></pre></div>
+<pre><code>##      LOC1      LOC2      LOC3      LOC4      LOC5      LOC6      LOC7      LOC8      LOC9     LOC10 
+## 0.1196172 0.6526055 0.2120482 0.5649038 0.3937947 0.2583732 0.2911695 0.3325359 0.3381295 0.6201923 
+##     LOC11     LOC12     LOC13     LOC14     LOC15     LOC16     LOC17     LOC18     LOC19     LOC20 
+## 0.3317422 0.2696897 0.5083532 0.5751790 0.4892086 0.2625298 0.2559809 0.3086124 0.1654676 0.1527446 
+##     LOC21     LOC22     LOC23     LOC24 
+## 0.1360382 0.3110048 0.1558753 0.1531100</code></pre>
+<div class="sourceCode" id="cb87"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb87-1"><a href="genetic-diversity.html#cb87-1" aria-hidden="true" tabindex="-1"></a>MtBuller<span class="sc">$</span>Hexp <span class="co"># Expected heterozygosity for all Mt Buller Samples</span></span></code></pre></div>
+<pre><code>##      LOC1      LOC2      LOC3      LOC4      LOC5      LOC6      LOC7      LOC8      LOC9     LOC10 
+## 0.1129982 0.6064596 0.2329279 0.6085111 0.4022334 0.2458735 0.2869544 0.3583595 0.3399151 0.6384350 
+##     LOC11     LOC12     LOC13     LOC14     LOC15     LOC16     LOC17     LOC18     LOC19     LOC20 
+## 0.3431457 0.3045010 0.5145363 0.5734332 0.5079217 0.3030058 0.2639076 0.3282291 0.1647056 0.1750275 
+##     LOC21     LOC22     LOC23     LOC24 
+## 0.1629775 0.3484438 0.1637021 0.1735194</code></pre>
+<p> 
+ 
+ </p>
+<div id="plotting-heterozygosity" class="section level3" number="3.2.1">
+<h3><span class="header-section-number">3.2.1</span> Plotting heterozygosity</h3>
+<p>Let’s use a barplot to look at variation in heterozygostiy across all our markers:</p>
+<div class="sourceCode" id="cb89"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb89-1"><a href="genetic-diversity.html#cb89-1" aria-hidden="true" tabindex="-1"></a><span class="fu">barplot</span>(MtBuller<span class="sc">$</span>Hobs)</span></code></pre></div>
+<p><img src="Website_files/figure-html/unnamed-chunk-57-1.png" width="672" /></p>
+<p>When we have a bunch of markers, we often take the mean across all those markers:</p>
+<div class="sourceCode" id="cb90"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb90-1"><a href="genetic-diversity.html#cb90-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(MtHiggenbotham<span class="sc">$</span>Hobs) <span class="co"># Mean observed heterozygosity in the Mt Higgenbotham population</span></span></code></pre></div>
+<pre><code>## [1] 0.5262125</code></pre>
+<p>Compare this value to the paper.</p>
+<p> 
+ 
+ </p>
+</div>
+</div>
+<div id="homework-2" class="section level2" number="3.3">
+<h2><span class="header-section-number">3.3</span> Homework</h2>
+<p>Now that we know how to estimate observed and expected heterozygosity, we’ll look at changes over time. Start a new script for your homework</p>
+<div id="homework-3-write-a-script-that-does-the-following" class="section level3" number="3.3.1">
+<h3><span class="header-section-number">3.3.1</span> <em>Homework 3: Write a script that does the following:</em></h3>
+<ol style="list-style-type: decimal">
+<li><p>Read in “genotypes.csv” and subset the dataframe to Mt Buller samples only. How many samples do you have from each year?</p></li>
+<li><p>Calculate mean observed heterozygosity for each year. Put these into a single dataframe.</p></li>
+<li><p>Calculate mean expected heterozygosity for each year. Add these to the dataframe from question 2.</p></li>
+<li><p>Plot mean expected heterozygosity over time.</p></li>
+<li><p>Add a vertical lines to your plot to show when introductions took place (hint - use the <code>abline</code> command)</p></li>
+</ol>
+
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="molecular-markers.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="population-structure.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["Website.pdf", "Website.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>
